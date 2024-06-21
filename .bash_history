@@ -892,3 +892,14 @@ gvim
 cd
 gvim .vimrc 
 gvim
+gvim .vimrc 
+git config --global user.email"imh2880@gmail.com"
+git config --global user.name"imh000"
+git branch -M master
+git branch --M master
+git branch -M master
+$git init
+$ git init
+git init
+git branch -M master
+gitpush
