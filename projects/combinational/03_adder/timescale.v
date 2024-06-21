@@ -1,0 +1,1 @@
+/home/imh522/templates/verilog/timescale.v
