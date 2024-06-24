@@ -903,3 +903,12 @@ $ git init
 git init
 git branch -M master
 gitpush
+git config --global user.email"imh2880@gmail.com"
+git config --global user.name"imh000"
+git remote add origin https://github.com/imh000/zaram_training_course.git
+git branch -M master
+gitpush
+git branch -M master
+git remote add origin https://github.com/imh000/zaram_training_course.git
+rm remote
+git push -u origin +master
