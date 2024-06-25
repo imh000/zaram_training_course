@@ -1194,3 +1194,10 @@ ivg fsm_detect_mealy
 gvim
 gitpush
 gvim .vimrc 
+gvim
+gvim .bash_aliases 
+gvim .vimrc 
+gvim .bash_aliases 
+g .vimrc
+gvim
+gitpush

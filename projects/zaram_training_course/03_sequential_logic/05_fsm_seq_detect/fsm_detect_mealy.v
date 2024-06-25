@@ -3,7 +3,7 @@ module fsm_detect_mealy
 	input clk,
 	input rstn,
 	input in,
-	output reg out
+	output out
 );
 
 	parameter IDLE=0, s1=1, s2=2, s3=3;
@@ -26,13 +26,8 @@ module fsm_detect_mealy
 		else 
 			state <= next_state;
 	end
-	
-	always @ (posedge clk) begin
-		case(state)
-			s3 : out <= in; 
-			default : out <= 0;
-		endcase
-	end
+
+	assign out = (state == s3) & in;
 
 	`ifdef	DEBUG
 		reg [8*32-1:0] stateMonitor;
