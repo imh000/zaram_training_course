@@ -1191,3 +1191,6 @@ cd projects/zaram_training_course/03_sequential_logic/
 cd 05_fsm_seq_detect/
 gvim fsm_detect_mealy.v
 ivg fsm_detect_mealy
+gvim
+gitpush
+gvim .vimrc 

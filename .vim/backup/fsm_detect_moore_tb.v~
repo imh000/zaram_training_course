@@ -4,6 +4,7 @@
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
 `define NVEC		50		// # of Test Vector
+`define DEBUG
 
 // --------------------------------------------------
 //	Includes
@@ -31,6 +32,8 @@ module fsm_detect_moore_tb;
 //	Tasks
 // --------------------------------------------------
 	reg [8*32-1:0] taskState;
+	reg [8*32-1:0] stateMonitor;
+
 	integer err = 0;
 
 	task init;
@@ -52,6 +55,7 @@ module fsm_detect_moore_tb;
 			taskState = "Reset OFF";
 		end
 	endtask
+
 
 	always #(500/`CLKFREQ) clk = ~clk;
 
