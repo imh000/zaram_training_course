@@ -912,3 +912,262 @@ git branch -M master
 git remote add origin https://github.com/imh000/zaram_training_course.git
 rm remote
 git push -u origin +master
+git cofig --global user.name "imh2880@gmail.com"
+git config --global user.email "imh2880@gmail.com"
+git config --global user.name "imh000"
+git branch -M master
+gitpush
+git config --global user.email "imh2880@gmail.com"
+git config --global user.name "imh000"
+gitpush
+gitpusj
+gitpush
+cd projects/
+mv combinational combinational_logic
+la
+cd combinational_logic/
+cd 03_adder/
+cd
+mkdir 04_parity
+cd 04_parity/
+cd ..
+rm 04_parity/
+la
+rm -rf 04_parity/
+la
+cd projects/combinational_logic/
+mkdir 04_parity
+la
+cd 04_parity/
+gvim parity8.v
+la
+gvim parity8_tb.v
+mv parity8.v even_parity.v
+la
+mv parity8_tb.v even_parity_tb.v
+la
+gvim even_parity_tb.v 
+cd ..
+mkdir 05_gray_code
+la
+cd 05_gray_code/
+gvim bin_to_gray.v
+gvim bin_to_gray_tb.v
+la
+cp bin_to_gray.v gray_to_bin.v
+la
+gvim bin_to_gray.v
+gvim gray_to_bin.v 
+cp bin_to_gray_tb.v gray_to_bin_tb.v
+gvim gray_to_bin_tb.v 
+la
+cd ..
+mkdir 06_barrel_shifter
+cd 06_barrel_shifter/
+la
+gvim barrel_shifter_ROR.v
+gvim barrel_shifter_ROR_tb.v
+la
+ivg barrel_shifter_ROR
+gvim barrel_shifter_ROR_tb.v 
+cd projects/
+cd combinational_logic/
+cd 06_barrel_shifter/
+ivg barrel_shifter_ROR
+gvim barrel_shifter_ROR.v
+ivg barrel_shifter_ROR
+la
+mv barrel_shifter_ROR.v barrel_shifter
+la
+mv barrel_shifter_ROR_tb.v barrel_shifter_tb.v
+la
+mv barrel_shifter barrel_shifter.v
+la
+gvim barrel_shifter.v
+cd projects/
+cd combinational_logic/06_barrel_shifter/
+gvim barrel_shifter.v
+cd
+cd projects/
+mkdir sequential_logic
+cd sequential_logic/
+gvim blocking.v
+la
+mv blocking.v blockings.v
+la
+gvim blockings.v 
+gvim blockings_tb.v
+ivg blockings
+la
+mkdir 02_latch_vs_dff
+cd 02_latch_vs_dff/
+gvim latch_vs_dff.v
+gvim latch_vs_dff_tb.v
+la
+cd ..
+mkdir 03_dffs
+cd 03_dffs/
+gvim dffs.v
+gvim dffs_tb.v
+ivg dffs
+cd ..
+mkdir 01_blockings
+la
+mv blockings.v 01_blockings
+la
+mv blockings_tb.v 01_blockings
+cd 01_blockings/
+cd ..
+mkdir zaram_training_course
+la
+mv combinational_logic zaram_training_course
+ll
+mv combinational_logic zaram_training_course
+la
+mv sequential_logic zaram_training_course
+la
+cd zaram_training_course/
+cd sequential_logic/
+cd 03_dffs/
+gvim dffs_tb.v 
+cd ..
+mkdir 04_counter
+gvim cnt.v
+la
+mv cnt.v 04_counter
+la
+mv cnt_tb.v 04_counter
+la
+cd 04_counter/
+cd ..
+mkdir 05_fsm_seq_dectect
+la
+cd 05_fsm_seq_dectect/
+gvim fsm_seq_detect_moore.v
+ivg fsm_seq_detect_moore
+cd projects/
+gvim test
+cd test
+cd ..
+cd zaram_training_course/
+mkdir 01_test
+cd 01_test/
+cd ..
+mv test ~/projects/zaram_training_course/01_test/
+la
+cd test_1
+la
+cd ..
+gvim test_1/
+rm -rf test_1/
+la
+cd zaram_training_course/
+mv combinational_logic 02_combinational_logic
+la
+mv sequential_logic 03_sequential_logic
+la
+cd ..
+cd zaram_training_course/
+mkdir 02_vim_script
+cd 02_vim_script/
+cd ..
+cd..
+cd ..
+mv vim_script ~/projects/zaram_training_course/02_vim_script
+la
+cd zaram_training_course/
+cd 02_vim_script/
+cd vim_script/
+gvim test.vim 
+cd ..
+rm -rf 02_vim_script/
+la
+cd 02_combinational_logic/
+cd 03_adder/
+cd ..
+cd 03_sequential_logic/
+cd 01_blockings/
+gvim blockings.v
+cd ..
+cd
+gvim .vimrc 
+gvim .bash_aliases 
+cd projects/zaram_training_course/03_sequential_logic/
+cd 01_blockings/
+ivg blockings
+cd
+gvim .bash_aliases 
+cd projects/
+cd zaram_training_course/
+cd 01_test/
+cd test/
+cd
+cd projects/zaram_training_course/03_sequential_logic/
+cd 01_blockings/
+ivg blockings
+cd
+gvim .bash_aliases 
+gvim
+gvim .vimrc 
+gvim
+gvim 
+gvim .vimrc 
+gvim
+gvim .vimrc 
+cd projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/
+mv fsm_detect.v fsm_detect_moore.v
+la
+cd ..
+mv 05_fsm_seq_dectect 05_fsm_seq_detect
+ll
+mkdir 05_fsm_seq_detect
+la
+mv 05_fsm_seq_dectect 05_fsm_seq_detect
+ll
+mv ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect
+rm -r 05_fsm_seq_detect
+la
+mv 05_fsm_seq_dectect/ 05_fsm_seq_detect/
+mv 05_fsm_seq_dectect/ 05_fsm_seq_detect
+mv 05_fsm_seq_dectect 05_fsm_seq_detect
+mkdir 05_fsm_seq_detect
+la
+mv 05_fsm_seq_dectect/ 05_fsm_seq_detect/
+mv ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/ 05_fsm_seq_detect/
+mv ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/ ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+mv 05_fsm_seq_dectect/ 05_fsm_seq_detect/
+la
+cd 05_fsm_seq_detect/
+cd 05_fsm_seq_dectect/
+mv fsm_detect_moore.v ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+cd ..
+cd 05_fsm_seq_dectect/
+mv fsm_detect_moore_tb.v ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+mv fsm_seq_detect_moore.v ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+mv fsm_seq_detect_moore_tb.v ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+mv log/ ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+mv timescale.v ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+mv vcd/ ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/
+la
+cd ..
+rm -rf 05_fsm_seq_dectect/
+la
+gvim fsm_detect_moore.v
+cd
+gvim
+cd projects/zaram_training_course/02_combinational_logic/
+cd 06_barrel_shifter/
+ivg barrel_shifter
+cd ..
+cd 05_gray_code/
+cd ..
+cd 06_barrel_shifter/
+ivg barrel_shifter
+gvim barrel_shifter.v
+ivg barrel_shifter

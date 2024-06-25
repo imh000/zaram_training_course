@@ -1,0 +1,26 @@
+module cnt
+#(
+	parameter num = 15
+)
+(
+	input clk,
+	input rstn,
+	input mode, 	// 1:up 0:down cnt
+	output reg [$clog2(num + 1)-1:0] o_cnt
+);
+	always @ (posedge clk or negedge rstn) begin
+		if(!rstn)
+			o_cnt <= 0;
+		else begin
+			if(mode) begin
+				o_cnt <= o_cnt + 1;
+				if(o_cnt == num)
+					o_cnt <= 0;
+			end
+			else begin
+				o_cnt <= o_cnt - 1;
+			end
+		end
+	end
+endmodule
+

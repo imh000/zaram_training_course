@@ -1,0 +1,23 @@
+module barrel_shifter
+#(
+	parameter bit_size = 4
+)
+(
+	input [bit_size-1:0] data,
+	input [$clog2(bit_size)-1:0] num_shift, 	// number to shift
+	input direction, 		// 0: left, 1:right
+	input [1:0] sel,		// 0: logical shift, 1:arithmetic shift, 2:rotate
+	output reg [bit_size-1:0] out,
+	output reg overflow			//logical and arithmetic overflow
+);
+	
+	always @ (*) begin
+		case(sel)
+			0 : {overflow, out} = direction ? (data >> num_shift) : (data << num_shift);
+			1 : {overflow, out} = direction ? (data >>> num_shift) : (data <<< num_shift);
+			2 : out = direction ? ((data >> num_shift) | (data << (4-num_shift))) :  ((data << num_shift) | (data >> (4-num_shift))); 
+			endcase
+		end
+
+endmodule
+

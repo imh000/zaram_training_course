@@ -58,7 +58,9 @@ snippet al
 	end 
 # Module block
 snippet mod
-	module ${1:`vim_snippets#Filename('$1', 'name')`} (${2});
+	module ${1:`vim_snippets#Filename('$1', 'name')`}
+	(${2}
+	);
 		${0}
 	endmodule
 # For
@@ -97,13 +99,101 @@ snippet tde
 	{
 		${3:REG = 16'h0000}
 	} ${1:my_dest_t};
-# typedef vcdf 
-snippet vcdf
-	reg	[8*32-1:0]	vcd_file;
-	initial begin
-		if ($value$plusargs("vcd_file=%s", vcd_file)) begin
-			$dumpfile(vcd_file);
-			$dumpvars;
-		end 
-	end
+# Test Bench Template
+
+snippet	tb
+	// --------------------------------------------------
+	//	Define Global Variables
+	// --------------------------------------------------
+	\`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
+	\`define	SIMCYCLE	\`NVEC	// Sim. Cycles
+	\`define NVEC		50		// # of Test Vector
+
+	// --------------------------------------------------
+	//	Includes
+	// --------------------------------------------------
+	\`include	"`expand('%:r:s?_tb??')`.v"
+
+	module ${2:`vim_snippets#Filename('$1', 'name')`};
+	// --------------------------------------------------
+	//	DUT Signals & Instantiate
+	// --------------------------------------------------
+	${1}
 	
+
+	// --------------------------------------------------
+	//	Tasks
+	// --------------------------------------------------
+		reg [8*32-1:0] taskState;
+		integer err = 0;
+
+		task init;
+			begin
+				taskState = "Init";
+				clk		= 0;
+			end
+		endtask
+
+		task resetReleaseAfterNCycles;
+			input [9:0] n;
+			begin
+				taskState = "Reset On";
+				rstn = 1'b0;
+				#(1000/\`CLKFREQ);
+				rstn = 1'b1; 
+				taskState = "Reset OFF";
+			end
+		endtask
+
+		always #(500/\`CLKFREQ) clk = ~clk;
+
+	// --------------------------------------------------
+	//	Test Stimulus
+	// --------------------------------------------------
+		integer		i, j;
+		initial begin
+			init();
+			resetReleaseAfterNCycles(4);
+
+			for (i=0; i<\`SIMCYCLE; i++) begin
+				a = \$urandom;
+			end
+			#(1000/\`CLKFREQ);
+			\$finish;
+		end
+
+	// --------------------------------------------------
+	//	Dump VCD
+	// --------------------------------------------------
+		reg	[8*32-1:0]	vcd_file;
+		initial begin
+			if (\$value\$plusargs("vcd_file=%s", vcd_file)) begin
+				\$dumpfile(vcd_file);
+				\$dumpvars;
+			end else begin
+				\$dumpfile("${3:`vim_snippets#Filename('$1', 'name')`}.vcd");
+				\$dumpvars;
+			end
+		end
+
+	endmodule
+
+# Tasks
+snippet utils
+	task dispAsFixedPoint;
+		input reg	[127:0]					sDescription;
+		input		[\`DEF_BIT_FULL-1:0]	bIn;
+		begin
+			\$display("[\%0s] Binary: \%b > Fixed Point Number: \%f", sDescription, bIn, bIn*(2.0**-(\`DEF_BIT_FRAC)));
+		end
+	endtask
+
+# Header Comment Template
+snippet co
+	// ==================================================
+	//	[ VLSISYS Lab. ]
+	//	* Author		: Woong Choi (woongchoi@sm.ac.kr)
+	//	* Filename		: ${0:`vim_snippets#Filename('$1', 'name')`}.v
+	//	* Date			: `strftime("%Y-%m-%d %H:%M:%S")`
+	//	* Description	: ${1}
+	// ==================================================

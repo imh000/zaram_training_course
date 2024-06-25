@@ -85,8 +85,8 @@ set	visualbell					" Notify you on screen when an error occurs without beeping
 
 
 " for indent conflict during verilog coding
-autocmd	FileType * setlocal comments-=://
-set	formatoptions-=r
+"autocmd	FileType * setlocal comments-=://
+"set	formatoptions-=r
 "==================================================
 " Map Setting
 "==================================================

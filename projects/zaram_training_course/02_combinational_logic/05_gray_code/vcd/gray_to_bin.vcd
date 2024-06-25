@@ -1,0 +1,63 @@
+$date
+	Mon Jun 24 10:59:26 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module gray_to_bin_tb $end
+$var wire 3 ! bin [2:0] $end
+$var reg 3 " gray [2:0] $end
+$var reg 256 # vcd_file [255:0] $end
+$scope module u_gray_to_bin $end
+$var wire 3 $ bin [2:0] $end
+$var wire 3 % gray [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 %
+b0 $
+b1011100010111101110110011000110110010000101111011001110111001001100001011110010101111101110100011011110101111101100010011010010110111000101110011101100110001101100100 #
+b0 "
+b0 !
+$end
+#100000
+b1 !
+b1 $
+b1 "
+b1 %
+#200000
+b10 !
+b10 $
+b11 "
+b11 %
+#300000
+b11 !
+b11 $
+b10 "
+b10 %
+#400000
+b100 !
+b100 $
+b110 "
+b110 %
+#500000
+b101 !
+b101 $
+b111 "
+b111 %
+#600000
+b110 !
+b110 $
+b101 "
+b101 %
+#700000
+b111 !
+b111 $
+b100 "
+b100 %
+#800000

@@ -98,7 +98,7 @@ setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=
-setlocal statusline=%!airline#statusline(1)
+setlocal statusline=%!airline#statusline(2)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -137,32 +137,44 @@ normal! zo
 normal! zo
 25
 normal! zo
-31
+30
 normal! zo
-36
+35
 normal! zo
-46
+45
 normal! zo
-56
+55
 normal! zo
-61
+60
 normal! zo
-83
+67
 normal! zo
-88
+82
 normal! zo
-93
+87
 normal! zo
-103
+92
+normal! zo
+97
+normal! zo
+102
 normal! zo
 104
 normal! zo
-let s:l = 28 - ((26 * winheight(0) + 13) / 27)
+181
+normal! zo
+182
+normal! zo
+191
+normal! zo
+192
+normal! zo
+let s:l = 133 - ((9 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 28
-normal! 0
+keepjumps 133
+normal! 028|
 let &g:so = s:so_save | let &g:siso = s:siso_save
 nohlsearch
 doautoall SessionLoadPost

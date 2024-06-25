@@ -1,0 +1,44 @@
+
+// --------------------------------------------------
+//	Define Global Variables
+// --------------------------------------------------
+`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
+`define	SIMCYCLE	`NVEC	// Sim. Cycles
+`define NVEC		10		// # of Test Vector
+
+// --------------------------------------------------
+//	Includes
+// --------------------------------------------------
+`include "barrel_shifter.v"
+module barrel_shifter_tb();
+
+	reg [3:0] in;
+	reg [1:0] k;
+	wire [3:0] out;
+
+	barrel_shifter
+	u_barrel_shifter(
+		.in					(in					),
+		.k					(k					),
+		.out				(out				)
+	);
+
+	integer i;
+	initial begin
+		for (i = 0; i < `SIMCYCLE; i++) begin
+			in = $random;
+			k = $urandom_range(0,3);
+			#(1000/`CLKFREQ);
+		end
+//		#(1000/'CLKFREQ);
+		$finish;
+	end
+
+	reg	[8*32-1:0]	vcd_file;
+	initial begin
+		if ($value$plusargs("vcd_file=%s", vcd_file)) begin
+			$dumpfile(vcd_file);
+			$dumpvars;
+		end
+	end
+endmodule

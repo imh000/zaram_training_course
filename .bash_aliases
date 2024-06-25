@@ -47,7 +47,7 @@ cd
 	fi
 	vvp $1.vvp +vcd_file=./vcd/$1.vcd > ./log/$1.log
 	rm $1.vvp
-	gtkwave -f ./vcd/$1.vcd -T ~/projects/test/gtkwv.tcl &
+	gtkwave -f ./vcd/$1.vcd -T ~/projects/zaram_training_course/01_test/test/gtkwv.tcl &
 }
 
 export	-f ivg
