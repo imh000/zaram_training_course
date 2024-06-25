@@ -1171,3 +1171,23 @@ cd 06_barrel_shifter/
 ivg barrel_shifter
 gvim barrel_shifter.v
 ivg barrel_shifter
+cd projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/
+ivg barrel_shifter
+gvim barrel_shifter
+gvim barrel_shifter.v
+ivg barrel_shifter
+cd
+gvim .vimrc 
+gvim .bash_aliases 
+cd projects/zaram_training_course/02_combinational_logic/01
+cd projects/zaram_training_course/02_combinational_logic/01_mux/
+ivg mux2
+cd ..
+cd 06_barrel_shifter/
+ivg barrel_shifter
+cd
+gitpush
+cd projects/zaram_training_course/03_sequential_logic/
+cd 05_fsm_seq_detect/
+gvim fsm_detect_mealy.v
+ivg fsm_detect_mealy

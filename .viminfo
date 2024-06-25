@@ -20,12 +20,12 @@
 $
 
 # Command Line History (newest to oldest):
+:q
+|2,0,1719299231,,"q"
 :w
-|2,0,1719293006,,"w"
+|2,0,1719299145,,"w"
 :q!
 |2,0,1719291416,,"q!"
-:q
-|2,0,1719291385,,"q"
 :so %
 |2,0,1719291383,,"so %"
 :wq
@@ -123,7 +123,7 @@ $
 
 # Search String History (newest to oldest):
 ? \Vtb\%#
-|2,1,1719291395,,"\\Vtb\\%#"
+|2,1,1719293997,,"\\Vtb\\%#"
 ?//
 |2,1,1719289981,47,"/"
 ?/*
@@ -226,6 +226,8 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@/home/imh522/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|2,3,1719293978,,"/home/imh522/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
 @/home/imh522/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/fsm_detect_moore_tb.v
 |2,3,1719280660,,"/home/imh522/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/fsm_detect_moore_tb.v"
 @/home/imh522/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/fsm_detect.v
@@ -241,51 +243,36 @@ $
 
 # Registers:
 "0	LINE	0
-			.direction			(direction			),
-|3,0,0,1,1,0,1719292051,"		.direction			(direction			),"
+				s3 : next_state = in ? s1 : s2;
+|3,0,0,1,1,0,1719296682,"			s3 : next_state = in ? s1 : s2;"
 "1	LINE	0
-			.2:rotate			(2:rotate			),
-|3,0,1,1,1,0,1719291857,"		.2:rotate			(2:rotate			),"
+		always @ (posedge clk) begin
+|3,0,1,1,1,0,1719299099,"	always @ (posedge clk) begin"
 "2	LINE	0
-			.1:right			(1:right			),
-|3,0,2,1,1,0,1719291856,"		.1:right			(1:right			),"
+		
+	endmodule
+|3,0,2,1,2,0,1719299014,"	","endmodule"
 "3	LINE	0
-		reg [3:0] data;
-		reg [1:0] num_shift; 	// number to shift
-		reg direction; 		// 0: left, 1:right
-		reg [1:0] sel;		// 0: logical shift, 1:arithmetic shift, 2:rotate
-		wire	 [3:0] out;
-		wire	 overflow;			//logical and arithmetic overflow;
-	
-		barrel_shifter
-		u_barrel_shifter(
-			.data				(data				),
-			.num_shift			(num_shift			),
-			.direction			(direction			),
-			.sel				(sel				),
-			.out				(out				),
-			.overflow			(overflow			)
-		);
-|3,0,3,1,16,0,1719291723,"	reg [3:0] data;","	reg [1:0] num_shift; 	// number to shift","	reg direction; 		// 0: left, 1:right","	reg [1:0] sel;		// 0: logical shift, 1:arithmetic shift, 2:rotate","	wire	 [3:0] out;","	wire	 overflow;			//logical and arithmetic overflow;","","	barrel_shifter","	u_barrel_shifter(","		.data				(data				),","		.num_shift			(num_shift			),","		.direction			(direction			),","		.sel				(sel				),","		.out				(out				),",>29
-|<"		.overflow			(overflow			)","	);"
+		end
+|3,0,3,1,1,0,1719299013,"	end"
 "4	LINE	0
-					vecInsert(i);
-|3,0,4,1,1,0,1719291301,"				vecInsert(i);"
+			endcase
+|3,0,4,1,1,0,1719299010,"		endcase"
 "5	LINE	0
-					${1}
-|3,0,5,1,1,0,1719291278,"				${1}"
+				default : out = 0;
+|3,0,5,1,1,0,1719299008,"			default : out = 0;"
 "6	LINE	0
-			//	default : out = 0;
-|3,0,6,1,1,0,1719291022,"		//	default : out = 0;"
+				s3 : out = in; 
+|3,0,6,1,1,0,1719299007,"			s3 : out = in; "
 "7	LINE	0
-			end
-|3,0,7,1,1,0,1719290489,"		end"
+			case(state)
+|3,0,7,1,1,0,1719299006,"		case(state)"
 "8	LINE	0
-			end
-|3,0,8,1,1,0,1719289898,"		end"
+		always @ (*) begin
+|3,0,8,1,1,0,1719299005,"	always @ (*) begin"
 "9	LINE	0
-			end
-|3,0,9,1,1,0,1719289895,"		end"
+	
+|3,0,9,1,1,0,1719298371,""
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
@@ -293,50 +280,158 @@ $
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
 ""-	CHAR	0
-	n
-|3,1,36,0,1,0,1719292064,"n"
+	*
+|3,1,36,0,1,0,1719299140,"*"
 
 # File marks:
-'0  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
-|4,48,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
-'1  50  82  ~/.bash_aliases
-|4,49,50,82,1719290237,"~/.bash_aliases"
-'2  141  0  ~/.vimrc
-|4,50,141,0,1719290110,"~/.vimrc"
-'3  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
-|4,51,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
-'4  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,52,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
-'5  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,53,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
-'6  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,54,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
-'7  16  2  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,55,16,2,1719282990,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
-'8  16  2  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,56,16,2,1719282990,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
-'9  16  2  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,57,16,2,1719282990,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+'0  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
+|4,48,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
+'1  16  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,49,16,2,1719297573,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+'2  16  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,50,16,2,1719297573,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+'3  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
+|4,51,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
+'4  50  82  ~/.bash_aliases
+|4,52,50,82,1719290237,"~/.bash_aliases"
+'5  141  0  ~/.vimrc
+|4,53,141,0,1719290110,"~/.vimrc"
+'6  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,54,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+'7  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,55,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+'8  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,56,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+'9  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,57,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
 
 # Jumplist (newest first):
+-'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
+|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
+-'  30  21  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,21,1719299235,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  24  11  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,24,11,1719299029,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  26  10  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,26,10,1719299029,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  27  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,27,8,1719299028,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  31  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,31,2,1719299027,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  32  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,32,3,1719299027,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  33  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,33,3,1719299027,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  34  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,34,2,1719299026,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  35  1  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,35,1,1719299026,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  28  1  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,28,1,1719299016,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  7  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,7,0,1719298345,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,1,0,1719297603,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  16  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,16,2,1719297573,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  16  2  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,16,2,1719297573,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  37  25  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,37,25,1719296209,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  30  25  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,25,1719296209,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  22  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,22,0,1719296064,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  22  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,22,0,1719296064,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,1,0,1719293797,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,1,0,1719293797,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
+|4,39,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
+|4,39,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
+|4,39,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
 -'  1  0  ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
 |4,39,1,0,1719293034,"~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v"
 -'  85  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
 |4,39,85,10,1719293023,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  85  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,85,10,1719293023,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  85  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,85,10,1719293023,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  85  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,85,10,1719293023,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  30  6  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,30,6,1719292050,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  30  6  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,30,6,1719292050,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  30  6  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,30,6,1719292050,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
 -'  30  6  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
 |4,39,30,6,1719292050,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
 -'  13  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
 |4,39,13,0,1719291707,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  13  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,13,0,1719291707,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  13  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,13,0,1719291707,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  13  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,13,0,1719291707,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  5  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,5,0,1719291481,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  5  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,5,0,1719291481,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  5  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,5,0,1719291481,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
 -'  5  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
 |4,39,5,0,1719291481,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
 -'  1  8  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1
 |4,39,1,8,1719291419,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1"
+-'  1  8  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1
+|4,39,1,8,1719291419,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1"
+-'  1  8  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1
+|4,39,1,8,1719291419,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1"
+-'  1  8  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1
+|4,39,1,8,1719291419,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/NERD_tree_tab_1"
+-'  50  82  ~/.bash_aliases
+|4,39,50,82,1719290237,"~/.bash_aliases"
+-'  50  82  ~/.bash_aliases
+|4,39,50,82,1719290237,"~/.bash_aliases"
+-'  50  82  ~/.bash_aliases
+|4,39,50,82,1719290237,"~/.bash_aliases"
 -'  50  82  ~/.bash_aliases
 |4,39,50,82,1719290237,"~/.bash_aliases"
 -'  141  0  ~/.vimrc
 |4,39,141,0,1719290110,"~/.vimrc"
 -'  141  0  ~/.vimrc
 |4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  141  0  ~/.vimrc
+|4,39,141,0,1719290110,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
+-'  89  0  ~/.vimrc
+|4,39,89,0,1719290093,"~/.vimrc"
 -'  89  0  ~/.vimrc
 |4,39,89,0,1719290093,"~/.vimrc"
 -'  89  0  ~/.vimrc
@@ -349,6 +444,30 @@ $
 |4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
 -'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
 |4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter
+|4,39,1,0,1719289637,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter"
 -'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
 |4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
 -'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
@@ -365,162 +484,122 @@ $
 |4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
 -'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
 |4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  24  10  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,24,10,1719289537,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-|4,39,1,0,1719289374,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
-|4,39,24,0,1719289359,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  44  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
-|4,39,44,0,1719289260,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  70  18  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,70,18,1719289251,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
--'  42  3  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-|4,39,42,3,1719288764,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
+-'  62  8  ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v
+|4,39,62,8,1719289589,"~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings_tb.v"
 
 # History of marks within files (newest to oldest):
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
+	*	1719299270	0
+	"	24	0
+
+> ~/NERD_tree_tab_1
+	*	1719299233	0
+	"	26	21
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+	*	1719299231	0
+	"	30	21
+	^	30	22
+	.	30	21
+	+	1	22
+	+	9	35
+	+	10	6
+	+	11	6
+	+	20	0
+	+	19	29
+	+	37	27
+	+	15	0
+	+	13	0
+	+	23	0
+	+	37	0
+	+	37	32
+	+	19	27
+	+	9	40
+	+	10	6
+	+	11	6
+	+	20	4
+	+	19	27
+	+	20	39
+	+	20	36
+	+	37	27
+	+	20	0
+	+	9	35
+	+	10	6
+	+	11	6
+	+	19	32
+	+	37	14
+	+	26	10
+	+	24	16
+	+	26	0
+	+	6	10
+	+	26	0
+	+	24	12
+	+	26	0
+	+	6	7
+	+	37	32
+	+	6	10
+	+	37	0
+	+	37	20
+	+	37	0
+	+	37	16
+	+	26	11
+	+	24	16
+	+	26	0
+	+	26	11
+	+	28	0
+	+	37	0
+	+	26	0
+	+	30	21
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+	*	1719299229	0
+	"	11	28
+	^	34	17
+	.	34	16
+	+	1	0
+	+	17	9
+	+	30	0
+	+	35	0
+	+	40	11
+	+	41	10
+	+	67	4
+	+	68	2
+	+	70	0
+	+	34	16
+	o	1	0
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/NERD_tree_tab_1
+	*	1719295952	0
+	"	9	17
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+	*	1719295950	0
+	"	29	1
 
 > ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
 	*	1719293034	0
@@ -943,29 +1022,13 @@ $
 	+	5	0
 	+	7	3
 
-> ~/NERD_tree_tab_1
-	*	1719289260	0
-	"	32	13
-	.	1	0
-	+	1	0
-
 > ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray_tb.v
 	*	1719289253	0
 	"	44	0
 
-> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/NERD_tree_tab_1
-	*	1719282889	0
-	"	16	0
-	.	1	0
-	+	1	0
-
 > ~/projects/zaram_training_course/03_sequential_logic/timescale.v
 	*	1719282542	0
 	"	1	0
-
-> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
-	*	1719282508	0
-	"	19	0
 
 > ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/fsm_seq_detect_moore.v
 	*	1719281909	0
@@ -2210,63 +2273,3 @@ $
 	+	2	17
 	+	1	0
 	o	6	0
-
-> ~/projects/combinational/01_adder/vcd/add.vcd
-	*	1718870658	0
-	"	145	6
-
-> ~/projects/combinational/01_adder/add.vpp
-	*	1718870614	0
-	"	37	0
-
-> ~/projects/combinational/01_dec/dec2.v
-	*	1718870065	0
-	"	8	43
-	^	8	44
-	.	8	43
-	+	1	0
-	+	9	0
-	+	5	18
-	+	8	44
-	+	1	19
-	+	10	0
-	+	11	0
-	+	30	0
-	+	11	0
-	+	4	0
-	+	3	0
-	+	4	0
-	+	3	0
-	+	4	11
-	+	5	14
-	+	13	0
-	+	19	21
-	+	22	4
-	+	22	0
-	+	30	0
-	+	22	22
-	+	29	4
-	+	27	6
-	+	28	15
-	+	26	0
-	+	29	1
-	+	5	0
-	+	3	7
-	+	4	8
-	+	5	13
-	+	5	0
-	+	3	0
-	+	5	0
-	+	3	18
-	+	31	0
-	+	32	0
-	+	39	0
-	+	32	16
-	+	36	16
-	+	35	2
-	+	36	0
-	+	34	8
-	+	3	11
-	+	13	10
-	+	15	10
-	+	8	43
