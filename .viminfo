@@ -11,19 +11,23 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\/
+~MSle0/\/
 
 # Last Substitute Search Pattern:
-~MSle0&\/
+~MSle0~&in
 
 # Last Substitute String:
-$
+$i_in
 
 # Command Line History (newest to oldest):
 :w
-|2,0,1719306859,,"w"
+|2,0,1719365350,,"w"
 :q
-|2,0,1719302912,,"q"
+|2,0,1719364545,,"q"
+:27, 31s/in/i_in/g
+|2,0,1719362896,,"27, 31s/in/i_in/g"
+:17, 20s/in/i_in/g
+|2,0,1719362327,,"17, 20s/in/i_in/g"
 :so %
 |2,0,1719300137,,"so %"
 :q!
@@ -116,12 +120,10 @@ $
 |2,0,1718784758,,"snip"
 :'<,'>
 |2,0,1718779574,,"'<,'>"
-:qq
-|2,0,1718774322,,"qq"
-:tabularizer
-|2,0,1718772737,,"tabularizer"
 
 # Search String History (newest to oldest):
+? in
+|2,1,1719362896,,"in"
 ? \Vtb\%#
 |2,1,1719293997,,"\\Vtb\\%#"
 ?//
@@ -220,8 +222,6 @@ $
 |2,1,1718088870,47,"type"
 ?/ type
 |2,1,1718088865,47," type"
-?? errroor
-|2,1,1718088703,63," errroor"
 
 # Expression History (newest to oldest):
 
@@ -243,31 +243,26 @@ $
 
 # Registers:
 "0	LINE	0
-		`ifdef	DEBUG
-			reg [8*32-1:0] stateMonitor;
-			always @ (*) begin
-				case(state)
-					IDLE : stateMonitor = "IDLE";
-					s1 : stateMonitor = "s1";
-					s2 : stateMonitor = "s2";
-					s3 : stateMonitor = "s3";
-					s4 : stateMonitor = "s4";
-				endcase
-			end
-		`endif
-|3,0,0,1,12,0,1719302872,"	`ifdef	DEBUG","		reg [8*32-1:0] stateMonitor;","		always @ (*) begin","			case(state)","				IDLE : stateMonitor = \"IDLE\";","				s1 : stateMonitor = \"s1\";","				s2 : stateMonitor = \"s2\";","				s3 : stateMonitor = \"s3\";","				s4 : stateMonitor = \"s4\";","			endcase","		end","	`endif"
+			reg [8*32-1:0] directMonitor;
+|3,0,0,1,1,0,1719363941,"		reg [8*32-1:0] directMonitor;"
 "1	LINE	0
+		reg Monitor
+|3,0,1,1,1,0,1719363677,"	reg Monitor"
+"2	LINE	0
+	
+|3,0,2,1,1,0,1719362491,""
+"3	LINE	0
 		always @ (*) begin
 			case(state)
 				s3 : out = in; 
 				default : out = 0;
 			endcase
 		end
-|3,0,1,1,6,0,1719306822,"	always @ (*) begin","		case(state)","			s3 : out = in; ","			default : out = 0;","		endcase","	end"
-"2	LINE	0
+|3,0,3,1,6,0,1719306822,"	always @ (*) begin","		case(state)","			s3 : out = in; ","			default : out = 0;","		endcase","	end"
+"4	LINE	0
 					s4 : stateMonitor = "s4";
-|3,0,2,1,1,0,1719302896,"				s4 : stateMonitor = \"s4\";"
-"3	LINE	0
+|3,0,4,1,1,0,1719302896,"				s4 : stateMonitor = \"s4\";"
+"5	LINE	0
 		task stateMonitor;
 			input [9:0] n;
 			begin
@@ -278,26 +273,20 @@ $
 				taskState = "Reset OFF";
 			end
 		endtask
-|3,0,3,1,10,0,1719301902,"	task stateMonitor;","		input [9:0] n;","		begin","			taskState = \"Reset On\";","			rstn = 1'b0;","			#(1000/`CLKFREQ);","			rstn = 1'b1; ","			taskState = \"Reset OFF\";","		end","	endtask"
-"4	LINE	0
-	export	GDK_SCALE=1
-|3,0,4,1,1,0,1719300133,"export	GDK_SCALE=1"
-"5	LINE	0
-		always @ (posedge clk) begin
-|3,0,5,1,1,0,1719299099,"	always @ (posedge clk) begin"
+|3,0,5,1,10,0,1719301902,"	task stateMonitor;","		input [9:0] n;","		begin","			taskState = \"Reset On\";","			rstn = 1'b0;","			#(1000/`CLKFREQ);","			rstn = 1'b1; ","			taskState = \"Reset OFF\";","		end","	endtask"
 "6	LINE	0
+	export	GDK_SCALE=1
+|3,0,6,1,1,0,1719300133,"export	GDK_SCALE=1"
+"7	LINE	0
+		always @ (posedge clk) begin
+|3,0,7,1,1,0,1719299099,"	always @ (posedge clk) begin"
+"8	LINE	0
 		
 	endmodule
-|3,0,6,1,2,0,1719299014,"	","endmodule"
-"7	LINE	0
-		end
-|3,0,7,1,1,0,1719299013,"	end"
-"8	LINE	0
-			endcase
-|3,0,8,1,1,0,1719299010,"		endcase"
+|3,0,8,1,2,0,1719299014,"	","endmodule"
 "9	LINE	0
-				default : out = 0;
-|3,0,9,1,1,0,1719299008,"			default : out = 0;"
+		end
+|3,0,9,1,1,0,1719299013,"	end"
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
@@ -305,46 +294,156 @@ $
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
 ""-	CHAR	0
-	g
-|3,1,36,0,1,0,1719306843,"g"
+	4
+|3,1,36,0,1,0,1719365089,"4"
 
 # File marks:
-'0  9  7  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
-|4,48,9,7,1719306925,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
-'1  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
-|4,49,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
-'2  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
-|4,50,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
-'3  24  0  ~/.vimrc
-|4,51,24,0,1719300804,"~/.vimrc"
-'4  24  0  ~/.bash_aliases
-|4,52,24,0,1719300802,"~/.bash_aliases"
-'5  1  0  ~/.vimrc
-|4,53,1,0,1719300782,"~/.vimrc"
-'6  9  0  ~/.bash_aliases
-|4,54,9,0,1719300139,"~/.bash_aliases"
-'7  9  0  ~/.bash_aliases
-|4,55,9,0,1719300139,"~/.bash_aliases"
-'8  1  0  ~/NERD_tree_tab_1
-|4,56,1,0,1719300124,"~/NERD_tree_tab_1"
-'9  1  0  ~/NERD_tree_tab_1
-|4,57,1,0,1719300124,"~/NERD_tree_tab_1"
+'0  30  22  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,48,30,22,1719365506,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+'1  11  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,49,11,0,1719363309,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+'2  11  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,50,11,0,1719363309,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+'3  16  16  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,51,16,16,1719363283,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+'4  16  16  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,52,16,16,1719363283,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+'5  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,53,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+'6  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,54,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+'7  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,55,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+'8  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,56,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+'9  9  7  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,57,9,7,1719306925,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
 
 # Jumplist (newest first):
+-'  30  22  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,22,1719365506,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  30  14  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,30,14,1719365500,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  18  123  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,18,123,1719365284,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  16  24  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,16,24,1719365215,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  29  11  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,29,11,1719363963,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  8  12  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+|4,39,8,12,1719363604,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v"
+-'  21  0  ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+|4,39,21,0,1719363562,"~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v"
+-'  50  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,50,8,1719363558,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,1,0,1719363326,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  11  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,11,0,1719363309,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  11  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,11,0,1719363309,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  150  2  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,150,2,1719363300,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  1  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,1,0,1719363300,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  150  2  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,150,2,1719363300,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  1  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,39,1,0,1719363300,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+-'  16  16  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,16,16,1719363283,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  16  16  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,16,16,1719363283,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  34  1  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,34,1,1719362896,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  34  1  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+|4,39,34,1,1719362896,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v"
+-'  22  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
+|4,39,22,0,1719362834,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
+-'  22  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
+|4,39,22,0,1719362834,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
+-'  24  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore_tb.v
+|4,39,24,8,1719362753,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore_tb.v"
+-'  24  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore_tb.v
+|4,39,24,8,1719362753,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore_tb.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore.v
+|4,39,61,0,1719362500,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore.v
+|4,39,61,0,1719362500,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore.v"
+-'  72  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,72,3,1719362421,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  72  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,72,3,1719362421,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  20  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,20,3,1719362353,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  20  3  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,20,3,1719362353,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  8  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,8,0,1719362327,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  8  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,8,0,1719362327,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,1,0,1719362122,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,1,0,1719362122,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  9  8  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,9,8,1719307571,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,1,0,1719307395,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,1,0,1719307395,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
+|4,39,1,0,1719307395,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
 -'  9  7  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
 |4,39,9,7,1719306925,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v"
+-'  35  21  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,35,21,1719306861,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  35  21  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,35,21,1719306861,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  30  21  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,30,21,1719306861,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  30  21  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,21,1719306861,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  36  17  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,36,17,1719306785,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  31  17  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,31,17,1719306785,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  36  17  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,36,17,1719306785,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  31  17  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,31,17,1719306785,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  31  17  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,31,17,1719306785,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,1,0,1719306746,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,1,0,1719306746,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  30  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  27  5  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,27,5,1719304572,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
 -'  30  10  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
 |4,39,30,10,1719303203,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  30  10  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+|4,39,30,10,1719303203,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v"
+-'  1  20  ~/NERD_tree_tab_1
+|4,39,1,20,1719302853,"~/NERD_tree_tab_1"
+-'  1  20  ~/NERD_tree_tab_1
+|4,39,1,20,1719302853,"~/NERD_tree_tab_1"
+-'  1  20  ~/NERD_tree_tab_1
+|4,39,1,20,1719302853,"~/NERD_tree_tab_1"
 -'  1  20  ~/NERD_tree_tab_1
 |4,39,1,20,1719302853,"~/NERD_tree_tab_1"
 -'  35  20  ~/NERD_tree_tab_1
@@ -357,6 +456,34 @@ $
 |4,39,24,0,1719300804,"~/.vimrc"
 -'  24  0  ~/.vimrc
 |4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.vimrc
+|4,39,24,0,1719300804,"~/.vimrc"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
+-'  24  0  ~/.bash_aliases
+|4,39,24,0,1719300802,"~/.bash_aliases"
 -'  24  0  ~/.bash_aliases
 |4,39,24,0,1719300802,"~/.bash_aliases"
 -'  24  0  ~/.bash_aliases
@@ -365,178 +492,270 @@ $
 |4,39,1,0,1719300782,"~/.vimrc"
 -'  1  0  ~/.vimrc
 |4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1719300782,"~/.vimrc"
 -'  9  0  ~/.bash_aliases
 |4,39,9,0,1719300748,"~/.bash_aliases"
 -'  9  0  ~/.bash_aliases
 |4,39,9,0,1719300748,"~/.bash_aliases"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719300685,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719300685,"~/.vimrc"
 -'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
+|4,39,9,0,1719300748,"~/.bash_aliases"
 -'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
+|4,39,9,0,1719300748,"~/.bash_aliases"
 -'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
+|4,39,9,0,1719300748,"~/.bash_aliases"
 -'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
+|4,39,9,0,1719300748,"~/.bash_aliases"
 -'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
--'  9  0  ~/.bash_aliases
-|4,39,9,0,1719300139,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  49  82  ~/.bash_aliases
-|4,39,49,82,1719300129,"~/.bash_aliases"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  12  0  ~/NERD_tree_tab_1
-|4,39,12,0,1719300124,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  21  2  ~/NERD_tree_tab_1
-|4,39,21,2,1719299983,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719299983,"~/NERD_tree_tab_1"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  89  0  ~/.vimrc
-|4,39,89,0,1719299909,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  141  0  ~/.vimrc
-|4,39,141,0,1719299883,"~/.vimrc"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
--'  24  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-|4,39,24,0,1719299271,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v"
+|4,39,9,0,1719300748,"~/.bash_aliases"
 
 # History of marks within files (newest to oldest):
 
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
+	*	1719365504	0
+	"	30	22
+	^	35	33
+	.	35	33
+	+	1	22
+	+	9	35
+	+	11	6
+	+	12	6
+	+	21	0
+	+	20	29
+	+	50	27
+	+	16	0
+	+	14	0
+	+	24	0
+	+	50	0
+	+	50	32
+	+	20	27
+	+	9	40
+	+	11	6
+	+	12	6
+	+	21	4
+	+	20	27
+	+	21	39
+	+	21	36
+	+	50	27
+	+	21	0
+	+	9	35
+	+	11	6
+	+	12	6
+	+	20	32
+	+	50	14
+	+	29	10
+	+	25	16
+	+	29	0
+	+	6	10
+	+	29	0
+	+	25	12
+	+	29	0
+	+	6	7
+	+	50	32
+	+	6	10
+	+	50	0
+	+	50	20
+	+	50	0
+	+	50	16
+	+	29	11
+	+	25	16
+	+	29	0
+	+	29	11
+	+	33	0
+	+	50	0
+	+	29	0
+	+	36	21
+	+	36	0
+	+	37	0
+	+	45	0
+	+	48	0
+	+	36	11
+	+	36	12
+	+	36	17
+	+	36	11
+	+	36	17
+	+	36	11
+	+	36	12
+	+	36	0
+	+	35	31
+	+	6	7
+	+	35	21
+	+	10	9
+	+	25	16
+	+	28	0
+	+	29	11
+	+	32	0
+	+	17	0
+	+	35	33
+
+> ~/NERD_tree_tab_1
+	*	1719365500	0
+	"	28	19
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
+	*	1719365499	0
+	"	30	14
+	^	16	24
+	.	16	23
+	+	97	0
+	+	17	0
+	+	17	26
+	+	17	24
+	+	17	15
+	+	97	11
+	+	14	0
+	+	97	0
+	+	17	0
+	+	48	0
+	+	17	0
+	+	48	11
+	+	47	6
+	+	48	0
+	+	17	15
+	+	60	10
+	+	97	0
+	+	51	0
+	+	54	1
+	+	65	2
+	+	73	2
+	+	77	35
+	+	80	0
+	+	7	14
+	+	88	28
+	+	88	1
+	+	88	15
+	+	88	0
+	+	88	14
+	+	88	0
+	+	88	30
+	+	88	0
+	+	88	15
+	+	88	0
+	+	96	0
+	+	89	0
+	+	46	1
+	+	77	23
+	+	79	17
+	+	76	11
+	+	77	16
+	+	78	16
+	+	79	10
+	+	76	29
+	+	77	33
+	+	78	16
+	+	79	27
+	+	80	0
+	+	81	0
+	+	7	14
+	+	76	17
+	+	77	22
+	+	78	16
+	+	79	16
+	+	76	11
+	+	77	16
+	+	78	16
+	+	79	10
+	+	17	25
+	+	37	0
+	+	16	23
+	+	22	15
+	+	33	0
+	+	31	0
+	+	30	26
+	+	31	0
+	+	33	0
+	+	32	14
+	+	16	22
+	+	8	12
+	+	16	23
+
+> ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
+	*	1719365270	0
+	"	18	123
+	^	18	124
+	.	18	123
+	+	18	0
+	+	18	120
+	+	10	10
+	+	11	10
+	+	20	0
+	+	40	0
+	+	5	0
+	+	4	0
+	+	6	27
+	+	10	32
+	+	6	15
+	+	10	21
+	+	7	24
+	+	38	0
+	+	37	6
+	+	35	9
+	+	24	22
+	+	25	20
+	+	28	20
+	+	29	20
+	+	32	17
+	+	33	17
+	+	34	17
+	+	19	20
+	+	18	123
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
+	*	1719363553	0
+	"	50	8
+	^	22	5
+	.	27	0
+	+	36	0
+	+	38	30
+	+	41	32
+	+	42	0
+	+	43	0
+	+	44	0
+	+	45	0
+	+	42	6
+	+	43	6
+	+	44	6
+	+	45	6
+	+	42	27
+	+	43	27
+	+	44	27
+	+	45	27
+	+	47	0
+	+	48	6
+	+	10	9
+	+	15	16
+	+	18	0
+	+	19	11
+	+	22	0
+	+	27	0
+
+> /usr/share/vim/vim82/doc/NERD_tree_tab_1
+	*	1719363307	0
+	"	11	0
+	.	1	0
+	+	1	0
+
+> /usr/share/vim/vim82/doc/help.txt
+	*	1719363293	0
+	"	1	0
+
 > ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy_tb.v
-	*	1719306919	0
-	"	9	7
+	*	1719363203	0
+	"	24	0
 	^	7	13
 	.	7	12
 	+	1	0
@@ -552,85 +771,9 @@ $
 	+	7	12
 	o	1	0
 
-> ~/NERD_tree_tab_1
-	*	1719306861	0
-	"	18	18
-	.	1	0
-	+	1	0
-
-> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy.v
-	*	1719306859	0
-	"	30	21
-	^	30	22
-	.	30	21
-	+	1	22
-	+	9	35
-	+	10	6
-	+	11	6
-	+	20	0
-	+	19	29
-	+	45	27
-	+	15	0
-	+	13	0
-	+	23	0
-	+	45	0
-	+	45	32
-	+	19	27
-	+	9	40
-	+	10	6
-	+	11	6
-	+	20	4
-	+	19	27
-	+	20	39
-	+	20	36
-	+	45	27
-	+	20	0
-	+	9	35
-	+	10	6
-	+	11	6
-	+	19	32
-	+	45	14
-	+	26	10
-	+	24	16
-	+	26	0
-	+	6	10
-	+	26	0
-	+	24	12
-	+	26	0
-	+	6	7
-	+	45	32
-	+	6	10
-	+	45	0
-	+	45	20
-	+	45	0
-	+	45	16
-	+	26	11
-	+	24	16
-	+	26	0
-	+	26	11
-	+	28	0
-	+	45	0
-	+	26	0
-	+	31	21
-	+	31	0
-	+	32	0
-	+	40	0
-	+	43	0
-	+	31	11
-	+	31	12
-	+	31	17
-	+	31	11
-	+	31	17
-	+	31	11
-	+	31	12
-	+	31	0
-	+	30	31
-	+	6	7
-	+	30	21
-
 > ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore_tb.v
-	*	1719303645	0
-	"	82	1
+	*	1719363063	0
+	"	23	0
 	.	59	0
 	+	7	12
 	+	35	27
@@ -639,28 +782,24 @@ $
 	+	58	0
 	+	59	0
 
-> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_moore.v
-	*	1719302911	0
-	"	32	0
-	^	43	7
-	.	43	6
-	+	31	0
-	+	33	30
-	+	36	32
-	+	37	0
-	+	38	0
-	+	39	0
-	+	40	0
-	+	37	6
-	+	38	6
-	+	39	6
-	+	40	6
-	+	37	27
-	+	38	27
-	+	39	27
-	+	40	27
-	+	42	0
-	+	43	6
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore.v
+	*	1719363044	0
+	"	23	3
+	^	60	0
+	.	56	26
+	+	47	0
+	+	60	0
+	+	48	0
+	+	47	0
+	+	61	0
+	+	56	26
+
+> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_seq_detect_moore_tb.v
+	*	1719362749	0
+	"	24	8
+	^	1	7
+	.	1	6
+	+	1	6
 
 > ~/projects/zaram_training_course/02_combinational_logic/04_parity/even_parity_tb.v
 	*	1719300842	0
@@ -888,100 +1027,6 @@ $
 	"	17	9
 	.	1	0
 	+	1	0
-
-> ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter_tb.v
-	*	1719293018	0
-	"	85	10
-	^	31	15
-	.	15	22
-	+	96	0
-	+	16	0
-	+	16	26
-	+	16	24
-	+	16	15
-	+	96	11
-	+	13	0
-	+	96	0
-	+	16	0
-	+	47	0
-	+	16	0
-	+	47	11
-	+	46	6
-	+	47	0
-	+	16	15
-	+	59	10
-	+	96	0
-	+	50	0
-	+	53	1
-	+	64	2
-	+	72	2
-	+	76	35
-	+	79	0
-	+	7	14
-	+	87	28
-	+	87	1
-	+	87	15
-	+	87	0
-	+	87	14
-	+	87	0
-	+	87	30
-	+	87	0
-	+	87	15
-	+	87	0
-	+	95	0
-	+	88	0
-	+	45	1
-	+	76	23
-	+	78	17
-	+	75	11
-	+	76	16
-	+	77	16
-	+	78	10
-	+	75	29
-	+	76	33
-	+	77	16
-	+	78	27
-	+	79	0
-	+	80	0
-	+	7	14
-	+	75	17
-	+	76	22
-	+	77	16
-	+	78	16
-	+	75	11
-	+	76	16
-	+	77	16
-	+	78	10
-	+	16	25
-	+	36	0
-	+	15	23
-	+	21	15
-	+	32	0
-	+	30	0
-	+	29	26
-	+	30	0
-	+	32	0
-	+	31	14
-	+	15	22
-
-> ~/projects/zaram_training_course/02_combinational_logic/06_barrel_shifter/barrel_shifter.v
-	*	1719291741	0
-	"	16	0
-	^	7	25
-	.	7	24
-	+	18	0
-	+	18	120
-	+	10	10
-	+	11	10
-	+	19	0
-	+	23	0
-	+	5	0
-	+	4	0
-	+	6	27
-	+	10	32
-	+	6	15
-	+	10	21
-	+	7	24
 
 > ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
 	*	1719291381	0
@@ -2165,125 +2210,3 @@ $
 > ~/projects/combinational/03_adder/adder
 	*	1718871893	0
 	"	1	0
-
-> ~/projects/combinational/01_adder/add_tb.v
-	*	1718871430	0
-	"	86	2
-	^	85	44
-	.	85	43
-	+	2	0
-	+	13	0
-	+	86	0
-	+	84	0
-	+	85	43
-	+	86	42
-	+	85	43
-
-> ~/projects/combinational/01_adder/adder_tb.v
-	*	1718871345	0
-	"	27	1
-	^	65	7
-	.	11	22
-	+	9	0
-	+	10	0
-	+	21	0
-	+	23	12
-	+	11	23
-	+	14	15
-	+	9	17
-	+	14	28
-	+	21	0
-	+	11	0
-	+	13	0
-	+	14	0
-	+	21	0
-	+	22	0
-	+	23	1
-	+	24	0
-	+	26	0
-	+	27	1
-	+	28	1
-	+	29	1
-	+	30	1
-	+	31	1
-	+	32	0
-	+	27	2
-	+	28	2
-	+	27	2
-	+	29	2
-	+	30	2
-	+	31	2
-	+	27	5
-	+	18	0
-	+	20	0
-	+	19	8
-	+	21	0
-	+	22	13
-	+	27	15
-	+	28	16
-	+	28	0
-	+	29	10
-	+	30	10
-	+	31	10
-	+	28	17
-	+	34	0
-	+	33	0
-	+	34	9
-	+	35	11
-	+	36	0
-	+	37	14
-	+	38	15
-	+	43	0
-	+	51	5
-	+	56	0
-	+	61	6
-	+	58	12
-	+	59	3
-	+	60	3
-	+	61	4
-	+	66	0
-	+	14	7
-	+	46	13
-	+	61	0
-	+	65	0
-	+	64	12
-	+	65	0
-	+	67	9
-	+	18	22
-	+	53	2
-	+	15	0
-	+	52	0
-	+	52	1
-	+	53	1
-	+	22	0
-	+	25	0
-	+	53	3
-	+	52	1
-	+	46	16
-	+	50	10
-	+	46	29
-	+	44	10
-	+	53	2
-	+	3	17
-	+	62	2
-	+	65	6
-	+	5	17
-	+	11	22
-	o	9	0
-
-> ~/tttt.v
-	*	1718870973	0
-	"	2	0
-	.	2	0
-	+	1	0
-	+	2	0
-	+	1	41
-	+	2	0
-	+	5	0
-	+	2	0
-
-> ~/projects/combinational/01_adder/NERD_tree_tab_1
-	*	1718870822	0
-	"	11	9
-	.	1	0
-	+	1	0

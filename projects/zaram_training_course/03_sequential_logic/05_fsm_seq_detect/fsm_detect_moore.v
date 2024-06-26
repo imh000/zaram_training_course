@@ -7,23 +7,28 @@ module fsm_detect_moore
 );
 
 	parameter IDLE=0, s1=1, s2=2, s3=3, s4=4;
+	reg i_in;
 	reg [2:0] state;
 	reg [2:0] next_state;
 	
 	always @ (posedge clk or negedge rstn) begin
-		if(!rstn) 
+		if(!rstn) begin 
 			state <= IDLE;
-		else 
+			i_in <= 0;
+		end
+		else begin 
 			state <= next_state;
+			i_in <= in;
+		end
 	end
 
 	always @ (*) begin
 		case(state)
-			IDLE : next_state = in ? s1 : IDLE;
-			s1 : next_state = in ? s1 : s2;
-			s2 : next_state = in ? s3 : IDLE;
-			s3 : next_state = in ? s4 : s2;
-			s4 : next_state = in ? s1 : IDLE;
+			IDLE : next_state = i_in ? s1 : IDLE;
+			s1 : next_state = i_in ? s1 : s2;
+			s2 : next_state = i_in ? s3 : IDLE;
+			s3 : next_state = i_in ? s4 : s2;
+			s4 : next_state = i_in ? s1 : IDLE;
 		endcase
 	end
 		

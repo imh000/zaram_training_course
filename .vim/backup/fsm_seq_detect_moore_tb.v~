@@ -1,4 +1,4 @@
-
+`define DEBUG
 `define CLKFREQ		100
 `define NVEC		50
 `define SIMCYCLE	`NVEC

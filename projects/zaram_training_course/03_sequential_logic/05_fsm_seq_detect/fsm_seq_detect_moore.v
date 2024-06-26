@@ -44,5 +44,19 @@ module fsm_seq_detect_moore
 		
 	end
 		assign out = (state == s4);
-		endmodule
+
+	`ifdef	DEBUG
+		reg [8*32-1:0] stateMonitor;
+		always @ (*) begin
+			case(state)
+				IDLE : stateMonitor = "IDLE";
+				s1 : stateMonitor = "s1";
+				s2 : stateMonitor = "s2";
+				s3 : stateMonitor = "s3";
+				s4 : stateMonitor = "s4";
+			endcase
+		end
+	`endif
+
+endmodule
 

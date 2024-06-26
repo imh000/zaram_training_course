@@ -5,6 +5,7 @@
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
 `define NVEC		50		// # of Test Vector
+`define DEBUG
 
 // --------------------------------------------------
 //	Includes
@@ -12,7 +13,7 @@
 `include "barrel_shifter.v"
 
 module barrel_shifter_tb();
-	parameter bit_size = 4;
+	parameter bit_size = 16;
 	reg [bit_size-1:0] data;
 	reg [$clog2(bit_size)-1:0] num_shift; 	// number to shift
 	reg direction; 		// 0: left, 1:right

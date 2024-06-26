@@ -1201,3 +1201,6 @@ gvim .bash_aliases
 g .vimrc
 gvim
 gitpush
+gvim
+gitpush
+gvim
