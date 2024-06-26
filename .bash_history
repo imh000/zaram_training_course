@@ -1204,3 +1204,58 @@ gitpush
 gvim
 gitpush
 gvim
+gitpush
+gvim
+gvim .vimrc 
+cd projects/zaram_training_course/02_combinational_logic/
+cd 03_adder/
+mv add.v adder_testvector.v
+la
+mv add_tb.v adder_testvector_tb.v
+la
+ivg adder_testvector
+cd
+la
+ls
+cd templates/
+cd verilog/
+cd
+mkdir utils
+ls
+cd utils/
+mkdir scripts
+cd scripts/
+cd
+gvim timescale.v 
+gvim .vimrc 
+gvim .bash_a
+gvim .bash_aliases 
+rm timescale.v 
+la
+ls
+cd utils/
+cd scripts/
+cd
+cd projects/zaram_training_course/01_test/test/
+mv gtkwv.tcl ~/utils/scripts/
+cd
+cd utils/scripts/
+cd
+cd projects/zaram_training_course/01_test/
+cd test/
+ivg mux2
+cd projects/zaram_training_course/01_test/test/
+ivg mux2
+cd ..
+cd 03_sequential_logic/
+cd ..
+cd 02_combinational_logic/
+cd 03_adder/
+mv test_vector.py ~/utils/scripts/
+la
+ivg adder_testvector
+cd
+cd utils/
+cd scripts/
+cd
+gvim

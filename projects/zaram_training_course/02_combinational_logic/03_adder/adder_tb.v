@@ -44,12 +44,11 @@ module adder_tb ();
 	integer i;
 	initial begin
 		for (i = 0; i < `SIMCYCLE; i++) begin
-			i_a = $random;
-			i_b = $random;
-			cin = $random;
+			i_a = $urandom;
+			i_b = $urandom;
+			cin = $urandom;
 			#(1000/`CLKFREQ);
 		end
-//		#(1000/'CLKFREQ);
 		$finish;
 	end
 
@@ -59,9 +58,9 @@ module adder_tb ();
 			$dumpfile(vcd_file);
 			$dumpvars;
 		end
-	/*	else begin
+		else begin
 			$dumpfile("adder_tb.vcd");
 			$dumpvars;
-		end*/
+		end
 	end
 	endmodule

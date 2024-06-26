@@ -10,9 +10,9 @@
 // --------------------------------------------------
 //	Includes
 // --------------------------------------------------
-`include	"add.v"
+`include	"adder_testvector.v"
 
-module add_tb;
+module adder_testvector_tb;
 // --------------------------------------------------
 //	DUT Signals & Instantiate
 // --------------------------------------------------
@@ -22,11 +22,11 @@ module add_tb;
 	reg		[`BW_DATA-1:0]	i_b;
 	reg						i_c;
 
-	add
+	adder_testvector
 	#(
 		.BW_DATA			(`BW_DATA			)
 	)
-	u_add(
+	u_adder_testvector(
 		.o_s				(o_s				),
 		.o_c				(o_c				),
 		.i_a				(i_a				),
@@ -110,7 +110,7 @@ module add_tb;
 			$dumpfile(vcd_file);
 			$dumpvars;
 		end else begin
-			$dumpfile("add_tb.vcd");
+			$dumpfile("adder_testvector_tb.vcd");
 			$dumpvars;
 		end
 	end

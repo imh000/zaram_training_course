@@ -1,5 +1,5 @@
 $date
-	Fri Jun 21 13:49:55 2024
+	Wed Jun 26 11:06:53 2024
 $end
 $version
 	Icarus Verilog
@@ -7,7 +7,7 @@ $end
 $timescale
 	1ps
 $end
-$scope module add_tb $end
+$scope module adder_testvector_tb $end
 $var wire 4 ! o_s [3:0] $end
 $var wire 1 " o_c $end
 $var reg 4 # i_a [3:0] $end
@@ -17,7 +17,7 @@ $var reg 128 & taskState [127:0] $end
 $var reg 256 ' vcd_file [255:0] $end
 $var integer 32 ( err [31:0] $end
 $var integer 32 ) i [31:0] $end
-$scope module u_add $end
+$scope module u_adder_testvector $end
 $var wire 4 * i_a [3:0] $end
 $var wire 4 + i_b [3:0] $end
 $var wire 1 % i_c $end
@@ -43,7 +43,7 @@ b1111 +
 b101 *
 b0 )
 b0 (
-b101110001011110111011001100011011001000010111101100001011001000110010000101110011101100110001101100100 '
+b10111000101111011101100110001101100100001011110110000101100100011001000110010101110010010111110111010001100101011100110111010001110110011001010110001101110100011011110111001000101110011101100110001101100100 '
 b101011001000101010000110101101100100000001000000011000001011101 &
 1%
 b1111 $
