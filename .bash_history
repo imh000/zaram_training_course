@@ -1259,3 +1259,23 @@ cd utils/
 cd scripts/
 cd
 gvim
+gitpush
+gvim
+gvim .vimrc 
+cd projects/zaram_training_course/03_sequential_logic/
+mkdir 06_sram
+cd 06_sram/
+gvim spsram.v
+gvim sram_doubled.v
+cd ..
+mkdir 07_regfile
+la
+cd 07
+cd 07_regfile/
+gvim regfile.v
+ivg regfile
+htop
+gvim
+gvim .vimrc
+gvim
+g .vimrc
