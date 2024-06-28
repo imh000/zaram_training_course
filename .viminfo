@@ -20,12 +20,14 @@
 $
 
 # Command Line History (newest to oldest):
+:w
+|2,0,1719550155,,"w"
+:q
+|2,0,1719549581,,"q"
+:'<,'>Tabularize / 
+|2,0,1719548653,,"'<,'>Tabularize / "
 :ls
 |2,0,1719538583,,"ls"
-:w
-|2,0,1719390855,,"w"
-:q
-|2,0,1719388774,,"q"
 :q!
 |2,0,1719377693,,"q!"
 :wq
@@ -40,8 +42,6 @@ $
 |2,0,1719221015,,"12, 25s/\\//\\/ /g"
 :reg
 |2,0,1719218948,,"reg"
-:'<,'>Tabularize / 
-|2,0,1719217606,,"'<,'>Tabularize / "
 :%s/seq/i_seq/g
 |2,0,1719215676,,"%s/seq/i_seq/g"
 : kkjjjjjj
@@ -122,10 +122,10 @@ $
 |2,0,1718784758,,"snip"
 
 # Search String History (newest to oldest):
+? \Vtb\%#
+|2,1,1719548980,,"\\Vtb\\%#"
 ? \Vco\%#
 |2,1,1719390756,,"\\Vco\\%#"
-? \Vtb\%#
-|2,1,1719384675,,"\\Vtb\\%#"
 ? \Vclk\%#
 |2,1,1719380214,,"\\Vclk\\%#"
 ? in
@@ -226,6 +226,10 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@/home/imh522/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|2,3,1719549600,,"/home/imh522/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+@/home/imh522/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter_tb.v
+|2,3,1719548955,,"/home/imh522/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter_tb.v"
 @/home/imh522/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
 |2,3,1719384668,,"/home/imh522/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
 @/home/imh522/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
@@ -248,136 +252,98 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	BLOCK	27
-	2 read ports & 1 wirte port
-|3,0,0,2,1,27,1719390659,"2 read ports & 1 wirte port"
-""1	LINE	0
-	// ==================================================
-	//	[ VLSISYS Lab. ]
-	//	* Author		: Woong Choi (woongchoi@sm.ac.kr)
-	//	* Filename		: regfile.v
-	//	* Date			: 2024-06-26 17:28:51
-	//	* Description	: 2 read ports & 1 wirte port
-	// ==================================================
-|3,1,1,1,7,0,1719390667,"// ==================================================","//	[ VLSISYS Lab. ]","//	* Author		: Woong Choi (woongchoi@sm.ac.kr)","//	* Filename		: regfile.v","//	* Date			: 2024-06-26 17:28:51","//	* Description	: 2 read ports & 1 wirte port","// =================================================="
-"2	LINE	0
-	// 2 read ports & 1 wirte port
-|3,0,2,1,1,0,1719390559,"// 2 read ports & 1 wirte port"
-"3	LINE	0
-	// 2 read ports & 1 wirte port
-|3,0,3,1,1,0,1719390545,"// 2 read ports & 1 wirte port"
-"4	LINE	0
-	/*
-	module spsram
-	#(
-		parameter	BW_DATA = 32,
-		parameter	BW_ADDR = 5
-	)
-	(
-		input clk,
-		input wen,
-		input cen,
-		input oen,
-		input [BW_ADDR-1:0] addr,
-		input [BW_DATA-1:0] i_data,
-		output [BW_DATA-1:0] o_data
-	);
-	
-		// Memory Write
-		reg		[BW_DATA-1:0]	mem[0:2**BW_ADDR-1];
-		always @ (posedge clk) begin
-			if(cen && wen)
-				mem[addr] <= i_data;
-			else
-				mem[addr] <= mem[addr];
-		end
-	
-		// Memory Read
-		`ifdef	SPSRAM_ASYNC
-			assign o_data = !oen ? 'bz :
-							cen && !wen ? mem[addr] : 'bx;
-		`else
-			reg		[BW_DATA-1:0] o_data;
-			always @ (posedge clk) begin
-				if(oen) begin
-					if(cen && !wen)
-						o_data <= mem[addr];
-					else
-						o_data <= 'bx;
-				end
-				else
-					o_data <= 'bz;
-			end
-		`endif
-	
-	endmodule
-	*/
-|3,0,4,1,45,0,1719390466,"/*","module spsram","#(","	parameter	BW_DATA = 32,","	parameter	BW_ADDR = 5",")","(","	input clk,","	input wen,","	input cen,","	input oen,","	input [BW_ADDR-1:0] addr,","	input [BW_DATA-1:0] i_data,","	output [BW_DATA-1:0] o_data",");","","	// Memory Write","	reg		[BW_DATA-1:0]	mem[0:2**BW_ADDR-1];","	always @ (posedge clk) begin","		if(cen && wen)","			mem[addr] <= i_data;","		else","			mem[addr] <= mem[addr];","	end","",>17
-|<"	// Memory Read","	`ifdef	SPSRAM_ASYNC","		assign o_data = !oen ? 'bz :","						cen && !wen ? mem[addr] : 'bx;","	`else","		reg		[BW_DATA-1:0] o_data;","		always @ (posedge clk) begin","			if(oen) begin","				if(cen && !wen)","					o_data <= mem[addr];","				else","					o_data <= 'bx;","			end","			else","				o_data <= 'bz;","		end","	`endif","","endmodule","*/"
-"5	LINE	0
-			end
-|3,0,5,1,1,0,1719385248,"		end"
-"6	LINE	0
-	
-|3,0,6,1,1,0,1719385028,""
-"7	LINE	0
-		integer		i, j;
-		initial begin
-			init();
-			#(4*1000/`CLKFREQ);
-	
-			for (i=0; i<`SIMCYCLE; i++) begin
-				a = $urandom;
-			end
+"0	LINE	0
 			#(1000/`CLKFREQ);
+|3,0,0,1,1,0,1719549309,"		#(1000/`CLKFREQ);"
+"1	LINE	0
+	
+|3,0,1,1,1,0,1719549380,""
+"2	LINE	0
+		reg [8*32-1:0] taskState;
+|3,0,2,1,1,0,1719549379,"	reg [8*32-1:0] taskState;"
+"3	LINE	0
+		integer err = 0;
+|3,0,3,1,1,0,1719549378,"	integer err = 0;"
+"4	LINE	0
+				taskState = "Init";
+|3,0,4,1,1,0,1719549377,"			taskState = \"Init\";"
+"5	LINE	0
+			resetReleaseAfterNCycles(4);
+|3,0,5,1,1,0,1719549317,"		resetReleaseAfterNCycles(4);"
+"6	LINE	0
+			#(1000/`CLKFREQ);
+|3,0,6,1,1,0,1719549312,"		#(1000/`CLKFREQ);"
+"7	LINE	0
 			$finish;
-		end
-|3,0,7,1,11,0,1719385015,"	integer		i, j;","	initial begin","		init();","		#(4*1000/`CLKFREQ);","","		for (i=0; i<`SIMCYCLE; i++) begin","			a = $urandom;","		end","		#(1000/`CLKFREQ);","		$finish;","	end"
+|3,0,7,1,1,0,1719549305,"		$finish;"
 "8	LINE	0
-					oen = 1;
-|3,0,8,1,1,0,1719385003,"				oen = 1;"
+	
+	
+|3,0,8,1,2,0,1719549199,"",""
 "9	LINE	0
-					cen = 1;
-|3,0,9,1,1,0,1719385001,"				cen = 1;"
+		always #(500/`CLKFREQ) clk = ~clk;
+|3,0,9,1,1,0,1719549199,"	always #(500/`CLKFREQ) clk = ~clk;"
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
 "t	CHAR	0
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
-"-	CHAR	0
-	kr
-|3,0,36,0,1,0,1719390617,"kr"
+""-	CHAR	0
+		
+|3,1,36,0,1,0,1719550085,"	"
 
 # File marks:
-'0  127  0  ~/.vimrc
-|4,48,127,0,1719547800,"~/.vimrc"
-'1  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
-|4,49,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
-'2  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
-|4,50,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+'0  17  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,48,17,8,1719550160,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+'1  1  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray.v
+|4,49,1,0,1719548699,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray.v"
+'2  127  0  ~/.vimrc
+|4,50,127,0,1719547800,"~/.vimrc"
 '3  127  0  ~/.vimrc
-|4,51,127,0,1719538867,"~/.vimrc"
-'4  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
-|4,52,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
-'5  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
-|4,53,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
-'6  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
-|4,54,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
-'7  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
-|4,55,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
-'8  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,56,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
-'9  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,57,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
+|4,51,127,0,1719547800,"~/.vimrc"
+'4  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,52,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+'5  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,53,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+'6  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,54,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+'7  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,55,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+'8  127  0  ~/.vimrc
+|4,56,127,0,1719538867,"~/.vimrc"
+'9  127  0  ~/.vimrc
+|4,57,127,0,1719538867,"~/.vimrc"
 
 # Jumplist (newest first):
+-'  17  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,17,8,1719550160,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  11  11  ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
+|4,39,11,11,1719549610,"~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1"
+-'  10  2  ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
+|4,39,10,2,1719549600,"~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1"
+-'  52  6  ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
+|4,39,52,6,1719549600,"~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1"
+-'  1  0  ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
+|4,39,1,0,1719549600,"~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray.v
+|4,39,1,0,1719548699,"~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray.v"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719547800,"~/.vimrc"
 -'  127  0  ~/.vimrc
 |4,39,127,0,1719547800,"~/.vimrc"
 -'  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
 |4,39,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
 -'  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
 |4,39,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+-'  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,39,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+-'  12  0  ~/projects/zaram_training_course/01_test/test/mux2.v
+|4,39,12,0,1719547754,"~/projects/zaram_training_course/01_test/test/mux2.v"
+-'  46  0  ~/projects/zaram_training_course/01_test/test/mux2_tb.v
+|4,39,46,0,1719539171,"~/projects/zaram_training_course/01_test/test/mux2_tb.v"
+-'  46  0  ~/projects/zaram_training_course/01_test/test/mux2_tb.v
+|4,39,46,0,1719539171,"~/projects/zaram_training_course/01_test/test/mux2_tb.v"
 -'  46  0  ~/projects/zaram_training_course/01_test/test/mux2_tb.v
 |4,39,46,0,1719539171,"~/projects/zaram_training_course/01_test/test/mux2_tb.v"
 -'  46  0  ~/projects/zaram_training_course/01_test/test/mux2_tb.v
@@ -386,10 +352,22 @@ $
 |4,39,1,0,1719538918,"~/projects/zaram_training_course/01_test/test/mux2.vcd"
 -'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.vcd
 |4,39,1,0,1719538918,"~/projects/zaram_training_course/01_test/test/mux2.vcd"
+-'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.vcd
+|4,39,1,0,1719538918,"~/projects/zaram_training_course/01_test/test/mux2.vcd"
+-'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.vcd
+|4,39,1,0,1719538918,"~/projects/zaram_training_course/01_test/test/mux2.vcd"
 -'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.log
 |4,39,1,0,1719538912,"~/projects/zaram_training_course/01_test/test/mux2.log"
 -'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.log
 |4,39,1,0,1719538912,"~/projects/zaram_training_course/01_test/test/mux2.log"
+-'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.log
+|4,39,1,0,1719538912,"~/projects/zaram_training_course/01_test/test/mux2.log"
+-'  1  0  ~/projects/zaram_training_course/01_test/test/mux2.log
+|4,39,1,0,1719538912,"~/projects/zaram_training_course/01_test/test/mux2.log"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719538867,"~/.vimrc"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719538867,"~/.vimrc"
 -'  127  0  ~/.vimrc
 |4,39,127,0,1719538867,"~/.vimrc"
 -'  127  0  ~/.vimrc
@@ -400,6 +378,18 @@ $
 |4,39,1,0,1719538755,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v"
 -'  1  0  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v
 |4,39,1,0,1719538755,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v
+|4,39,1,0,1719538755,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v
+|4,39,1,0,1719538755,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v
+|4,39,1,0,1719538755,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2.v"
+-'  53  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,53,5,1719538592,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  53  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,53,5,1719538592,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  53  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,53,5,1719538592,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
 -'  53  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
 |4,39,53,5,1719538592,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
 -'  53  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
@@ -412,6 +402,18 @@ $
 |4,39,56,5,1719538540,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
 -'  56  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
 |4,39,56,5,1719538540,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  56  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,56,5,1719538540,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  56  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,56,5,1719538540,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  56  5  ~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v
+|4,39,56,5,1719538540,"~/projects/zaram_training_course/02_combinational_logic/01_mux/mux2_tb.v"
+-'  162  0  ~/.vimrc
+|4,39,162,0,1719538488,"~/.vimrc"
+-'  162  0  ~/.vimrc
+|4,39,162,0,1719538488,"~/.vimrc"
+-'  162  0  ~/.vimrc
+|4,39,162,0,1719538488,"~/.vimrc"
 -'  162  0  ~/.vimrc
 |4,39,162,0,1719538488,"~/.vimrc"
 -'  162  0  ~/.vimrc
@@ -428,6 +430,26 @@ $
 |4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
 -'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
 |4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
+|4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
+|4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
+|4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
+|4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  133  3  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v
+|4,39,133,3,1719393548,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile_tb.v"
+-'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
+|4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
+-'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
+|4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
+-'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
+|4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
+-'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
+|4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
+-'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
+|4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
 -'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
 |4,39,125,8,1719390967,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
 -'  125  8  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
@@ -448,6 +470,26 @@ $
 |4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
 -'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
 |4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  61  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,61,0,1719390963,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
+-'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
+|4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
 -'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
 |4,39,1,2,1719390756,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
 -'  1  2  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
@@ -468,112 +510,146 @@ $
 |4,39,20,0,1719390745,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
 -'  20  0  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
 |4,39,20,0,1719390745,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  1  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
-|4,39,1,2,1719390645,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  1  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
-|4,39,1,2,1719390645,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  1  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
-|4,39,1,2,1719390645,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  1  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
-|4,39,1,2,1719390645,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  1  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
-|4,39,1,2,1719390645,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
--'  198  23  ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
-|4,39,198,23,1719390637,"~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets"
--'  198  23  ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
-|4,39,198,23,1719390637,"~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets"
--'  198  23  ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
-|4,39,198,23,1719390637,"~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets"
--'  198  23  ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
-|4,39,198,23,1719390637,"~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets"
--'  198  23  ~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets
-|4,39,198,23,1719390637,"~/.vim/pack/plugins/start/vim-snippets/snippets/verilog.snippets"
--'  17  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,17,0,1719390473,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  17  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,17,0,1719390473,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  17  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,17,0,1719390473,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  17  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,17,0,1719390473,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  17  0  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,17,0,1719390473,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  29  12  ~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v
-|4,39,29,12,1719390452,"~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v"
--'  29  12  ~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v
-|4,39,29,12,1719390452,"~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v"
--'  29  12  ~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v
-|4,39,29,12,1719390452,"~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v"
--'  29  12  ~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v
-|4,39,29,12,1719390452,"~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v"
--'  29  12  ~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v
-|4,39,29,12,1719390452,"~/projects/zaram_training_course/03_sequential_logic/06_sram/spsram.v"
--'  103  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,103,1,1719390436,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
--'  103  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,103,1,1719390436,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
--'  103  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,103,1,1719390436,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
--'  103  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,103,1,1719390436,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
--'  103  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,103,1,1719390436,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
--'  62  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,62,1,1719389760,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  62  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,62,1,1719389760,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  62  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,62,1,1719389760,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  62  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,62,1,1719389760,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  62  1  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v
-|4,39,62,1,1719389760,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled.v"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  19  9  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,19,9,1719388774,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  23  2  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,23,2,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  1  11  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-|4,39,1,11,1719385931,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1"
--'  4  4  ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
-|4,39,4,4,1719384179,"~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v"
+-'  20  0  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
+|4,39,20,0,1719390745,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
+-'  20  0  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
+|4,39,20,0,1719390745,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
+-'  20  0  ~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v
+|4,39,20,0,1719390745,"~/projects/zaram_training_course/03_sequential_logic/07_regfile/regfile.v"
 
 # History of marks within files (newest to oldest):
+
+> ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+	*	1719550158	0
+	"	17	8
+	^	21	0
+	.	21	0
+	+	6	6
+	+	4	12
+	+	5	13
+	+	9	6
+	+	6	10
+	+	10	1
+	+	9	0
+	+	10	6
+	+	3	14
+	+	12	6
+	+	11	0
+	+	12	18
+	+	13	18
+	+	14	20
+	+	15	20
+	+	16	6
+	+	14	3
+	+	15	3
+	+	16	18
+	+	17	0
+	+	20	3
+	+	22	0
+	+	21	0
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
+	*	1719549610	0
+	"	11	11
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter.v
+	*	1719549580	0
+	"	19	9
+	^	16	11
+	.	16	10
+	+	1	0
+	+	14	0
+	+	12	0
+	+	13	0
+	+	7	0
+	+	22	0
+	+	9	0
+	+	11	0
+	+	22	0
+	+	24	0
+	+	4	0
+	+	6	20
+	+	7	20
+	+	22	0
+	+	15	0
+	+	19	31
+	+	20	30
+	+	22	0
+	+	3	10
+	+	16	10
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter_tb.v
+	*	1719549577	0
+	"	20	0
+	^	4	22
+	.	4	20
+	+	1	0
+	+	80	0
+	+	32	30
+	+	41	0
+	+	18	28
+	+	32	0
+	+	38	20
+	+	20	0
+	+	21	23
+	+	18	4
+	+	49	5
+	+	53	0
+	+	61	5
+	+	21	22
+	+	6	17
+	+	61	9
+	+	64	0
+	+	62	0
+	+	64	0
+	+	62	1
+	+	59	0
+	+	56	11
+	+	49	0
+	+	47	0
+	+	21	22
+	+	6	17
+	+	4	20
+
+> ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/gray_to_bin.v
+	*	1719548960	0
+	"	1	0
+
+> ~/projects/zaram_training_course/03_sequential_logic/04_counter/cnt.v
+	*	1719548904	0
+	"	9	0
+	.	9	0
+	+	8	30
+	+	21	12
+	+	21	13
+	+	21	8
+	+	22	0
+	+	8	13
+	+	17	3
+	+	18	3
+	+	21	3
+	+	24	1
+	+	9	0
+	+	17	2
+	+	18	2
+	+	21	2
+	+	16	23
+	+	17	2
+	+	18	3
+	+	19	5
+	+	21	3
+	+	22	0
+	+	20	0
+	+	24	0
+	+	25	0
+	+	8	22
+	+	9	0
+
+> ~/projects/zaram_training_course/02_combinational_logic/05_gray_code/bin_to_gray.v
+	*	1719548699	0
+	"	1	0
 
 > ~/.vimrc
 	*	1719547800	0
@@ -1610,36 +1686,6 @@ $
 	+	55	18
 	+	56	5
 
-> ~/projects/zaram_training_course/03_sequential_logic/04_counter/cnt.v
-	*	1719279366	0
-	"	18	13
-	^	21	4
-	.	8	22
-	+	8	30
-	+	21	12
-	+	21	13
-	+	21	8
-	+	22	0
-	+	8	13
-	+	17	3
-	+	18	3
-	+	21	3
-	+	24	1
-	+	9	0
-	+	17	2
-	+	18	2
-	+	21	2
-	+	16	23
-	+	17	2
-	+	18	3
-	+	19	5
-	+	21	3
-	+	22	0
-	+	20	0
-	+	24	0
-	+	25	0
-	+	8	22
-
 > ~/projects/zaram_training_course/03_sequential_logic/03_dffs/dffs_tb.v
 	*	1719278943	0
 	"	2	0
@@ -2206,92 +2252,3 @@ $
 > ~/projects/combinational_logic/01_mux/mux2_tb.v
 	*	1719193143	0
 	"	1	0
-
-> ~/projects/combinational_logic/04_parity/NERD_tree_tab_1
-	*	1719192753	0
-	"	20	11
-	.	1	0
-	+	1	0
-
-> ~/projects/combinational_logic/04_parity/even_parity.v
-	*	1719192752	0
-	"	1	0
-	^	1	18
-	.	1	17
-	+	1	17
-
-> ~/projects/combinational_logic/04_parity/parity8_tb.v
-	*	1719191734	0
-	"	1	19
-	^	1	20
-	.	1	19
-	+	1	19
-	o	1	0
-
-> ~/projects/combinational_logic/04_parity/parity8.v
-	*	1719191490	0
-	"	3	14
-	^	3	15
-	.	3	14
-	+	3	14
-	+	4	13
-	+	5	1
-	+	4	3
-	+	8	8
-	+	6	7
-	+	3	14
-
-> ~/projects/vim_script/test.vim
-	*	1718958090	0
-	"	1	16
-	^	1	17
-	.	1	17
-	+	1	16
-	+	1	17
-
-> ~/projects/combinational/01_mux/mux2.v
-	*	1718958055	0
-	"	67	4
-	^	77	2
-	.	77	2
-	+	1	18
-	+	12	0
-	+	11	0
-	+	13	14
-	+	2	0
-	+	13	14
-	+	19	1
-	+	6	6
-	+	29	0
-	+	28	0
-	+	29	0
-	+	30	15
-	+	38	18
-	+	38	19
-	+	45	0
-	+	33	0
-	+	21	3
-	+	6	6
-	+	27	0
-	+	44	0
-	+	10	0
-	+	4	0
-	+	16	0
-	+	18	10
-	+	35	10
-	+	16	0
-	+	1	0
-	+	9	0
-	+	15	0
-	+	18	0
-	+	35	0
-	+	6	0
-	+	3	6
-	+	4	7
-	+	5	7
-	+	6	7
-	+	6	0
-	+	26	3
-	+	46	53
-	+	77	2
-	o	1	0
