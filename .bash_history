@@ -1279,3 +1279,43 @@ gvim
 gvim .vimrc
 gvim
 g .vimrc
+cd projects/
+cd zaram_training_course/
+cd 02
+cd 02_combinational_logic/
+cd
+gitpush
+cd projects/
+mkdir verilog_tutorials
+la
+cd verilog_tutorials/
+mkdir project_0
+la
+cd project_0/
+mkdir 00_gray_code_converter
+la
+mkdir 01_barrel_shifter
+mkdir 02_alu
+mkdir 03_adder_cla
+mkdir 04_shift_register
+mkdir 05_fsm_traffic_light
+mkdir 06_sram_extension
+la
+tree -L
+sudo apt install tree
+tree -L
+tree -L 1
+cd ..
+cd zaram_training_course/
+cd 02_combinational_logic/
+cd 05_gray_code/
+gvim bin_to_gray.v
+cd -
+cd ..
+cd
+cd projects/verilog_tutorials/
+cd project_0/
+cd 00_gray_code_converter/
+gvim gray_code_converter.v
+cd
+gitpush
