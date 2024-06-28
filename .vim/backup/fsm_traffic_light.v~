@@ -1,0 +1,46 @@
+// ==================================================
+//	[ VLSISYS Lab. ]
+//	* Author		: HyeRyun Lim (imh2880@gmail.com)
+//	* Filename		: fsm_traffic_light.v
+//	* Date			: 2024-06-28 16:12:34
+//	* Description	: 
+// ==================================================
+//
+module fsm_traffic_light
+(
+	input clk,
+	input rstn,
+	input Ta,
+	input Tb,
+	input M,
+	output La,
+	output Lb
+);
+
+	localparam S0 = 0;
+	localparam S1 = 1;
+	localparam S2 = 2;
+	localparam S3 = 3;
+	
+	parameter green = 0, yellow = 1, red = 2;
+
+	reg [1:0] state, next_state;
+
+	always @ (*) begin
+		case(state)
+			S0 : next_state = Ta ? S0 : S1;
+			S1 : next_state = S2;
+			S2 : next_state = (M | Tb) ? S2 : S3;
+			S3 : next_state = S0;
+		endcase
+	end
+
+	always @ (posedge clk) begin
+		if(!rstn)
+			state <= S0;
+		else
+			state <= next_state;
+	end
+endmodule
+
+

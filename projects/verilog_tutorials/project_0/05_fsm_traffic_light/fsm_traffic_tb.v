@@ -1,4 +1,3 @@
-
 // --------------------------------------------------
 //	Define Global Variables
 // --------------------------------------------------
@@ -10,29 +9,42 @@
 // --------------------------------------------------
 //	Includes
 // --------------------------------------------------
-`include "barrel_shifter.v"
+`include	"fsm_traffic.v"
 
-module barrel_shifter_tb();
-	parameter bit_size = 8;
-	reg [bit_size-1:0] data;
-	reg [$clog2(bit_size)-1:0] num_shift; 	// number to shift
-	reg direction; 		// 0: left, 1:right
-	reg [1:0] sel;		// 0: logical shift, 1:arithmetic shift, 2:rotate
-	wire	 [bit_size-1:0] out;
-	wire	 overflow;			//logical and arithmetic overflow;
+module fsm_traffic_tb;
+// --------------------------------------------------
+//	DUT Signals & Instantiate
+// --------------------------------------------------
+	reg clk;
+	reg rstn;
+	reg P;
+	reg R;
+	reg Ta;
+	reg Tb;
+	wire M;
+	wire [1:0] La;
+	wire [1:0] Lb;
 
-	barrel_shifter
-	#(
-		.bit_size			(bit_size			)
-	)
-	u_barrel_shifter(
-		.data				(data				),
-		.num_shift			(num_shift			),
-		.direction			(direction			),
-		.sel				(sel				),
-		.out				(out				),
-		.overflow			(overflow			)
+	fsm_traffic_light
+	u_fsm_traffic_light(
+		.clk				(clk				),
+		.rstn				(rstn				),
+		.Ta					(Ta					),
+		.Tb					(Tb					),
+		.M					(M					),
+		.La					(La					),
+		.Lb					(Lb					)
 	);
+
+	fsm_parade
+	u_fsm_parade(
+		.clk				(clk				),
+		.rstn				(rstn				),
+		.P					(P					),
+		.R					(R					),
+		.M					(M					)
+	);
+
 
 
 // --------------------------------------------------
@@ -43,15 +55,16 @@ module barrel_shifter_tb();
 
 	task init;
 		begin
-//			taskState = "Init";
-			data	= 0;
-			num_shift = 0;
-			direction = 0;
-			sel =0;
-
+			taskState = "Init";
+			clk = 0;
+			rstn = 0;
+			P = 0;
+			R = 0;
+			Ta = 0;
+			Tb = 0;
 		end
 	endtask
-/*
+
 	task resetReleaseAfterNCycles;
 		input [9:0] n;
 		begin
@@ -62,7 +75,8 @@ module barrel_shifter_tb();
 			taskState = "Reset OFF";
 		end
 	endtask
-*/
+
+	always #(500/`CLKFREQ) clk = ~clk;
 
 // --------------------------------------------------
 //	Test Stimulus
@@ -70,14 +84,14 @@ module barrel_shifter_tb();
 	integer		i, j;
 	initial begin
 		init();
-//		resetReleaseAfterNCycles(4);
+		resetReleaseAfterNCycles(4);
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			data = $urandom;
-			num_shift = $urandom;
-			direction = $urandom;
-			sel = $urandom;
-		#(1000/`CLKFREQ);
+			P = $urandom;
+			R = $urandom;
+			Ta = $urandom;
+			Tb = $urandom;
+			#(1000/`CLKFREQ);
 		end
 		$finish;
 	end
@@ -85,12 +99,15 @@ module barrel_shifter_tb();
 // --------------------------------------------------
 //	Dump VCD
 // --------------------------------------------------
+	reg	[8*32-1:0]	vcd_file;
+	initial begin
+		if ($value$plusargs("vcd_file=%s", vcd_file)) begin
+			$dumpfile(vcd_file);
+			$dumpvars;
+		end else begin
+			$dumpfile("fsm_traffic_tb.vcd");
+			$dumpvars;
+		end
+	end
 
-	reg [8*32-1:0]  vcd_file;
-    initial begin
-        if ($value$plusargs("vcd_file=%s", vcd_file)) begin
-            $dumpfile(vcd_file);
-            $dumpvars;
-        end
-    end
 endmodule

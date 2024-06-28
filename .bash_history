@@ -1319,3 +1319,22 @@ cd 00_gray_code_converter/
 gvim gray_code_converter.v
 cd
 gitpush
+cd projects/verilog_tutorials/
+cd project_0/
+cd ..
+cd zaram_training_course/
+cd 02_combinational_logic/
+cd 03_adder/
+cd
+cd projects/verilog_tutorials/project_0/00
+cd projects/verilog_tutorials/project_0/00_gray_code_converter/
+gvim README.md
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/00_gray_code_converter/
+ivg gray_code_converter
+la
+feh
+sudo apt install feh
+feh waveform.png 
+ivg gray_code_converter
