@@ -1373,3 +1373,16 @@ gitpush
 cd projects/verilog_tutorials/project_0/
 cd 04_shift_register/
 gvim shift_register.v 
+gitpush
+cd projects/zaram_training_course/
+cd 02_combinational_logic/
+cd ..
+cd 03_sequential_logic/
+cd 05_fsm_seq_detect/
+gvim fsm_detect_mealy
+gvim fsm_detect_mealy.v
+cd
+cd projects/
+cd verilog_tutorials/project_0/
+cd 02_alu/
+gvim ALU.v

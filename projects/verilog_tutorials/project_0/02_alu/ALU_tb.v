@@ -3,7 +3,7 @@
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		50		// # of Test Vector
+`define NVEC		8		// # of Test Vector
 
 // --------------------------------------------------
 //	Includes
@@ -31,27 +31,14 @@ module ALU_tb;
 //	Tasks
 // --------------------------------------------------
 	reg [8*32-1:0] taskState;
-	integer err = 0;
 
 	task init;
 		begin
-			taskState = "Init";
-			clk		= 0;
+			F = 0;
+			A = 0;
+			B = 0;
 		end
 	endtask
-
-	task resetReleaseAfterNCycles;
-		input [9:0] n;
-		begin
-			taskState = "Reset On";
-			rstn = 1'b0;
-			#(1000/`CLKFREQ);
-			rstn = 1'b1; 
-			taskState = "Reset OFF";
-		end
-	endtask
-
-	always #(500/`CLKFREQ) clk = ~clk;
 
 // --------------------------------------------------
 //	Test Stimulus
@@ -59,12 +46,13 @@ module ALU_tb;
 	integer		i, j;
 	initial begin
 		init();
-		resetReleaseAfterNCycles(4);
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			a = $urandom;
+			F = i;
+			A = $urandom;
+			B = $urandom;
+			#(1000/`CLKFREQ);
 		end
-		#(1000/`CLKFREQ);
 		$finish;
 	end
 
@@ -81,5 +69,4 @@ module ALU_tb;
 			$dumpvars;
 		end
 	end
-
 endmodule

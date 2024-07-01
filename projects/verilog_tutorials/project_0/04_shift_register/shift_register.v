@@ -7,21 +7,32 @@ module shift_register
 	input load,
 	input Sin,
 	input [bit_size-1:0] d,
-	output [bit_size-1:0] q
+	output [bit_size-1:0] q,
+	output Sout
 );
-	
+
+		mux_dff
+		u_mux_dff(
+			.clk				(clk				),
+			.load				(load				),
+			.Sin				(Sin				),
+			.d					(d[0]				),
+			.q					(q[0]				)
+		);
 	genvar i;
 	generate
-		for (i=0; i<bit_size; i=i+1) begin : shift_register_block
+		for (i=1; i<bit_size; i=i+1) begin : shift_register_block
 			mux_dff
 			u_mux_dff(
 				.clk				(clk				),
 				.load				(load				),
-				.Sin				(Sin				),
+				.Sin				(q[i-1]				),
 				.d					(d[i]				),
 				.q					(q[i]				)
 			);
 		end
+
+		assign Sout = q[7];
 	endgenerate
 	
 endmodule

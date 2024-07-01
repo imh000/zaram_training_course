@@ -14,13 +14,14 @@ module shift_register_tb;
 // --------------------------------------------------
 //	DUT Signals & Instantiate
 // --------------------------------------------------
+	parameter bit_size = 8;
+
 	reg clk;
 	reg load;
 	reg Sin;
 	reg [bit_size-1:0] d;
 	wire [bit_size-1:0] q;
-
-	parameter bit_size = 8;
+	wire Sout;
 
 	shift_register
 	#(
@@ -31,9 +32,9 @@ module shift_register_tb;
 		.load				(load				),
 		.Sin				(Sin				),
 		.d					(d					),
-		.q					(q					)
+		.q					(q					),
+		.Sout				(Sout				)
 	);
-
 
 
 
@@ -49,7 +50,7 @@ module shift_register_tb;
 			clk = 0;
 			load = 0;
 			Sin = 0;
-			d= 0;
+			d = 0;
 		end
 	endtask
 
@@ -64,8 +65,8 @@ module shift_register_tb;
 
 		for (i=0; i<`SIMCYCLE; i++) begin
 			load = $urandom;
-			Sin = $urandom;
-			d	= $urandom;
+			Sin  = $urandom;
+			d = $urandom;
 			#(1000/`CLKFREQ);
 		end
 		$finish;
