@@ -123,7 +123,8 @@
 ```
 
 ## Simulation Result
-- @ 10ns
-	- 010 --> 010
+- Clock Period = 10ns
+- bin -> gray -> out_bin
+- bin = out_bin
 
 ![Waveform0](./waveform.png)

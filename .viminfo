@@ -20,12 +20,12 @@
 $
 
 # Command Line History (newest to oldest):
-:w
-|2,0,1719821725,,"w"
 :q
-|2,0,1719821638,,"q"
+|2,0,1719821961,,"q"
 :wq
-|2,0,1719819758,,"wq"
+|2,0,1719821960,,"wq"
+:w
+|2,0,1719821958,,"w"
 :'<,'>q
 |2,0,1719819678,,"'<,'>q"
 :Q
@@ -324,7 +324,13 @@ $
 |3,0,0,1,50,0,1719819752,"// --------------------------------------------------","//	Define Global Variables","// --------------------------------------------------","`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)","`define	SIMCYCLE	`NVEC	// Sim. Cycles","`define NVEC		8		// # of Test Vector","","// --------------------------------------------------","//	Includes","// --------------------------------------------------","`include	\"ALU.v\"","",>16
 |<"module ALU_tb;","// --------------------------------------------------","//	DUT Signals & Instantiate","// --------------------------------------------------","	reg		 [2:0]  F;","	reg		 [31:0] A;","	reg		 [31:0] B;","	wire	 [31:0] ALUOut;","","	ALU","	u_ALU(","		.F					(F					),","		.A					(A					),","		.B					(B					),","		.ALUOut				(ALUOut				)","	);","","// --------------------------------------------------","//	Tasks","// --------------------------------------------------",>28
 |<"	reg [8*32-1:0] taskState;","","	task init;","		begin","			F = 0;","			A = 0;","			B = 0;","		end","	endtask","","// --------------------------------------------------","//	Test Stimulus","// --------------------------------------------------","	integer		i, j;","	initial begin","		init();","","		for (i=0; i<`SIMCYCLE; i++) begin"
-"1	LINE	0
+""1	LINE	0
+	- @ 10ns
+|3,1,1,1,1,0,1719821877,"- @ 10ns"
+"2	LINE	0
+		- 010 --> 010
+|3,0,2,1,1,0,1719821876,"	- 010 --> 010"
+"3	LINE	0
 	// ==================================================
 	//	[ VLSISYS Lab. ]
 	//	* Author		: HyeRyun Lim (imh2880@gmail.com)
@@ -354,9 +360,9 @@ $
 			endcase
 		end
 	endmodule
-|3,0,1,1,29,0,1719819657,"// ==================================================","//	[ VLSISYS Lab. ]","//	* Author		: HyeRyun Lim (imh2880@gmail.com)","//	* Filename		: ALU.v","//	* Date			: 2024-06-28 15:31:49","//	* Description	: ","// ==================================================","","module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut",");","","	always @ (*) begin","		case(F)",>24
+|3,0,3,1,29,0,1719819657,"// ==================================================","//	[ VLSISYS Lab. ]","//	* Author		: HyeRyun Lim (imh2880@gmail.com)","//	* Filename		: ALU.v","//	* Date			: 2024-06-28 15:31:49","//	* Description	: ","// ==================================================","","module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut",");","","	always @ (*) begin","		case(F)",>24
 |<"			0 : ALUOut = A & B;","			1 : ALUOut = A | B;","			2 : ALUOut = A + B;","			4 : ALUOut = A & ~B;","			5 : ALUOut = A | ~B;","			6 : ALUOut = A - B;","			7 : ALUOut = A < B;","			default : ALUOut = 0;","		endcase","	end","endmodule"
-"2	LINE	0
+"4	LINE	0
 	module ALU
 	(
 		input		 [2:0]  F,
@@ -378,61 +384,61 @@ $
 			endcase
 		end
 	endmodule
-|3,0,2,1,21,0,1719819586,"module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut",");","","	always @ (*) begin","		case(F)","			0 : ALUOut = A & B;","			1 : ALUOut = A | B;","			2 : ALUOut = A + B;","			4 : ALUOut = A & ~B;","			5 : ALUOut = A | ~B;","			6 : ALUOut = A - B;","			7 : ALUOut = A < B;","			default : ALUOut = 0;","		endcase","	end","endmodule"
-"3	LINE	0
-		integer err = 0;
-|3,0,3,1,1,0,1719818330,"	integer err = 0;"
-"4	LINE	0
-				taskState = "Init";
-|3,0,4,1,1,0,1719818329,"			taskState = \"Init\";"
+|3,0,4,1,21,0,1719819586,"module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut",");","","	always @ (*) begin","		case(F)","			0 : ALUOut = A & B;","			1 : ALUOut = A | B;","			2 : ALUOut = A + B;","			4 : ALUOut = A & ~B;","			5 : ALUOut = A | ~B;","			6 : ALUOut = A - B;","			7 : ALUOut = A < B;","			default : ALUOut = 0;","		endcase","	end","endmodule"
 "5	LINE	0
-		assign cout = (cin & out_P) | out_G;
-|3,0,5,1,1,0,1719817976,"	assign cout = (cin & out_P) | out_G;"
+		integer err = 0;
+|3,0,5,1,1,0,1719818330,"	integer err = 0;"
 "6	LINE	0
-	
-|3,0,6,1,1,0,1719817968,""
+				taskState = "Init";
+|3,0,6,1,1,0,1719818329,"			taskState = \"Init\";"
 "7	LINE	0
-		wire out_P, out_G;
-|3,0,7,1,1,0,1719817967,"	wire out_P, out_G;"
+		assign cout = (cin & out_P) | out_G;
+|3,0,7,1,1,0,1719817976,"	assign cout = (cin & out_P) | out_G;"
 "8	LINE	0
-		assign out_P = &P;
-|3,0,8,1,1,0,1719817953,"	assign out_P = &P;"
+	
+|3,0,8,1,1,0,1719817968,""
 "9	LINE	0
-		assign out_G = (G[3] | (P[3] & (G[2] | (P[2] & (G[1] | (P[1] & G[0])))))); 
-|3,0,9,1,1,0,1719817952,"	assign out_G = (G[3] | (P[3] & (G[2] | (P[2] & (G[1] | (P[1] & G[0])))))); "
+		wire out_P, out_G;
+|3,0,9,1,1,0,1719817967,"	wire out_P, out_G;"
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
 "t	CHAR	0
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
-""-	BLOCK	18
+"-	BLOCK	18
 	(A - B < 0) ? 1 : 0
-|3,1,36,2,1,18,1719821272,"(A - B < 0) ? 1 : 0"
+|3,0,36,2,1,18,1719821272,"(A - B < 0) ? 1 : 0"
 
 # File marks:
-'0  109  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,48,109,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'1  4  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
-|4,49,4,0,1719819821,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
-'2  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,50,1,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'3  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,51,8,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'4  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
-|4,52,11,0,1719819713,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
-'5  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,53,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
+'0  13  0  ~/NERD_tree_tab_1
+|4,48,13,0,1719821961,"~/NERD_tree_tab_1"
+'1  109  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
+|4,49,109,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
+'2  4  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,50,4,0,1719819821,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+'3  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,51,1,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'4  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,52,8,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'5  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
+|4,53,11,0,1719819713,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
 '6  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
 |4,54,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
 '7  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
 |4,55,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
 '8  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
 |4,56,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'9  1  10  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,57,1,10,1719801388,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'9  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
+|4,57,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
 
 # Jumplist (newest first):
+-'  13  0  ~/NERD_tree_tab_1
+|4,39,13,0,1719821961,"~/NERD_tree_tab_1"
+-'  26  2  ~/NERD_tree_tab_1
+|4,39,26,2,1719821864,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1719821864,"~/NERD_tree_tab_1"
 -'  109  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
 |4,39,109,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
 -'  13  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
@@ -627,14 +633,37 @@ $
 |4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
 -'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
 |4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
 
 # History of marks within files (newest to oldest):
+
+> ~/NERD_tree_tab_1
+	*	1719821960	0
+	"	13	0
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/README.md
+	*	1719821958	0
+	"	128	14
+	^	128	15
+	.	128	14
+	+	10	0
+	+	3	16
+	+	3	0
+	+	3	13
+	+	9	37
+	+	14	1
+	+	14	0
+	+	15	0
+	+	39	0
+	+	42	10
+	+	43	0
+	+	44	0
+	+	130	26
+	+	129	0
+	+	126	20
+	+	127	23
+	+	128	14
 
 > ~/projects/verilog_tutorials/project_0/02_alu/README.md
 	*	1719821729	0
@@ -819,25 +848,6 @@ $
 	"	18	5
 	.	1	0
 	+	1	0
-
-> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/README.md
-	*	1719819596	0
-	"	13	9
-	^	129	27
-	.	129	26
-	+	10	0
-	+	3	16
-	+	3	0
-	+	3	13
-	+	9	37
-	+	14	1
-	+	14	0
-	+	15	0
-	+	39	0
-	+	42	10
-	+	43	0
-	+	44	0
-	+	129	26
 
 > ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
 	*	1719818966	0
@@ -1886,12 +1896,6 @@ $
 	+	13	0
 	+	12	53
 	+	43	2
-
-> ~/NERD_tree_tab_1
-	*	1719539170	0
-	"	11	0
-	.	1	0
-	+	1	0
 
 > ~/projects/zaram_training_course/01_test/test/mux2_tb.v
 	*	1719538939	0
