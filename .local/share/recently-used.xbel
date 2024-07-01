@@ -13,4 +13,24 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/02_alu/waveform" added="2024-07-01T08:13:01.651129Z" modified="2024-07-01T08:13:01.651592Z" visited="2024-07-01T08:13:01.651581Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-01T08:13:01.651589Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/02_alu/waveform1.png" added="2024-07-01T08:13:21.302751Z" modified="2024-07-01T08:13:21.302755Z" visited="2024-07-01T08:13:21.302752Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-01T08:13:21.302753Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

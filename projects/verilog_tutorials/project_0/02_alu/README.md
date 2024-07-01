@@ -105,4 +105,6 @@ endmodule
 
 ## Simulation Result
 - Clock Period = 10ns
+![Waveform0](./waveform.png)
+![Waveform0](./waveform1.png)
 
