@@ -1338,3 +1338,38 @@ feh
 sudo apt install feh
 feh waveform.png 
 ivg gray_code_converter
+cd projects/verilog_tutorials/project_0/
+cd 01_barrel_shifter/
+gvim barrel_shifter.v
+cd ..
+cd 00_gray_code_converter/
+ivg gray_code_converter
+cd ..
+cd 03_adder_cla/
+gvim adder_cla.v
+cd ..
+cd 04_shift_register/
+gvim shift_register.v
+cd ..
+cd 05_fsm_traffic_light/
+mv fsm_traffic_light.v fsm_traffic.v
+la
+gvim fsm_traffic.v
+la
+cd ..
+cd 00_gray_code_converter/
+feh waveform.png 
+gvim README.md 
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/00_gray_code_converter/
+rm waveform.png 
+la
+ivg gray_code_converter
+la
+gvim README.md 
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/
+cd 04_shift_register/
+gvim shift_register.v 
