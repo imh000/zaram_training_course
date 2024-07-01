@@ -21,11 +21,11 @@ $
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1719821961,,"q"
+|2,0,1719822795,,"q"
 :wq
-|2,0,1719821960,,"wq"
+|2,0,1719822793,,"wq"
 :w
-|2,0,1719821958,,"w"
+|2,0,1719822790,,"w"
 :'<,'>q
 |2,0,1719819678,,"'<,'>q"
 :Q
@@ -270,63 +270,12 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	// --------------------------------------------------
-	//	Define Global Variables
-	// --------------------------------------------------
-	`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
-	`define	SIMCYCLE	`NVEC	// Sim. Cycles
-	`define NVEC		8		// # of Test Vector
-	
-	// --------------------------------------------------
-	//	Includes
-	// --------------------------------------------------
-	`include	"ALU.v"
-	
-	module ALU_tb;
-	// --------------------------------------------------
-	//	DUT Signals & Instantiate
-	// --------------------------------------------------
-		reg		 [2:0]  F;
-		reg		 [31:0] A;
-		reg		 [31:0] B;
-		wire	 [31:0] ALUOut;
-	
-		ALU
-		u_ALU(
-			.F					(F					),
-			.A					(A					),
-			.B					(B					),
-			.ALUOut				(ALUOut				)
-		);
-	
-	// --------------------------------------------------
-	//	Tasks
-	// --------------------------------------------------
-		reg [8*32-1:0] taskState;
-	
-		task init;
-			begin
-				F = 0;
-				A = 0;
-				B = 0;
-			end
-		endtask
-	
-	// --------------------------------------------------
-	//	Test Stimulus
-	// --------------------------------------------------
-		integer		i, j;
-		initial begin
-			init();
-	
-			for (i=0; i<`SIMCYCLE; i++) begin
-|3,0,0,1,50,0,1719819752,"// --------------------------------------------------","//	Define Global Variables","// --------------------------------------------------","`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)","`define	SIMCYCLE	`NVEC	// Sim. Cycles","`define NVEC		8		// # of Test Vector","","// --------------------------------------------------","//	Includes","// --------------------------------------------------","`include	\"ALU.v\"","",>16
-|<"module ALU_tb;","// --------------------------------------------------","//	DUT Signals & Instantiate","// --------------------------------------------------","	reg		 [2:0]  F;","	reg		 [31:0] A;","	reg		 [31:0] B;","	wire	 [31:0] ALUOut;","","	ALU","	u_ALU(","		.F					(F					),","		.A					(A					),","		.B					(B					),","		.ALUOut				(ALUOut				)","	);","","// --------------------------------------------------","//	Tasks","// --------------------------------------------------",>28
-|<"	reg [8*32-1:0] taskState;","","	task init;","		begin","			F = 0;","			A = 0;","			B = 0;","		end","	endtask","","// --------------------------------------------------","//	Test Stimulus","// --------------------------------------------------","	integer		i, j;","	initial begin","		init();","","		for (i=0; i<`SIMCYCLE; i++) begin"
-""1	LINE	0
+""0	LINE	0
+	|000|A&B|
+|3,1,0,1,1,0,1719822692,"|000|A&B|"
+"1	LINE	0
 	- @ 10ns
-|3,1,1,1,1,0,1719821877,"- @ 10ns"
+|3,0,1,1,1,0,1719821877,"- @ 10ns"
 "2	LINE	0
 		- 010 --> 010
 |3,0,2,1,1,0,1719821876,"	- 010 --> 010"
@@ -411,28 +360,34 @@ $
 |3,0,36,2,1,18,1719821272,"(A - B < 0) ? 1 : 0"
 
 # File marks:
-'0  13  0  ~/NERD_tree_tab_1
-|4,48,13,0,1719821961,"~/NERD_tree_tab_1"
-'1  109  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,49,109,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'2  4  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
-|4,50,4,0,1719819821,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
-'3  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,51,1,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'4  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,52,8,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'5  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
-|4,53,11,0,1719819713,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
-'6  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,54,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'7  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,55,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'8  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,56,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
-'9  20  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,57,20,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
+'0  22  0  ~/NERD_tree_tab_1
+|4,48,22,0,1719822795,"~/NERD_tree_tab_1"
+'1  1  0  ~/NERD_tree_tab_1
+|4,49,1,0,1719821961,"~/NERD_tree_tab_1"
+'2  13  0  ~/NERD_tree_tab_1
+|4,50,13,0,1719821961,"~/NERD_tree_tab_1"
+'3  119  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
+|4,51,119,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
+'4  109  28  ~/projects/verilog_tutorials/project_0/02_alu/README.md
+|4,52,109,28,1719821729,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
+'5  4  0  /usr/share/vim/vim82/doc/NERD_tree_tab_1
+|4,53,4,0,1719819821,"/usr/share/vim/vim82/doc/NERD_tree_tab_1"
+'6  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,54,1,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'7  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,55,8,0,1719819764,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'8  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
+|4,56,11,0,1719819713,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
+'9  29  22  ~/projects/verilog_tutorials/project_0/02_alu/README.md
+|4,57,29,22,1719819700,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
 
 # Jumplist (newest first):
+-'  22  0  ~/NERD_tree_tab_1
+|4,39,22,0,1719822795,"~/NERD_tree_tab_1"
+-'  34  2  ~/NERD_tree_tab_1
+|4,39,34,2,1719822116,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1719822116,"~/NERD_tree_tab_1"
 -'  13  0  ~/NERD_tree_tab_1
 |4,39,13,0,1719821961,"~/NERD_tree_tab_1"
 -'  26  2  ~/NERD_tree_tab_1
@@ -627,23 +582,56 @@ $
 |4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
 -'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
 |4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
--'  1  0  ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy
-|4,39,1,0,1719794501,"~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_detect/fsm_detect_mealy"
 
 # History of marks within files (newest to oldest):
 
 > ~/NERD_tree_tab_1
-	*	1719821960	0
-	"	13	0
+	*	1719822793	0
+	"	22	0
 	.	1	0
 	+	1	0
 
+> ~/projects/verilog_tutorials/project_0/02_alu/README.md
+	*	1719822790	0
+	"	12	7
+	^	12	8
+	.	12	7
+	+	13	15
+	+	120	0
+	+	37	0
+	+	16	0
+	+	41	0
+	+	119	28
+	+	117	0
+	+	5	9
+	+	13	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	6	3
+	+	7	2
+	+	8	3
+	+	9	2
+	+	10	3
+	+	11	2
+	+	12	3
+	+	6	6
+	+	7	6
+	+	8	13
+	+	9	6
+	+	7	6
+	+	6	6
+	+	5	6
+	+	10	9
+	+	11	8
+	+	12	7
+
 > ~/projects/verilog_tutorials/project_0/00_gray_code_converter/README.md
-	*	1719821958	0
+	*	1719822096	0
 	"	128	14
 	^	128	15
 	.	128	14
@@ -664,18 +652,6 @@ $
 	+	126	20
 	+	127	23
 	+	128	14
-
-> ~/projects/verilog_tutorials/project_0/02_alu/README.md
-	*	1719821729	0
-	"	109	28
-	^	109	29
-	.	109	28
-	+	4	15
-	+	110	0
-	+	28	0
-	+	7	0
-	+	32	0
-	+	109	28
 
 > ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
 	*	1719821641	0

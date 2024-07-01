@@ -1,6 +1,15 @@
 # Arithmetic Logic Unit (ALU)
 ## Operation Principle
-
+|F[2:0]|Function|
+|:---:|:---:|
+|000|A & B|
+|001|A | B|
+|010|A + B|
+|011|not used|
+|100|A & ~B|
+|101|A | ~B|
+|110|A - B|
+|111|SLT|
 ## verilog Code
 ### DUT
 ```verilog
@@ -105,6 +114,7 @@ endmodule
 
 ## Simulation Result
 - Clock Period = 10ns
+
 ![Waveform0](./waveform.png)
 ![Waveform0](./waveform1.png)
 

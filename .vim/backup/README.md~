@@ -1,130 +1,120 @@
-# Gray Code Converter
+# Arithmetic Logic Unit (ALU)
 ## Operation Principle
-- Binary -> Gray
-	- G[N-1] = B[N-1]
-	- G[i] = B[i+1] ^ B[i]
-
-- Gray -> Binary
-	- B[N-1] = G[N-1]
-	- B[i] = B[i+1] ^ G[i]	(N-1 > i >= 0)
-
-## Verilog Code
+|F[2:0]|Function|
+|:---:|:---:|
+|000|A & B|
+|001|A | B|
+|010|A + B|
+|011|not used|
+|100|A & ~B|
+|101|A | ~B|
+|110|A - B|
+|111|SLT|
+## verilog Code
 ### DUT
-```Verilog
-	module bin_to_gray
-	#(
-		parameter bit_size = 8
-	)
-	(
-		input    [bit_size-1:0]   bin,
-		output   [bit_size-1:0]   gray
-	);
-	
-		assign gray = (bin >> 1) ^ bin;
-	
-	endmodule
-	
-	module gray_to_bin
-	#(
-		parameter bit_size = 8
-	)
-	(
-		input    [bit_size-1:0]   gray,
-		output   [bit_size-1:0]   bin
-	);
-	
-		assign bin = (bin >> 1) ^ gray;
-	
-	endmodule
+```verilog
+module ALU
+(
+	input		 [2:0]  F,
+	input		 [31:0] A,
+	input		 [31:0] B,
+	output reg	 [31:0] ALUOut
+);
+
+	always @ (*) begin
+		case(F)
+			0 : ALUOut = A & B;
+			1 : ALUOut = A | B;
+			2 : ALUOut = A + B;
+			4 : ALUOut = A & ~B;
+			5 : ALUOut = A | ~B;
+			6 : ALUOut = A - B;
+			7 : ALUOut = A < B;
+			default : ALUOut = 0;
+		endcase
+	end
+endmodule
 ```
 
 ### Testbench
-```Verilog
-	// --------------------------------------------------
-	//	Define Global Variables
-	// --------------------------------------------------
-	`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
-	`define	SIMCYCLE	`NVEC	// Sim. Cycles
-	`define NVEC		2**8		// # of Test Vector
-	
-	// --------------------------------------------------
-	//	Includes
-	// --------------------------------------------------
-	`include	"gray_code_converter.v"
-	
-	module gray_code_converter_tb;
-	// --------------------------------------------------
-	//	DUT Signals & Instantiate
-	// --------------------------------------------------
-		reg    [bit_size-1:0]   bin;
-		wire   [bit_size-1:0]   out_bin;
-		wire   [bit_size-1:0]   gray;
-	
-		parameter bit_size = 8;
-	
-		bin_to_gray
-		#(
-			.bit_size			(bit_size			)
-		)
-		u_bin_to_gray(
-			.bin				(bin				),
-			.gray				(gray				)
-		);
-	
-		gray_to_bin
-		#(
-			.bit_size			(bit_size			)
-		)
-		u_gray_to_bin(
-			.gray				(gray				),
-			.bin				(out_bin			)
-		);
-	
-	
-	
-	
-	// --------------------------------------------------
-	//	Tasks
-	// --------------------------------------------------
-		task init;
-			begin
-				bin		= 0;
-			end
-		endtask
-	
-	// --------------------------------------------------
-	//	Test Stimulus
-	// --------------------------------------------------
-		integer		i;
-		initial begin
-			init();
-	
-			for (i=0; i<`SIMCYCLE; i++) begin
-				bin = i;
-				#(1000/`CLKFREQ);
-			end
+```verilog
+// --------------------------------------------------
+//	Define Global Variables
+// --------------------------------------------------
+`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
+`define	SIMCYCLE	`NVEC	// Sim. Cycles
+`define NVEC		8		// # of Test Vector
+
+// --------------------------------------------------
+//	Includes
+// --------------------------------------------------
+`include	"ALU.v"
+
+module ALU_tb;
+// --------------------------------------------------
+//	DUT Signals & Instantiate
+// --------------------------------------------------
+	reg		 [2:0]  F;
+	reg		 [31:0] A;
+	reg		 [31:0] B;
+	wire	 [31:0] ALUOut;
+
+	ALU
+	u_ALU(
+		.F					(F					),
+		.A					(A					),
+		.B					(B					),
+		.ALUOut				(ALUOut				)
+	);
+
+// --------------------------------------------------
+//	Tasks
+// --------------------------------------------------
+	reg [8*32-1:0] taskState;
+
+	task init;
+		begin
+			F = 0;
+			A = 0;
+			B = 0;
 		end
-	
-	// --------------------------------------------------
-	//	Dump VCD
-	// --------------------------------------------------
-		reg	[8*32-1:0]	vcd_file;
-		initial begin
-			if ($value$plusargs("vcd_file=%s", vcd_file)) begin
-				$dumpfile(vcd_file);
-				$dumpvars;
-			end else begin
-				$dumpfile("gray_code_converter_tb.vcd");
-				$dumpvars;
-			end
+	endtask
+
+// --------------------------------------------------
+//	Test Stimulus
+// --------------------------------------------------
+	integer		i, j;
+	initial begin
+		init();
+
+		for (i=0; i<`SIMCYCLE; i++) begin
+			F = i;
+			A = $urandom;
+			B = $urandom;
+			#(1000/`CLKFREQ);
 		end
-	
-	endmodule
+		$finish;
+	end
+
+// --------------------------------------------------
+//	Dump VCD
+// --------------------------------------------------
+	reg	[8*32-1:0]	vcd_file;
+	initial begin
+		if ($value$plusargs("vcd_file=%s", vcd_file)) begin
+			$dumpfile(vcd_file);
+			$dumpvars;
+		end else begin
+			$dumpfile("ALU_tb.vcd");
+			$dumpvars;
+		end
+	end
+endmodule
 ```
 
 ## Simulation Result
 - Clock Period = 10ns
-- bin -> gray -> out_bin
-- bin = out_bin
 
 ![Waveform0](./waveform.png)
+![Waveform0](./waveform1.png)
+
