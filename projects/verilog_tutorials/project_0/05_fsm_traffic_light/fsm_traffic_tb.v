@@ -1,4 +1,4 @@
-// --------------------------------------------------
+// // --------------------------------------------------
 //	Define Global Variables
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
@@ -17,34 +17,24 @@ module fsm_traffic_tb;
 // --------------------------------------------------
 	reg clk;
 	reg rstn;
-	reg P;
-	reg R;
 	reg Ta;
 	reg Tb;
-	wire M;
+	reg P;
+	reg R;
 	wire [1:0] La;
 	wire [1:0] Lb;
 
-	fsm_traffic_light
-	u_fsm_traffic_light(
+	fsm_traffic
+	u_fsm_traffic(
 		.clk				(clk				),
 		.rstn				(rstn				),
 		.Ta					(Ta					),
 		.Tb					(Tb					),
-		.M					(M					),
+		.P					(P					),
+		.R					(R					),
 		.La					(La					),
 		.Lb					(Lb					)
 	);
-
-	fsm_parade
-	u_fsm_parade(
-		.clk				(clk				),
-		.rstn				(rstn				),
-		.P					(P					),
-		.R					(R					),
-		.M					(M					)
-	);
-
 
 
 // --------------------------------------------------

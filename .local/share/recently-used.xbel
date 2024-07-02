@@ -53,4 +53,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/05_fsm_traffic_light/waveform" added="2024-07-02T07:05:38.083575Z" modified="2024-07-02T07:05:38.083614Z" visited="2024-07-02T07:05:38.083602Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T07:05:38.083610Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

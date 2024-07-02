@@ -3,7 +3,7 @@
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		8		// # of Test Vector
+`define NVEC		32		// # of Test Vector
 
 // --------------------------------------------------
 //	Includes
@@ -51,7 +51,7 @@ module ALU_tb;
 		init();
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			F = i;
+			F = $urandom;
 			A = $urandom;
 			B = $urandom;
 			#(1000/`CLKFREQ);

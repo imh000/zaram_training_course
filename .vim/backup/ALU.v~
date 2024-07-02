@@ -24,7 +24,7 @@ module ALU
 			5 : ALUOut = A | ~B;
 			6 : ALUOut = A - B;
 			7 : ALUOut = A < B;
-			default : ALUOut = 0;
+			default : {Cout, ALUOut} = 0;
 		endcase
 	end
 endmodule

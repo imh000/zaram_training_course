@@ -127,7 +127,7 @@ setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 311 - ((16 * winheight(0) + 15) / 31)
+let s:l = 311 - ((19 * winheight(0) + 15) / 31)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
