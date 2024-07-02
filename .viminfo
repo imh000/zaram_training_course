@@ -20,10 +20,12 @@
 $
 
 # Command Line History (newest to oldest):
-:w
-|2,0,1719884530,,"w"
 :q
-|2,0,1719884332,,"q"
+|2,0,1719893178,,"q"
+:so %
+|2,0,1719893172,,"so %"
+:w
+|2,0,1719893170,,"w"
 :set nohlsearch
 |2,0,1719882821,,"set nohlsearch"
 :59, 73s/c/C/g
@@ -44,8 +46,6 @@ $
 |2,0,1719555023,,"'<,'>Tabularize / "
 :ls
 |2,0,1719538583,,"ls"
-:so %
-|2,0,1719375470,,"so %"
 :27, 31s/in/i_in/g
 |2,0,1719362896,,"27, 31s/in/i_in/g"
 :17, 20s/in/i_in/g
@@ -274,7 +274,7 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
+"0	LINE	0
 		task vecInsert;
 			input	[$clog2(`NVEC)-1:0]	i;
 			begin
@@ -295,7 +295,7 @@ $
 				#(0.9*1000/`CLKFREQ);
 			end
 		endtask
-|3,1,0,1,20,0,1719884096,"	task vecInsert;","		input	[$clog2(`NVEC)-1:0]	i;","		begin","			$sformat(taskState,	\"VEC[%3d]\", i);","			i_a				= vi_a[i];","			i_b				= vi_b[i];","			i_c				= vi_c[i];","		end","	endtask","","	task vecVerify;","		input	[$clog2(`NVEC)-1:0]	i;","		begin","			#(0.1*1000/`CLKFREQ);","			if (o_s				!= vo_s[i]) begin $display(\"[Idx: %3d] Mismatched o_s\", i); end",>81
+|3,0,0,1,20,0,1719884096,"	task vecInsert;","		input	[$clog2(`NVEC)-1:0]	i;","		begin","			$sformat(taskState,	\"VEC[%3d]\", i);","			i_a				= vi_a[i];","			i_b				= vi_b[i];","			i_c				= vi_c[i];","		end","	endtask","","	task vecVerify;","		input	[$clog2(`NVEC)-1:0]	i;","		begin","			#(0.1*1000/`CLKFREQ);","			if (o_s				!= vo_s[i]) begin $display(\"[Idx: %3d] Mismatched o_s\", i); end",>81
 |<"			if (o_c				!= vo_c[i]) begin $display(\"[Idx: %3d] Mismatched o_c\", i); end","			if ((o_s != vo_s[i]) || (o_c != vo_c[i])) begin err++; end","			#(0.9*1000/`CLKFREQ);","		end","	endtask"
 "1	LINE	0
 			.cout_test			(cout_test			)
@@ -330,37 +330,69 @@ $
 "t	CHAR	0
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
-"-	CHAR	0
-	2
-|3,0,36,0,1,0,1719884525,"2"
+""-	CHAR	0
+	4
+|3,1,36,0,1,0,1719893167,"4"
 
 # File marks:
-'0  46  0  ~/utils/scripts/test_vector.py
-|4,48,46,0,1719884773,"~/utils/scripts/test_vector.py"
-'1  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,49,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
-'2  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,50,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
-'3  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,51,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
-'4  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,52,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
-'5  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,53,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
-'6  1  0  ~/NERD_tree_tab_1
-|4,54,1,0,1719822795,"~/NERD_tree_tab_1"
-'7  22  0  ~/NERD_tree_tab_1
-|4,55,22,0,1719822795,"~/NERD_tree_tab_1"
-'8  1  0  ~/NERD_tree_tab_1
-|4,56,1,0,1719821961,"~/NERD_tree_tab_1"
+'0  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+|4,48,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
+'1  22  15  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,49,22,15,1719893178,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+'2  46  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,50,46,0,1719884773,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+'3  46  0  ~/utils/scripts/test_vector.py
+|4,51,46,0,1719884773,"~/utils/scripts/test_vector.py"
+'4  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,52,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+'5  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,53,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+'6  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,54,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+'7  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,55,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+'8  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,56,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 '9  1  0  ~/NERD_tree_tab_1
-|4,57,1,0,1719821961,"~/NERD_tree_tab_1"
+|4,57,1,0,1719822795,"~/NERD_tree_tab_1"
 
 # Jumplist (newest first):
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+|4,39,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
+-'  9  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+|4,39,9,2,1719894562,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
+-'  22  15  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,22,15,1719893178,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+-'  22  15  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,22,15,1719893178,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+-'  46  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,46,0,1719893137,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+-'  46  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,46,0,1719893137,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+-'  46  0  ~/utils/scripts/test_vector.py
+|4,39,46,0,1719884773,"~/utils/scripts/test_vector.py"
 -'  46  0  ~/utils/scripts/test_vector.py
 |4,39,46,0,1719884773,"~/utils/scripts/test_vector.py"
 -'  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
 |4,39,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  25  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,25,1,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  34  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,34,2,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  25  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,25,1,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  34  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,34,2,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  25  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,25,1,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  34  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,34,2,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
 -'  25  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
 |4,39,25,1,1719884679,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
 -'  34  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
@@ -369,16 +401,64 @@ $
 |4,39,35,2,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
 -'  36  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
 |4,39,36,1,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  35  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,35,2,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  36  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,36,1,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  35  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,35,2,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  36  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,36,1,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  35  2  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,35,2,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  36  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,36,1,1719884678,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  1  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,1,0,1719883739,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
+-'  1  0  ~/utils/scripts/test_vector.py
+|4,39,1,0,1719883739,"~/utils/scripts/test_vector.py"
+-'  1  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
+|4,39,1,0,1719883739,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
 -'  1  0  ~/utils/scripts/test_vector.py
 |4,39,1,0,1719883739,"~/utils/scripts/test_vector.py"
 -'  105  10  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
 |4,39,105,10,1719883491,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  105  10  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,105,10,1719883491,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  105  10  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,105,10,1719883491,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  105  10  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,105,10,1719883491,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,18,0,1719883433,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,18,0,1719883433,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,18,0,1719883433,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
 -'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
 |4,39,18,0,1719883433,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
 -'  71  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
 |4,39,71,0,1719883292,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  71  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,71,0,1719883292,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  71  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,71,0,1719883292,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  71  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,71,0,1719883292,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
 -'  60  18  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
 |4,39,60,18,1719882727,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  60  18  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,60,18,1719882727,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  60  18  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,60,18,1719882727,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  60  18  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,60,18,1719882727,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  18  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,18,1,1719882120,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  18  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,18,1,1719882120,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  18  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,18,1,1719882120,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
 -'  18  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
 |4,39,18,1,1719882120,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
 -'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
@@ -387,12 +467,66 @@ $
 |4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
 -'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
 |4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  6  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,30,6,1719881458,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
 -'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
 |4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
 -'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
 |4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
 -'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
 |4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  7  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,7,0,1719880854,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 -'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
 |4,39,2,0,1719880683,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 -'  2  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
@@ -406,159 +540,36 @@ $
 -'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
 |4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 -'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 -'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 -'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,33,13,1719826257,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  34  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,34,1,1719826086,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  18  17  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,18,17,1719825574,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  93  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,93,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  77  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,77,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  93  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,93,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  77  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,77,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  93  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,93,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  77  7  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,77,7,1719823924,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  7  1  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,7,1,1719823821,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  1  16  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-|4,39,1,16,1719823417,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  49  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,49,5,1719823334,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  78  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-|4,39,78,0,1719823322,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  105  11  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,105,11,1719823255,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
--'  1  17  ~/NERD_tree_tab_1
-|4,39,1,17,1719822969,"~/NERD_tree_tab_1"
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  33  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,33,13,1719880305,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
 
 # History of marks within files (newest to oldest):
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+	*	1719894566	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/utils/scripts/_i_c    = './vec/i_c.vec'
+	*	1719893170	0
+	"	22	15
+	^	22	16
+	.	22	15
+	+	22	15
 
 > ~/utils/scripts/test_vector.py
 	*	1719884772	0
@@ -2802,21 +2813,3 @@ $
 	+	37	22
 	+	29	8
 	o	6	0
-
-> ~/projects/zaram_training_course/sequential_logic/cnt.v
-	*	1719212545	0
-	"	17	0
-	^	21	0
-	.	21	0
-	+	8	14
-	+	4	1
-	+	8	35
-	+	9	1
-	+	8	10
-	+	21	0
-
-> ~/projects/zaram_training_course/sequential_logic/03_dffs/dffs_tb.v
-	*	1719211633	0
-	"	61	0
-	.	3	14
-	+	3	14

@@ -1,6 +1,1 @@
-ERROR: adder_cla_tb.v:48: $readmemb: Unable to open ./vec/o_s.vec for reading.
-ERROR: adder_cla_tb.v:49: $readmemb: Unable to open ./vec/o_c.vec for reading.
-ERROR: adder_cla_tb.v:50: $readmemb: Unable to open ./vec/i_a.vec for reading.
-ERROR: adder_cla_tb.v:51: $readmemb: Unable to open ./vec/i_b.vec for reading.
-ERROR: adder_cla_tb.v:52: $readmemb: Unable to open ./vec/i_c.vec for reading.
 VCD info: dumpfile ./vcd/adder_cla.vcd opened for output.

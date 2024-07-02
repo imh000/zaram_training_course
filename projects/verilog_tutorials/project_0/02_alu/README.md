@@ -18,19 +18,20 @@ module ALU
 	input		 [2:0]  F,
 	input		 [31:0] A,
 	input		 [31:0] B,
-	output reg	 [31:0] ALUOut
+	output reg	 [31:0] ALUOut,
+	output reg			Cout
 );
 
 	always @ (*) begin
 		case(F)
 			0 : ALUOut = A & B;
 			1 : ALUOut = A | B;
-			2 : ALUOut = A + B;
+			2 : {Cout, ALUOut} = A + B;
 			4 : ALUOut = A & ~B;
 			5 : ALUOut = A | ~B;
 			6 : ALUOut = A - B;
 			7 : ALUOut = A < B;
-			default : ALUOut = 0;
+			default : {Cout, ALUOut} = 0;
 		endcase
 	end
 endmodule
@@ -58,14 +59,17 @@ module ALU_tb;
 	reg		 [31:0] A;
 	reg		 [31:0] B;
 	wire	 [31:0] ALUOut;
+	wire			Cout;
 
 	ALU
 	u_ALU(
 		.F					(F					),
 		.A					(A					),
 		.B					(B					),
-		.ALUOut				(ALUOut				)
+		.ALUOut				(ALUOut				),
+		.Cout				(Cout				)
 	);
+
 
 // --------------------------------------------------
 //	Tasks

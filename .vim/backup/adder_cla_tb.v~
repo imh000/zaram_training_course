@@ -21,8 +21,6 @@ module adder_cla_tb;
 	reg         cin;
 	wire        cout;
 	wire [31:0] sum;
-	wire [31:0] sum_test;
-	wire 	    cout_test;
 
 	adder_cla
 	u_adder_cla(
@@ -30,10 +28,9 @@ module adder_cla_tb;
 		.b					(b					),
 		.cin				(cin				),
 		.cout				(cout				),
-		.sum				(sum				),
-		.sum_test			(sum_test			),
-		.cout_test			(cout_test			)
+		.sum				(sum				)
 	);
+
 
 // --------------------------------------------------
 //	Test Vector Configuration
@@ -45,11 +42,11 @@ module adder_cla_tb;
 	reg						vi_c[0:`NVEC-1];
 
 	initial begin
-		$readmemb("./vec/o_s.vec",			vo_s);
-		$readmemb("./vec/o_c.vec",			vo_c);
-		$readmemb("./vec/i_a.vec",			vi_a);
-		$readmemb("./vec/i_b.vec",			vi_b);
-		$readmemb("./vec/i_c.vec",			vi_c);
+		$readmemb("/home/imh522/utils/scripts/vec/o_s.vec",			vo_s);
+		$readmemb("/home/imh522/utils/scripts/vec/o_c.vec",			vo_c);
+		$readmemb("/home/imh522/utils/scripts/vec/i_a.vec",			vi_a);
+		$readmemb("/home/imh522/utils/scripts/vec/i_b.vec",			vi_b);
+		$readmemb("/home/imh522/utils/scripts/vec/i_c.vec",			vi_c);
 	end
 
 // --------------------------------------------------

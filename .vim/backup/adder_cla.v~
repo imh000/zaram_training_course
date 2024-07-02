@@ -1,16 +1,13 @@
 module adder_cla
 (
-	input [31:0] a,
-	input [31:0] b,
-	input cin,
-	output cout,
-	output [31:0] sum,
-	output [31:0] sum_test
+	input  [31:0] a,
+	input  [31:0] b,
+	input         cin,
+	output        cout,
+	output [31:0] sum
 );
 
 	wire [6:0] co;
-
-	assign sum_test = a + b + cin;
 
 	adder_cla_4bit
 	u_adder_cla_4bit0(
@@ -36,7 +33,7 @@ module adder_cla
 	endgenerate
 
 	adder_cla_4bit
-	u_adder_cla_4bit1(
+	u_adder_cla_4bit7(
 		.a					(a[31:28]			),
 		.b					(b[31:28]			),
 		.cin				(co[6]				),

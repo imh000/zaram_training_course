@@ -19,7 +19,7 @@ fh_i_b      = open(file_i_b,	'w')
 fh_i_c      = open(file_i_c,	'w')
 
 simNum      = 10
-bitWidth    = 4
+bitWidth    = 32
 for n in range(simNum):
 	intMIN, intMAX = 0, pow(2,bitWidth)-1
 	intA    = random.randint(intMIN, intMAX)

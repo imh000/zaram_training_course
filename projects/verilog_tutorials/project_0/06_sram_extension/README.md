@@ -306,5 +306,6 @@ endmodule
 
 ## Simulation Result
 - Clock Period = 10ns
+- When taskState is RD, o_data = i (0 ~ 63)
 
 ![Waveform0](./waveform.png)

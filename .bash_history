@@ -1416,3 +1416,27 @@ gvim
 gitpush
 cd projects/verilog_tutorials/project_0/01_barrel_shifter/
 gvim barrel_shifter.v 
+cd projects/verilog_tutorials/project_0/
+cd 01_barrel_shifter/
+gvim barrel_shifter.v
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/
+cd 03_adder_cla/
+gvim adder_cla.v
+cd
+cd utils/
+cd scripts/
+gvim test_vector.py 
+cd
+cd projects/verilog_tutorials/project_0/
+cd 03_adder_cla/
+ivg adder_cla
+cd ..
+cd 04_shift_register/
+gvim shift_register.v
+cd
+gitpush
+cd utils/
+cd scripts/
+gvim test_vector.py 

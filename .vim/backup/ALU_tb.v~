@@ -18,14 +18,17 @@ module ALU_tb;
 	reg		 [31:0] A;
 	reg		 [31:0] B;
 	wire	 [31:0] ALUOut;
+	wire			Cout;
 
 	ALU
 	u_ALU(
 		.F					(F					),
 		.A					(A					),
 		.B					(B					),
-		.ALUOut				(ALUOut				)
+		.ALUOut				(ALUOut				),
+		.Cout				(Cout				)
 	);
+
 
 // --------------------------------------------------
 //	Tasks
