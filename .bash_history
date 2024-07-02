@@ -1386,3 +1386,33 @@ cd projects/
 cd verilog_tutorials/project_0/
 cd 02_alu/
 gvim ALU.v
+cd projects/verilog_tutorials/project_0/
+cd 04_shift_register/
+gvim shift_register.v
+cd ..
+03_adder_cla/
+cd 03_adder_cla/
+gvim adder_cla.v 
+cd ..
+cd 02
+cd 02_alu/
+gvim README.md 
+cd
+gitpush
+gvim
+cd projects/verilog_tutorials/project_0/03
+cd projects/verilog_tutorials/project_0/
+cd 02_alu/
+gvim README.md 
+feh waveform
+feh waveform.png 
+cd
+gitpush
+gvim
+gitpush
+gvim
+gitpush
+gvim
+gitpush
+cd projects/verilog_tutorials/project_0/01_barrel_shifter/
+gvim barrel_shifter.v 

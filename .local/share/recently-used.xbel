@@ -33,4 +33,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/01_barrel_shifter/waveform" added="2024-07-02T00:49:56.292153Z" modified="2024-07-02T00:49:56.292232Z" visited="2024-07-02T00:49:56.292217Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T00:49:56.292227Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

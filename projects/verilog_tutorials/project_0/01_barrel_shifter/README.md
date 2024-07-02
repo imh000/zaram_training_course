@@ -180,3 +180,5 @@ endmodule
 
 ## Simulation Result
 - result : (0 ~ 7) right rotate
+
+![Waveform0](./waveform.png)
