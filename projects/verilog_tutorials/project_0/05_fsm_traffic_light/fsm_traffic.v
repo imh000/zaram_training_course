@@ -108,7 +108,6 @@ module fsm_traffic
 					yellow : out_Lb_stateMonitor = "yellow";
 					red : out_Lb_stateMonitor = "red";
 				endcase
-
 			end
 		`endif
 endmodule

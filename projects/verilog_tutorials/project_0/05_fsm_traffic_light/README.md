@@ -1,7 +1,7 @@
 # FSM : Traffic Light Controller
 ## Operation Principle
 - light FSM
- 
+![image](https://github.com/imh000/zaram_training_course/assets/173435083/eb76b1a9-0df0-4e2f-8ce6-7a8ecb81d57c)
 
 ## Verilog Code
 ### DUT

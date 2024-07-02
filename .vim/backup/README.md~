@@ -1,6 +1,7 @@
 # FSM : Traffic Light Controller
 ## Operation Principle
 - light FSM
+ 
 
 ## Verilog Code
 ### DUT
@@ -28,7 +29,7 @@ module fsm_traffic
 
 	wire M;
 	reg [1:0] state, next_state;
-	reg [1:0] p_state, p_next_state;
+	reg p_state, p_next_state;
 
 	always @ (*) begin
 		case(p_state)
