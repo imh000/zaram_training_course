@@ -63,4 +63,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/03_adder_cla/waveform" added="2024-07-02T07:35:14.829087Z" modified="2024-07-02T07:35:14.829152Z" visited="2024-07-02T07:35:14.829124Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T07:35:14.829143Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

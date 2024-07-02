@@ -1,207 +1,183 @@
-# FSM : Traffic Light Controller
+# Carry-Lookahead Adder
 ## Operation Principle
-- light FSM
- 
-
+- 
 ## Verilog Code
 ### DUT
-```verilog
-module fsm_traffic
+```Verilog
+module adder_cla
 (
-	input clk,
-	input rstn,
-	input Ta,
-	input Tb,
-	input P,
-	input R,
-	output reg  [1:0] La,
-	output reg	[1:0] Lb
+	input  [31:0] a,
+	input  [31:0] b,
+	input         cin,
+	output        cout,
+	output [31:0] sum
 );
 
-	localparam S0 = 0;
-	localparam S1 = 1;
-	localparam S2 = 2;
-	localparam S3 = 3;
-	localparam SP0 = 0;
-	localparam SP1 = 1;
+	wire [6:0] co;
+
+	adder_cla_4bit
+	u_adder_cla_4bit0(
+		.a					(a[3:0]				),
+		.b					(b[3:0]				),
+		.cin				(cin				),
+		.cout				(co[0]				),
+		.sum				(sum[3:0]			)
+	);
+
+	genvar i;
+	generate
+		for(i=1; i<7; i=i+1) begin : adder_cla_loop
+			adder_cla_4bit
+			u_adder_cla_4bit(
+				.a					(a[4*i+3:4*i]		),
+				.b					(b[4*i+3:4*i]		),
+				.cin				(co[i-1]			),
+				.cout				(co[i]				),
+				.sum				(sum[4*i+3:4*i]		)
+			);
+		end
+	endgenerate
+
+	adder_cla_4bit
+	u_adder_cla_4bit7(
+		.a					(a[31:28]			),
+		.b					(b[31:28]			),
+		.cin				(co[6]				),
+		.cout				(cout				),
+		.sum				(sum[31:28]			)
+	);
+
+
+endmodule
 	
-	parameter green = 0, yellow = 1, red = 2;
+module adder_cla_4bit
+(
+	input  [3:0] a,
+	input  [3:0] b,
+	input        cin,
+	output       cout,
+	output [3:0] sum
+);
 
-	wire M;
-	reg [1:0] state, next_state;
-	reg p_state, p_next_state;
+	wire [3:0] P, G, C;
+	wire out_P, out_G;
 
-	always @ (*) begin
-		case(p_state)
-			SP0 : p_next_state = P ? SP1 : SP0;
-			SP1 : p_next_state = R ? SP0 : SP1;
-		endcase
-	end
+	// bitwise PG Logic
+	assign P = a ^ b;
+	assign G = a & b;
 
-	assign M = (p_state == SP1);
-	always @ (*) begin
-		case(state)
-			S0 : next_state = Ta ? S0 : S1;
-			S1 : next_state = S2;
-			S2 : next_state = (M | Tb) ? S2 : S3;
-			S3 : next_state = S0;
-		endcase
-	end
+	// Group PG Logic
+	assign C[0] = cin;
+	assign C[1] = G[0] | (P[0] & C[0]);
+	assign C[2] = G[1] | (P[1] & C[1]);
+	assign C[3] = G[2] | (P[2] & C[2]);
+	assign cout = G[3] | P[3] & C[3];
 
-	always @ (posedge clk) begin
-		if(!rstn) begin
-			state <= S0;
-			p_state <= SP0;
-		end
-		else begin
-			state <= next_state;
-			p_state <= p_next_state;
-		end
-	end
+	// Sum LogiC
+	assign sum = a ^ b ^ C;
 
-	always @ (*) begin
-		case(state)
-			S0 : begin
-				La = green;
-				Lb = red;
-			end
-			S1 : begin
-				La = yellow;
-				Lb = red;
-			end
-			S2 : begin
-				La = red;
-				Lb = green;
-			end
-			S3 : begin
-				La = red;
-				Lb = yellow;
-			end
-		endcase
-	end
-
-	`ifdef	DEBUG
-			reg [8*32-1:0] light_stateMonitor;
-			reg [8*32-1:0] parade_stateMonitor;
-			reg [8*32-1:0] out_La_stateMonitor;
-			reg [8*32-1:0] out_Lb_stateMonitor;
-			always @ (*) begin
-				case(state)
-					S0 : light_stateMonitor = "S0";
-					S1 : light_stateMonitor = "S1";
-					S2 : light_stateMonitor = "S2";
-					S3 : light_stateMonitor = "S3";
-				endcase
-
-				case(p_state)
-					S0 : parade_stateMonitor = "SP0";
-					S1 : parade_stateMonitor = "SP1";
-				endcase
-
-				case(La)
-					green : out_La_stateMonitor = "green";
-					yellow : out_La_stateMonitor = "yellow";
-					red : out_La_stateMonitor = "red";
-				endcase
-
-				case(Lb)
-					green : out_Lb_stateMonitor = "green";
-					yellow : out_Lb_stateMonitor = "yellow";
-					red : out_Lb_stateMonitor = "red";
-				endcase
-
-			end
-		`endif
 endmodule
 ```
 
-### Testbench
-```verilog
-// // --------------------------------------------------
+## Testbench
+```Verilog
+// --------------------------------------------------
 //	Define Global Variables
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		50		// # of Test Vector
-`define DEBUG
+`define NVEC		10		// # of Test Vector
+`define BW_DATA		32		// Bitwidth of ~~
 
 // --------------------------------------------------
 //	Includes
 // --------------------------------------------------
-`include	"fsm_traffic.v"
+`include	"adder_cla.v"
 
-module fsm_traffic_tb;
+module adder_cla_tb;
+
 // --------------------------------------------------
 //	DUT Signals & Instantiate
 // --------------------------------------------------
-	reg clk;
-	reg rstn;
-	reg Ta;
-	reg Tb;
-	reg P;
-	reg R;
-	wire [1:0] La;
-	wire [1:0] Lb;
+	reg  [31:0] a;
+	reg  [31:0] b;
+	reg         cin;
+	wire        cout;
+	wire [31:0] sum;
 
-	fsm_traffic
-	u_fsm_traffic(
-		.clk				(clk				),
-		.rstn				(rstn				),
-		.Ta					(Ta					),
-		.Tb					(Tb					),
-		.P					(P					),
-		.R					(R					),
-		.La					(La					),
-		.Lb					(Lb					)
+	adder_cla
+	u_adder_cla(
+		.a					(a					),
+		.b					(b					),
+		.cin				(cin				),
+		.cout				(cout				),
+		.sum				(sum				)
 	);
 
 
 // --------------------------------------------------
+//	Test Vector Configuration
+// --------------------------------------------------
+	reg		[`BW_DATA-1:0]	vo_s[0:`NVEC-1];
+	reg						vo_c[0:`NVEC-1];
+	reg		[`BW_DATA-1:0]	vi_a[0:`NVEC-1];
+	reg		[`BW_DATA-1:0]	vi_b[0:`NVEC-1];
+	reg						vi_c[0:`NVEC-1];
+
+	initial begin
+		$readmemb("/home/imh522/utils/scripts/vec/o_s.vec",			vo_s);
+		$readmemb("/home/imh522/utils/scripts/vec/o_c.vec",			vo_c);
+		$readmemb("/home/imh522/utils/scripts/vec/i_a.vec",			vi_a);
+		$readmemb("/home/imh522/utils/scripts/vec/i_b.vec",			vi_b);
+		$readmemb("/home/imh522/utils/scripts/vec/i_c.vec",			vi_c);
+	end
+
+// --------------------------------------------------
 //	Tasks
 // --------------------------------------------------
-	reg [8*32-1:0] taskState;
-	integer err = 0;
+	reg		 [8*32-1:0] taskState;
+	integer				err = 0;
 
 	task init;
 		begin
-			taskState = "Init";
-			clk = 0;
-			rstn = 0;
-			P = 0;
-			R = 0;
-			Ta = 0;
-			Tb = 0;
+			a = 0;
+			b = 0;
+			cin = 0;
 		end
 	endtask
 
-	task resetReleaseAfterNCycles;
-		input [9:0] n;
+	task vecInsert;
+		input	[$clog2(`NVEC)-1:0]	i;
 		begin
-			taskState = "Reset On";
-			rstn = 1'b0;
-			#(1000/`CLKFREQ);
-			rstn = 1'b1; 
-			taskState = "Reset OFF";
+			$sformat(taskState,	"VEC[%3d]", i);
+			a				= vi_a[i];
+			b				= vi_b[i];
+			cin				= vi_c[i];
 		end
 	endtask
 
-	always #(500/`CLKFREQ) clk = ~clk;
-
+	task vecVerify;
+		input	[$clog2(`NVEC)-1:0]	i;
+		begin
+			#(0.1*1000/`CLKFREQ);
+			if (sum				!= vo_s[i]) begin $display("[Idx: %3d] Mismatched sum", i); end
+			if (cout			!= vo_c[i]) begin $display("[Idx: %3d] Mismatched cout", i); end
+			if ((sum != vo_s[i]) || (cout != vo_c[i])) begin err++; end
+			#(0.9*1000/`CLKFREQ);
+		end
+	endtask
 // --------------------------------------------------
 //	Test Stimulus
 // --------------------------------------------------
 	integer		i, j;
 	initial begin
 		init();
-		resetReleaseAfterNCycles(4);
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			P = $urandom;
-			R = $urandom;
-			Ta = $urandom;
-			Tb = $urandom;
-			#(1000/`CLKFREQ);
+			vecInsert(i);
+			vecVerify(i);
 		end
+		#(1000/`CLKFREQ);
 		$finish;
 	end
 
@@ -214,7 +190,7 @@ module fsm_traffic_tb;
 			$dumpfile(vcd_file);
 			$dumpvars;
 		end else begin
-			$dumpfile("fsm_traffic_tb.vcd");
+			$dumpfile("adder_cla_tb.vcd");
 			$dumpvars;
 		end
 	end
@@ -223,6 +199,5 @@ endmodule
 ```
 
 ## Simulation Result
-- Clock Period = 10ns
 
-![Waveform0](./waveform.png)
+
