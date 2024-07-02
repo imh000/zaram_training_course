@@ -54,6 +54,7 @@ module adder_cla_4bit
 );
 
 	wire [3:0] P, G, C;
+	wire out_P, out_G;
 
 	// bitwise PG Logic
 	assign P = a ^ b;
@@ -64,10 +65,12 @@ module adder_cla_4bit
 	assign C[1] = G[0] | (P[0] & C[0]);
 	assign C[2] = G[1] | (P[1] & C[1]);
 	assign C[3] = G[2] | (P[2] & C[2]);
+	assign out_G = G[3] | (P[3] & (G[2] | (P[2] & (G[1] | (P[1] & G[0]))))); 
+	assign out_P = &P;
+	assign cout = G[3] | P[3] & C[3];
 
 	// Sum LogiC
-	assign cout = G[3] | (P[3] & C[3]);
-	assign sum = P ^ C;
+	assign sum = a ^ b ^ C;
 
 endmodule
 
