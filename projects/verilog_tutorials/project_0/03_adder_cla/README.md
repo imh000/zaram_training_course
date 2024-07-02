@@ -6,9 +6,9 @@
 		- P = A ^ B
 		- G = A & B
 	- Group PG Logic
-		- C[0] = cin
-		- C[i] = G[i] | (p[i] & C[i]) (0 < i < 3)
-		- Cout = G[3] | (P[3] & C[3])
+		- G[i:j] = G[i] + P[i](G[i-1] + p[i-1](G[i-2] + P[i-2] * G[j])
+		- P[i:j] = P[i] & P[i-1] & P[i-2] & P[j]
+		- C[i] = G[i:j] + P[i:j] * C[j-1]
 	- Sum Logic
 		- sum = A ^ B ^ C
 ## Verilog Code

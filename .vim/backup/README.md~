@@ -1,6 +1,16 @@
 # Carry-Lookahead Adder
 ## Operation Principle
-- 
+- 32\-bit CLA with 4\-bit blocks
+- 4\-bit block
+	- bitwise PG Logic
+		- P = A ^ B
+		- G = A & B
+	- Group PG Logic
+		- C[0] = cin
+		- C[i] = G[i] | (p[i] & C[i]) (0 < i < 3)
+		- Cout = G[3] | (P[3] & C[3])
+	- Sum Logic
+		- sum = A ^ B ^ C
 ## Verilog Code
 ### DUT
 ```Verilog
@@ -199,5 +209,8 @@ endmodule
 ```
 
 ## Simulation Result
+- Clock Period = 10ns
+- err = 0 -> simulation result = testvector result 
 
+![Waveform0](./waveform.png)
 
