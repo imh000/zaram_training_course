@@ -12,12 +12,12 @@ setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
 setlocal cindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinkeys=0{,0},0),0],:,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=/*%s*/
+setlocal comments=b:#,fb:-
+setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -28,14 +28,14 @@ setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
 setlocal cursorlineopt=both
-setlocal define=
+setlocal define=^\\s*\\(def\\|class\\)
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal noexpandtab
-if &filetype != 'verilog'
-setlocal filetype=verilog
+setlocal expandtab
+if &filetype != 'python'
+setlocal filetype=python
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -49,19 +49,19 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=croqlm1
+setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetVerilogIndent()
-setlocal indentkeys=!^F,o,O,0),=begin,=end,=join,=endcase,=endmodule,=endfunction,=endtask,=endspecify,=endconfig,=endgenerate,=endprimitive,=endtable,=`else,=`elsif,=`endif
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(substitute(substitute(v:fname,b:grandparent_match,b:grandparent_sub,''),b:parent_match,b:parent_sub,''),b:child_match,b:child_sub,'g')
+setlocal indentexpr=GetPythonIndent(v:lnum)
+setlocal indentkeys=0{,0},0),0],:,!^F,o,O,e,<:>,=elif,=except
 setlocal noinfercase
-setlocal iskeyword=@,48-57,63,_,192-255
-setlocal keywordprg=
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=python3\ -m\ pydoc
 setlocal linebreak
 setlocal nolisp
 setlocal lispwords=
@@ -75,7 +75,7 @@ setlocal modifiable
 setlocal nrformats=bin,octal,hex,alpha
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=python3complete#Complete
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -92,18 +92,18 @@ setlocal showbreak=
 setlocal sidescrolloff=-1
 setlocal signcolumn=auto
 setlocal smartindent
-setlocal softtabstop=0
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=
-setlocal statusline=%!airline#statusline(4)
-setlocal suffixesadd=
+setlocal statusline=%!airline#statusline(1)
+setlocal suffixesadd=.py
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'verilog'
-setlocal syntax=verilog
+if &syntax != 'python'
+setlocal syntax=python
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -112,7 +112,7 @@ setlocal tags=
 setlocal termwinkey=
 setlocal termwinscroll=10000
 setlocal termwinsize=
-setlocal textwidth=78
+setlocal textwidth=0
 setlocal thesaurus=
 setlocal thesaurusfunc=
 setlocal noundofile
@@ -127,12 +127,13 @@ setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 15) / 30)
+let s:l = 46 - ((18 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
-normal! 024|
+keepjumps 46
+normal! 0
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :

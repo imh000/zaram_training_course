@@ -1,16 +1,17 @@
 module adder_cla
 (
-	input [31:0] a,
-	input [31:0] b,
-	input cin,
-	output cout,
+	input  [31:0] a,
+	input  [31:0] b,
+	input         cin,
+	output        cout,
 	output [31:0] sum,
-	output [31:0] sum_test
+	output [31:0] sum_test,
+	output 		  cout_test
 );
 
 	wire [6:0] co;
 
-	assign sum_test = a + b + cin;
+	assign {cout_test, sum_test} = a + b + cin;
 
 	adder_cla_4bit
 	u_adder_cla_4bit0(
@@ -36,7 +37,7 @@ module adder_cla
 	endgenerate
 
 	adder_cla_4bit
-	u_adder_cla_4bit1(
+	u_adder_cla_4bit7(
 		.a					(a[31:28]			),
 		.b					(b[31:28]			),
 		.cin				(co[6]				),
@@ -49,28 +50,28 @@ endmodule
 	
 module adder_cla_4bit
 (
-	input [3:0] a,
-	input [3:0] b,
-	input cin,
-	output cout,
+	input  [3:0] a,
+	input  [3:0] b,
+	input        cin,
+	output       cout,
 	output [3:0] sum
 );
 
-	wire [3:0] P, G, c;
+	wire [3:0] P, G, C;
 
 	// bitwise PG Logic
 	assign P = a ^ b;
 	assign G = a & b;
 
 	// Group PG Logic
-	assign c[0] = cin;
-	assign c[1] = G[0] | (P[0] & c[0]);
-	assign c[2] = G[1] | (P[1] & c[1]);
-	assign c[3] = G[2] | (P[2] & c[2]);
-	assign cout = G[3] | (P[3] & c[3]);
+	assign C[0] = cin;
+	assign C[1] = G[0] | (P[0] & C[0]);
+	assign C[2] = G[1] | (P[1] & C[1]);
+	assign C[3] = G[2] | (P[2] & C[2]);
 
-	// Sum Logic
-	assign sum = P ^ c;
+	// Sum LogiC
+	assign cout = G[3] | (P[3] & C[3]);
+	assign sum = P ^ C;
 
 endmodule
 

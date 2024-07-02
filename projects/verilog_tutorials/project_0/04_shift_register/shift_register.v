@@ -3,12 +3,12 @@ module shift_register
 	parameter bit_size = 8
 )
 (
-	input clk,
-	input load,
-	input Sin,
-	input [bit_size-1:0] d,
+	input 				  clk,
+	input 				  load,
+	input 				  Sin,
+	input  [bit_size-1:0] d,
 	output [bit_size-1:0] q,
-	output Sout
+	output				  Sout
 );
 
 		mux_dff
@@ -19,6 +19,7 @@ module shift_register
 			.d					(d[0]				),
 			.q					(q[0]				)
 		);
+
 	genvar i;
 	generate
 		for (i=1; i<bit_size; i=i+1) begin : shift_register_block
@@ -33,6 +34,7 @@ module shift_register
 		end
 
 		assign Sout = q[7];
+
 	endgenerate
 	
 endmodule
