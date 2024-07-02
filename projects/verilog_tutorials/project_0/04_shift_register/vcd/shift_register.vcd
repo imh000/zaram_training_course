@@ -1,5 +1,5 @@
 $date
-	Tue Jul  2 10:52:40 2024
+	Tue Jul  2 17:45:57 2024
 $end
 $version
 	Icarus Verilog
@@ -9,105 +9,95 @@ $timescale
 $end
 $scope module shift_register_tb $end
 $var wire 8 ! q [7:0] $end
-$var wire 1 " Sout $end
-$var reg 1 # Sin $end
-$var reg 1 $ clk $end
-$var reg 8 % d [7:0] $end
-$var reg 1 & load $end
-$var reg 256 ' vcd_file [255:0] $end
-$var integer 32 ( i [31:0] $end
+$var reg 1 " Sin $end
+$var reg 1 # clk $end
+$var reg 8 $ d [7:0] $end
+$var reg 1 % load $end
+$var reg 256 & vcd_file [255:0] $end
+$var integer 32 ' i [31:0] $end
 $scope module u_shift_register $end
-$var wire 1 # Sin $end
-$var wire 1 $ clk $end
-$var wire 8 ) d [7:0] $end
-$var wire 1 & load $end
-$var wire 8 * q [7:0] $end
-$var wire 1 " Sout $end
+$var wire 1 " Sin $end
+$var wire 1 # clk $end
+$var wire 8 ( d [7:0] $end
+$var wire 1 % load $end
+$var wire 8 ) q [7:0] $end
 $scope begin shift_register_block[1] $end
 $scope module u_mux_dff $end
-$var wire 1 + Sin $end
-$var wire 1 $ clk $end
-$var wire 1 , d $end
-$var wire 1 & load $end
-$var reg 1 - Sout $end
-$var reg 1 . mux_out $end
-$var reg 1 / q $end
+$var wire 1 # clk $end
+$var wire 1 * in0 $end
+$var wire 1 + in1 $end
+$var wire 1 % load $end
+$var reg 1 , mux_out $end
+$var reg 1 - q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[2] $end
 $scope module u_mux_dff $end
-$var wire 1 0 Sin $end
-$var wire 1 $ clk $end
-$var wire 1 1 d $end
-$var wire 1 & load $end
-$var reg 1 2 Sout $end
-$var reg 1 3 mux_out $end
-$var reg 1 4 q $end
+$var wire 1 # clk $end
+$var wire 1 . in0 $end
+$var wire 1 / in1 $end
+$var wire 1 % load $end
+$var reg 1 0 mux_out $end
+$var reg 1 1 q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[3] $end
 $scope module u_mux_dff $end
-$var wire 1 5 Sin $end
-$var wire 1 $ clk $end
-$var wire 1 6 d $end
-$var wire 1 & load $end
-$var reg 1 7 Sout $end
-$var reg 1 8 mux_out $end
-$var reg 1 9 q $end
+$var wire 1 # clk $end
+$var wire 1 2 in0 $end
+$var wire 1 3 in1 $end
+$var wire 1 % load $end
+$var reg 1 4 mux_out $end
+$var reg 1 5 q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[4] $end
 $scope module u_mux_dff $end
-$var wire 1 : Sin $end
-$var wire 1 $ clk $end
-$var wire 1 ; d $end
-$var wire 1 & load $end
-$var reg 1 < Sout $end
-$var reg 1 = mux_out $end
-$var reg 1 > q $end
+$var wire 1 # clk $end
+$var wire 1 6 in0 $end
+$var wire 1 7 in1 $end
+$var wire 1 % load $end
+$var reg 1 8 mux_out $end
+$var reg 1 9 q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[5] $end
 $scope module u_mux_dff $end
-$var wire 1 ? Sin $end
-$var wire 1 $ clk $end
-$var wire 1 @ d $end
-$var wire 1 & load $end
-$var reg 1 A Sout $end
-$var reg 1 B mux_out $end
-$var reg 1 C q $end
+$var wire 1 # clk $end
+$var wire 1 : in0 $end
+$var wire 1 ; in1 $end
+$var wire 1 % load $end
+$var reg 1 < mux_out $end
+$var reg 1 = q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[6] $end
 $scope module u_mux_dff $end
-$var wire 1 D Sin $end
-$var wire 1 $ clk $end
-$var wire 1 E d $end
-$var wire 1 & load $end
-$var reg 1 F Sout $end
-$var reg 1 G mux_out $end
-$var reg 1 H q $end
+$var wire 1 # clk $end
+$var wire 1 > in0 $end
+$var wire 1 ? in1 $end
+$var wire 1 % load $end
+$var reg 1 @ mux_out $end
+$var reg 1 A q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[7] $end
 $scope module u_mux_dff $end
-$var wire 1 I Sin $end
-$var wire 1 $ clk $end
-$var wire 1 J d $end
-$var wire 1 & load $end
-$var reg 1 K Sout $end
-$var reg 1 L mux_out $end
-$var reg 1 M q $end
+$var wire 1 # clk $end
+$var wire 1 B in0 $end
+$var wire 1 C in1 $end
+$var wire 1 % load $end
+$var reg 1 D mux_out $end
+$var reg 1 E q $end
 $upscope $end
 $upscope $end
 $scope module u_mux_dff $end
-$var wire 1 # Sin $end
-$var wire 1 $ clk $end
-$var wire 1 N d $end
-$var wire 1 & load $end
-$var reg 1 O Sout $end
-$var reg 1 P mux_out $end
-$var reg 1 Q q $end
+$var wire 1 # clk $end
+$var wire 1 " in0 $end
+$var wire 1 F in1 $end
+$var wire 1 % load $end
+$var reg 1 G mux_out $end
+$var reg 1 H q $end
 $upscope $end
 $upscope $end
 $scope task init $end
@@ -116,25 +106,16 @@ $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-xQ
-1P
-xO
-1N
-xM
-xL
-xK
-0J
-xI
 xH
-xG
-xF
-0E
+0G
+1F
+xE
 xD
-xC
+1C
 xB
 xA
-0@
-x?
+x@
+0?
 x>
 x=
 x<
@@ -142,894 +123,232 @@ x<
 x:
 x9
 x8
-x7
-16
+07
+x6
 x5
 x4
-x3
+03
 x2
-01
+x1
 x0
-x/
+0/
 x.
 x-
-0,
-x+
-bx *
-b1001 )
-b0 (
-b1011100010111101110110011000110110010000101111011100110110100001101001011001100111010001011111011100100110010101100111011010010111001101110100011001010111001000101110011101100110001101100100 '
-0&
-b1001 %
-0$
-1#
-x"
+x,
+0+
+x*
+bx )
+b10000001 (
+b0 '
+b1011100010111101110110011000110110010000101111011100110110100001101001011001100111010001011111011100100110010101100111011010010111001101110100011001010111001000101110011101100110001101100100 &
+0%
+b10000001 $
+0#
+0"
 bx !
 $end
 #5000
-1.
-1+
-bx1 !
-bx1 *
-1Q
-1$
+0,
+0*
+bx0 !
+bx0 )
+0H
+1#
 #10000
-11
-1J
-0.
-13
-18
-0=
-0B
-0G
-1L
-0$
-b10001101 %
-b10001101 )
-1&
-b1 (
+1+
+1;
+1?
+0C
+1G
+0#
+b1100011 $
+b1100011 (
+1"
+b1 '
 #15000
-1"
-0I
-0D
-0?
-1:
-15
+1,
 00
-1M
-0H
-0C
-0>
-19
-14
-b10001101 !
-b10001101 *
-0/
-1$
+1*
+0.
+1H
+bx01 !
+bx01 )
+0-
+1#
 #20000
-03
-08
-0L
-01
-06
-0J
-0$
-b1 %
-b1 )
+0+
+1/
+13
+0;
+0?
+1C
 0#
-b10 (
+b10001101 $
+b10001101 (
+b10 '
 #25000
-05
-0:
-0"
+10
 04
-09
-b1 !
-b1 *
-0M
-1$
+1.
+02
+1-
+bx011 !
+bx011 )
+01
+1#
 #30000
-13
-18
-1=
-1B
-11
-16
-1;
-1@
-0$
-b111101 %
-b111101 )
-b11 (
-#35000
-1D
-1?
-1:
-15
-1C
-1>
-19
-b111101 !
-b111101 *
-14
-1$
-#40000
-03
-1G
-1L
-01
-1E
-1J
-0$
-b11111001 %
-b11111001 )
-b100 (
-#45000
-05
-1I
-1"
-04
-1H
-b11111001 !
-b11111001 *
-1M
-1$
-#50000
-1,
-0;
-0E
-0N
-1.
-08
-0$
-b10101010 %
-b10101010 )
-1#
-0&
-b101 (
-#55000
-0=
-13
-0:
-10
-09
-b11110011 !
-b11110011 *
-1/
-1$
-#60000
-1=
-0B
-0L
-06
-1;
-0@
-0J
-03
-08
-0G
-0P
-0$
-b10010 %
-b10010 )
-1&
-b110 (
-#65000
-0D
-0I
-0"
-0+
-0C
-0H
-0M
-b10010 !
-b10010 *
-0Q
-1$
-#70000
-13
-18
-0=
-1G
-1L
-11
-16
-0;
-1E
-1J
-0$
-b11001110 %
-b11001110 )
-0#
-b111 (
-#75000
-1"
-1I
-0?
-1:
-15
-1M
-1H
-0>
-19
-b11001110 !
-b11001110 *
-14
-1$
-#80000
-0,
-1;
-0J
-0.
-1=
-0G
-1P
-0$
-b1011100 %
-b1011100 )
-1#
-0&
-b1000 (
-#85000
-03
-1B
-0L
-1.
-00
-1?
-0I
 1+
 0/
-1>
-0H
-b10011101 !
-b10011101 *
-1Q
-1$
-#90000
-08
-0=
-06
-0;
-1@
-1N
-0.
-13
-1B
-1G
-1P
-0$
-b1100101 %
-b1100101 )
-1&
-b1001 (
-#95000
-0"
-1I
-1D
-0?
-0:
-0M
-1H
-1C
-0>
-b1100101 !
-b1100101 *
-09
-1$
-#100000
 03
-0B
-0G
-1L
-0P
-01
-0@
-0E
-1J
-0N
-0$
-b10000000 %
-b10000000 )
-0#
-b1010 (
-#105000
-05
-0D
-0I
-1"
-0+
-04
+17
 0C
-0H
-1M
-b10000000 !
-b10000000 *
-0Q
-1$
-#110000
-11
-16
-1;
-1N
-0L
-0$
-b10011101 %
-b10011101 )
-0&
-b1011 (
-#115000
-0"
-b0 !
-b0 *
-0M
-1$
-#120000
-0;
-0J
-1P
-0$
-b1101 %
-b1101 )
-1#
-b1100 (
-#125000
-1.
-1+
-b1 !
-b1 *
-1Q
-1$
-#130000
-1=
-1G
-1L
-06
-1;
-1E
-1J
-0.
-13
-08
-0$
-b11010101 %
-b11010101 )
-1&
-b1101 (
-#135000
-1"
-1I
-1?
-15
-1M
-1H
-1>
-b11010101 !
-b11010101 *
-14
-1$
-#140000
-16
-0E
-0J
-1.
-03
-18
-0=
-1B
-0G
-0P
-0$
-b11101 %
-b11101 )
+0F
 0#
-0&
-b1110 (
-#145000
-13
-08
-1=
-0B
-1G
-0L
-0.
-10
-05
-1:
-0?
-1D
-0I
-0+
-1/
-04
-19
-0>
-1C
-0H
-b10101010 !
-b10101010 *
-0Q
-1$
-#150000
-1.
-03
-0=
-1,
-01
-0;
-0N
-18
-0G
-0P
-0$
-b1010 %
-b1010 )
-1#
-1&
-b1111 (
-#155000
-0"
-0D
-0M
-b1010 !
-b1010 *
-0C
-1$
-#160000
-06
-1;
-1@
-1E
-1J
-0.
-13
-08
-1=
-0$
-b11110010 %
-b11110010 )
-0#
-0&
-b10000 (
-#165000
-03
-18
-0=
-1B
-00
-15
-0:
-1?
-0/
-14
-09
-b10100 !
-b10100 *
-1>
-1$
-#170000
-0,
-16
-0@
-1P
-0$
-b11011000 %
-b11011000 )
-1#
-b10001 (
-#175000
-1.
-1G
-0B
-1=
-08
-1+
-1D
-0?
-1:
-05
-1Q
-1C
-0>
-19
-b101001 !
-b101001 *
-04
-1$
-#180000
-1,
-0;
-1@
-1N
-0$
-b11101011 %
-b11101011 )
+b10010 $
 b10010 (
-#185000
-13
-0=
-1B
-0G
-1L
-10
-0:
-1?
-0D
-1I
-1/
-09
-1>
-0C
-b1010011 !
-b1010011 *
-1H
-1$
-#190000
-11
-0E
-0N
-0P
-0$
-b10101110 %
-b10101110 )
-0#
-b10011 (
-#195000
-0.
-0L
-1G
-0B
-18
-0+
-1"
-0I
-1D
-0?
-15
-0Q
-1M
-0H
-1C
-0>
-b10100110 !
-b10100110 *
+b11 '
+#35000
+08
 14
-1$
-#200000
-01
-0@
-0J
-1N
-0$
-b1011 %
-b1011 )
-b10100 (
-#205000
-03
-1=
-0G
-1L
-00
-1:
-0D
-1I
-0"
-0/
-19
-0C
-1H
-b1001100 !
-b1001100 *
-0M
-1$
-#210000
-13
-1G
+06
+12
+05
+bx0111 !
+bx0111 )
 11
-1E
-1.
-0=
-0L
-1P
-0$
-b1001111 %
-b1001111 )
 1#
-1&
-b10101 (
-#215000
-1+
-10
-1Q
-b1001111 !
-b1001111 *
+#40000
+0+
 1/
-1$
-#220000
-1=
-1B
-0P
+13
+07
+1F
+0#
+b1101 $
+b1101 (
+b100 '
+#45000
+18
+0<
+16
+0:
+15
+bx01111 !
+bx01111 )
+09
+1#
+#50000
+17
 1;
-1@
-0N
-0$
-b1111110 %
-b1111110 )
-0#
-b10110 (
-#225000
-1?
-1D
-0+
-1>
-1C
-b1111110 !
-b1111110 *
-0Q
-1$
-#230000
-0.
-03
-0B
-1L
-1P
-0,
-01
-0@
-1J
-1N
-0$
-b11011001 %
-b11011001 )
-1#
-b10111 (
-#235000
-1+
-1"
-0D
-05
-00
-1Q
-1M
-0C
-04
-b11011001 !
-b11011001 *
-0/
-1$
-#240000
-1,
-11
-0E
-1.
-08
-1B
 0G
-0P
-0$
-b10011111 %
-b10011111 )
 0#
-0&
-b11000 (
-#245000
-13
-0=
-1G
-0L
-0.
-10
-0:
-1D
-0I
-0+
-1/
-09
-1C
-0H
-b10110010 !
-b10110010 *
-0Q
-1$
-#250000
-06
-1@
-1.
-08
-1=
-1B
-0G
-1L
-1P
-0$
-b10110111 %
-b10110111 )
-1&
-b11001 (
-#255000
-1+
-15
-1Q
-b10110111 !
-b10110111 *
-14
-1$
-#260000
-03
-18
-0B
-1G
-0L
-01
-16
-0@
-1E
-0J
-0$
-b1011011 %
-b1011011 )
-b11010 (
-#265000
-05
-1:
-0D
-1I
+b111101 $
+b111101 (
 0"
-04
-19
-0C
-1H
-b1011011 !
-b1011011 *
-0M
-1$
-#270000
-0.
-08
-1L
-0P
+b101 '
+#55000
 0,
-06
-1J
-0N
-0$
-b11010000 %
-b11010000 )
-1#
-b11011 (
-#275000
-0+
-1"
-0:
-00
-0Q
-1M
-09
-b11010000 !
-b11010000 *
-0/
-1$
-#280000
-1.
-13
-0G
-1,
-11
-0E
-0$
-b10010110 %
-b10010110 )
-b11100 (
-#285000
-10
-15
-0I
-1/
-14
-b10010110 !
-b10010110 *
+0@
+1<
+0*
+0>
+1:
 0H
-1$
-#290000
-0,
-01
-16
+0=
+bx011110 !
+bx011110 )
+19
+1#
+#60000
+07
 0;
-1E
-0.
-18
-0=
-1B
-0L
-0$
-b11001000 %
-b11001000 )
+1C
+0F
+1G
 0#
-0&
-b11101 (
-#295000
-1G
-0B
-1=
-03
-0"
-1D
-0?
-1:
+b10001100 $
+b10001100 (
+1"
+b110 '
+#65000
 00
-0M
-1C
-0>
-19
-b101100 !
-b101100 *
-0/
-1$
-#300000
-1.
-08
-0G
-1,
-06
-1;
-0E
-0J
-1=
-0L
-0$
-b10010 %
-b10010 )
-1#
-1&
-b11110 (
-#305000
-10
-05
-0:
-1?
-0D
-1/
-04
-09
-1>
-b10010 !
-b10010 *
-0C
-1$
-#310000
-0,
-16
 1@
-1N
+0D
+1,
 0.
-13
-0=
-1B
-1P
-0$
-b111001 %
-b111001 )
-0&
-b11111 (
-#315000
-1.
-1G
+1>
 0B
-18
-03
+1*
+0-
+1=
+0A
+bx0111101 !
+bx0111101 )
+1H
+1#
+#70000
 1+
+03
+1?
+0#
+b11000110 $
+b11000110 (
+b111 '
+#75000
 1D
-0?
-15
-00
-1Q
-1C
-0>
-14
-b100101 !
-b100101 *
+04
+10
+1B
+02
+1.
+0E
+1A
+01
+b1111011 !
+b1111011 )
+1-
+1#
+#80000
 0/
-1$
-#320000
-0$
-b100000 (
+13
+1;
+0?
+0#
+b10101010 $
+b10101010 (
+b1000 '
+#85000
+14
+08
+12
+06
+11
+05
+b11110111 !
+b11110111 )
+1E
+1#
+#90000
+1/
+03
+17
+1?
+0C
+1F
+0#
+b1110111 $
+b1110111 (
+b1001 '
+#95000
+0<
+18
+0:
+16
+09
+b11101111 !
+b11101111 )
+15
+1#
+#100000
+0#
+b1010 '

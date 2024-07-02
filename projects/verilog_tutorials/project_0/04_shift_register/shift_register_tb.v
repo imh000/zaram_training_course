@@ -3,7 +3,7 @@
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		32		// # of Test Vector
+`define NVEC		10		// # of Test Vector
 
 // --------------------------------------------------
 //	Includes
@@ -16,12 +16,11 @@ module shift_register_tb;
 // --------------------------------------------------
 	parameter bit_size = 8;
 
-	reg				    clk;
-	reg				    load;
-	reg				    Sin;
+	reg 				  clk;
+	reg 				  load;
+	reg 				  Sin;
 	reg  [bit_size-1:0] d;
 	wire [bit_size-1:0] q;
-	wire 				Sout;
 
 	shift_register
 	#(
@@ -32,8 +31,7 @@ module shift_register_tb;
 		.load				(load				),
 		.Sin				(Sin				),
 		.d					(d					),
-		.q					(q					),
-		.Sout				(Sout				)
+		.q					(q					)
 	);
 
 // --------------------------------------------------
@@ -61,7 +59,7 @@ module shift_register_tb;
 		init();
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			load = $urandom;
+			load = 0;
 			Sin  = $urandom;
 			d	 = $urandom;
 			#(1000/`CLKFREQ);
