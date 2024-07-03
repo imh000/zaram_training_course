@@ -1482,3 +1482,61 @@ cd projects/verilog_tutorials/project_0/04_shift_register/
 rm regshift.v 
 la
 cd
+gvim
+cd utils/scripts/
+./test_vector.py 
+cd
+cd projects/verilog_tutorials/project_0/
+cd 03_adder_cla/
+cd ..
+cd
+cd utils/scripts/
+cd
+cd projects/verilog_tutorials/project_0/
+cd 06_sram_extension/
+feh waveform.png 
+cd
+gitpush
+gvim
+gitpush
+gvim
+gitpush
+cd projects/verilog_tutorials/project_0/
+tree -L 1
+gvim
+cd
+gvim .vimrc 
+gitpush
+gitk
+git log
+git config --global credential.helper cache
+gitpush
+gitlog
+git log
+gvim
+cd projects/verilog_tutorials/project_0/
+cd 02_alu/
+ivg ALU
+gvim ALU.v
+cd
+gitpush
+cd projects/
+cd zaram_training_course/
+cd 02_combinational_logic/
+cd 03_adder/
+gvim adder.v
+gvim signed_adder.v
+cd
+gitpush
+git config credential.helper store
+gitpush
+git config --unset credential.helper
+gitpush
+git config credential.helper store
+gitpush
+git commit --amend
+gitpush
+git log
+git push
+git commit --amend
+gitpush
