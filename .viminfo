@@ -21,11 +21,11 @@ $
 
 # Command Line History (newest to oldest):
 :q
-|2,0,1719995000,,"q"
+|2,0,1719995044,,"q"
+:w
+|2,0,1719995042,,"w"
 :wq
 |2,0,1719994999,,"wq"
-:w
-|2,0,1719994998,,"w"
 :set nohlsearch
 |2,0,1719988610,,"set nohlsearch"
 :help
@@ -298,13 +298,16 @@ $
 	);
 |3,0,0,1,7,0,1719993569,"module signed_adder","(","	input signed [3:0] a,","	input 		 [3:0] b,","	input			   cin,","	output signed [4:0] sum",");"
 ""1	LINE	0
+	//dkfjdkjfdjfkdjfkldjs
+|3,1,1,1,1,0,1719995040,"//dkfjdkjfdjfkdjfkldjs"
+"2	LINE	0
 	[credential]
 		helper = store
-|3,1,1,1,2,0,1719993868,"[credential]","	helper = store"
-"2	LINE	0
-	
-|3,0,2,1,1,0,1719993589,""
+|3,0,2,1,2,0,1719993868,"[credential]","	helper = store"
 "3	LINE	0
+	
+|3,0,3,1,1,0,1719993589,""
+"4	LINE	0
 		reg signed [3:0] a;
 		reg 		 [3:0] b;
 		reg			   cin;
@@ -318,26 +321,23 @@ $
 			.sum				(sum				)
 		);
 	
-|3,0,3,1,13,0,1719993564,"	reg signed [3:0] a;","	reg 		 [3:0] b;","	reg			   cin;","	wire signed [4:0] sum;","","	signed_adder","	u_signed_adder(","		.a					(a					),","		.b					(b					),","		.cin				(cin				),","		.sum				(sum				)","	);",""
-"4	LINE	0
-	### djfdkfkdjf
-|3,0,4,1,1,0,1719993500,"### djfdkfkdjf"
+|3,0,4,1,13,0,1719993564,"	reg signed [3:0] a;","	reg 		 [3:0] b;","	reg			   cin;","	wire signed [4:0] sum;","","	signed_adder","	u_signed_adder(","		.a					(a					),","		.b					(b					),","		.cin				(cin				),","		.sum				(sum				)","	);",""
 "5	LINE	0
-			#(1000/`CLKFREQ);
-|3,0,5,1,1,0,1719991761,"		#(1000/`CLKFREQ);"
+	### djfdkfkdjf
+|3,0,5,1,1,0,1719993500,"### djfdkfkdjf"
 "6	LINE	0
-			resetReleaseAfterNCycles(4);
-|3,0,6,1,1,0,1719991741,"		resetReleaseAfterNCycles(4);"
+			#(1000/`CLKFREQ);
+|3,0,6,1,1,0,1719991761,"		#(1000/`CLKFREQ);"
 "7	LINE	0
-	
-|3,0,7,1,1,0,1719991739,""
+			resetReleaseAfterNCycles(4);
+|3,0,7,1,1,0,1719991741,"		resetReleaseAfterNCycles(4);"
 "8	LINE	0
 	
-	// --------------------------------------------------
-|3,0,8,1,2,0,1719991736,"","// --------------------------------------------------"
+|3,0,8,1,1,0,1719991739,""
 "9	LINE	0
-		always #(500/`CLKFREQ) clk = ~clk;
-|3,0,9,1,1,0,1719991735,"	always #(500/`CLKFREQ) clk = ~clk;"
+	
+	// --------------------------------------------------
+|3,0,9,1,2,0,1719991736,"","// --------------------------------------------------"
 "f	CHAR	0
 	iint1€ıa€ıa
 |3,0,15,0,1,0,1718260665,"iint1€ıa€ıa"
@@ -349,28 +349,34 @@ $
 |3,0,36,0,1,0,1719993660,"],"
 
 # File marks:
-'0  13  9  ~/NERD_tree_tab_1
-|4,48,13,9,1719995000,"~/NERD_tree_tab_1"
-'1  22  73  ~/.bash_aliases
-|4,49,22,73,1719994916,"~/.bash_aliases"
-'2  22  73  ~/.bash_aliases
-|4,50,22,73,1719994735,"~/.bash_aliases"
+'0  13  0  ~/NERD_tree_tab_1
+|4,48,13,0,1719995044,"~/NERD_tree_tab_1"
+'1  1  9  ~/NERD_tree_tab_1
+|4,49,1,9,1719995000,"~/NERD_tree_tab_1"
+'2  13  9  ~/NERD_tree_tab_1
+|4,50,13,9,1719995000,"~/NERD_tree_tab_1"
 '3  22  73  ~/.bash_aliases
-|4,51,22,73,1719994163,"~/.bash_aliases"
+|4,51,22,73,1719994916,"~/.bash_aliases"
 '4  22  73  ~/.bash_aliases
-|4,52,22,73,1719994163,"~/.bash_aliases"
-'5  159  35  ~/.vimrc
-|4,53,159,35,1719994131,"~/.vimrc"
-'6  1  0  ~/.git/COMMIT_EDITMSG
-|4,54,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
-'7  11  1  ~/.git/config
-|4,55,11,1,1719993872,"~/.git/config"
-'8  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,56,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
-'9  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,57,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+|4,52,22,73,1719994735,"~/.bash_aliases"
+'5  22  73  ~/.bash_aliases
+|4,53,22,73,1719994163,"~/.bash_aliases"
+'6  22  73  ~/.bash_aliases
+|4,54,22,73,1719994163,"~/.bash_aliases"
+'7  159  35  ~/.vimrc
+|4,55,159,35,1719994131,"~/.vimrc"
+'8  1  0  ~/.git/COMMIT_EDITMSG
+|4,56,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+'9  11  1  ~/.git/config
+|4,57,11,1,1719993872,"~/.git/config"
 
 # Jumplist (newest first):
+-'  13  0  ~/NERD_tree_tab_1
+|4,39,13,0,1719995044,"~/NERD_tree_tab_1"
+-'  22  2  ~/NERD_tree_tab_1
+|4,39,22,2,1719995037,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1719995037,"~/NERD_tree_tab_1"
 -'  13  9  ~/NERD_tree_tab_1
 |4,39,13,9,1719995000,"~/NERD_tree_tab_1"
 -'  22  2  ~/NERD_tree_tab_1
@@ -565,37 +571,28 @@ $
 |4,39,1,0,1719993805,"~/.git/config"
 -'  1  0  ~/.git/config
 |4,39,1,0,1719993805,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1719993805,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1719993805,"~/.git/config"
--'  1  0  ~/.git/config
-|4,39,1,0,1719993805,"~/.git/config"
 
 # History of marks within files (newest to oldest):
 
 > ~/NERD_tree_tab_1
-	*	1719994999	0
-	"	13	9
+	*	1719995043	0
+	"	13	0
 	.	1	0
 	+	1	0
 
 > ~/projects/zaram_training_course/01_test/test/mux2.v
-	*	1719994998	0
-	"	12	21
-	^	12	22
-	.	12	21
+	*	1719995042	0
+	"	11	0
+	.	12	0
 	+	12	0
-	+	13	0
-	+	13	1
-	+	13	7
-	+	13	0
-	+	13	46
+	+	12	1
+	+	12	7
 	+	12	0
-	+	13	0
+	+	12	46
+	+	12	0
 	+	12	53
-	+	43	2
-	+	12	21
+	+	42	2
+	+	12	0
 
 > ~/.bash_aliases
 	*	1719994915	0

@@ -9,4 +9,3 @@ module  mux2
     assign  o_out   = i_sel ? i_in1 : i_in0;
 
 endmodule
-//dkfjdkjfdjfkdjfkldjs
