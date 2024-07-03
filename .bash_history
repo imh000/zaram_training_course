@@ -1580,3 +1580,10 @@ git pull
 git add .
 git commit -m 'comment'
 gitpush
+gvim
+gitpush
+gvim
+gitpush
+cd .git/
+gvim FETCH_HEAD 
+gitpush
