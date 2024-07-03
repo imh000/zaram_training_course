@@ -1540,3 +1540,43 @@ git log
 git push
 git commit --amend
 gitpush
+gvim
+gitpush
+gvim
+gitpush
+.git-credentials
+cd .git/
+vim config 
+cd
+gitpush
+cd .git/
+vim COMMIT_EDITMSG 
+cd
+pull
+git pull
+gitpush
+git pull
+gvim .vimrc 
+gvim .bash_aliases 
+git add.
+git pull
+git add .
+git commit -m 'comment'
+git push -u origin +master
+git pull
+git add .
+git commit -m ""
+gitpush
+git log
+gitpush
+git add
+git add .
+gvim .bash_aliases 
+git add .
+git commit -m 'comment'
+git push -u origin +master
+gitpush
+git pull
+git add .
+git commit -m 'comment'
+gitpush
