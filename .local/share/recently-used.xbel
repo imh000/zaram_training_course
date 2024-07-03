@@ -83,4 +83,24 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/04_shift_register/waveform" added="2024-07-03T01:58:08.247100Z" modified="2024-07-03T01:58:08.247166Z" visited="2024-07-03T01:58:08.247156Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-03T01:58:08.247162Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/04_shift_register/waveform0" added="2024-07-03T01:59:12.790232Z" modified="2024-07-03T01:59:12.790301Z" visited="2024-07-03T01:59:12.790272Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-03T01:59:12.790293Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

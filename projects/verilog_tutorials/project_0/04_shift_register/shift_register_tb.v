@@ -39,12 +39,25 @@ module shift_register_tb;
 // --------------------------------------------------
 //	Tasks
 // --------------------------------------------------
+	reg [8*32-1:0] taskState;
+
 	task init;
 		begin
 			clk = 0;
 			load = 0;
 			Sin = 0;
 			d = 0;
+		end
+	endtask
+
+	task loadcycle;
+		input [9:0] n;
+		begin
+			taskState = "register";
+			load = 1;
+			#(4*1000/`CLKFREQ);
+			load = 0;
+			taskState  = "shift register";
 		end
 	endtask
 
@@ -59,11 +72,8 @@ module shift_register_tb;
 	integer		i, j;
 	initial begin
 		init();
+		loadcycle(10);
 
-		load = 0;
-		d = $urandom;
-		#(4*1000/`CLKFREQ);
-		load = 0;
 		for (i=0; i<`SIMCYCLE; i++) begin
 			Sin  = $urandom;
 			d	 = $urandom;

@@ -33,6 +33,8 @@ module shift_register
 			);
 		end
 	endgenerate
+
+	assign Sout = load ? q[7] : 0;
 endmodule
 
 module mux_dff

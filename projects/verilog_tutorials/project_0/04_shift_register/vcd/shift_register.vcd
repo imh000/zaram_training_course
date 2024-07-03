@@ -1,5 +1,5 @@
 $date
-	Tue Jul  2 18:22:03 2024
+	Wed Jul  3 10:58:17 2024
 $end
 $version
 	Icarus Verilog
@@ -8,404 +8,448 @@ $timescale
 	1ps
 $end
 $scope module shift_register_tb $end
-$var wire 1 ! Sout $end
-$var wire 8 " q [7:0] $end
+$var wire 8 ! q [7:0] $end
+$var wire 1 " Sout $end
 $var reg 1 # Sin $end
 $var reg 1 $ clk $end
 $var reg 8 % d [7:0] $end
 $var reg 1 & load $end
-$var reg 256 ' vcd_file [255:0] $end
-$var integer 32 ( i [31:0] $end
+$var reg 256 ' taskState [255:0] $end
+$var reg 256 ( vcd_file [255:0] $end
+$var integer 32 ) i [31:0] $end
 $scope module u_shift_register $end
 $var wire 1 # Sin $end
-$var wire 1 ! Sout $end
 $var wire 1 $ clk $end
-$var wire 8 ) d [7:0] $end
+$var wire 8 * d [7:0] $end
 $var wire 1 & load $end
-$var wire 8 * q [7:0] $end
+$var wire 8 + q [7:0] $end
+$var wire 1 " Sout $end
 $scope begin shift_register_block[1] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 + in0 $end
-$var wire 1 , in1 $end
+$var wire 1 , in0 $end
+$var wire 1 - in1 $end
 $var wire 1 & load $end
-$var reg 1 - mux_out $end
-$var reg 1 . q $end
+$var reg 1 . mux_out $end
+$var reg 1 / q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[2] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 / in0 $end
-$var wire 1 0 in1 $end
+$var wire 1 0 in0 $end
+$var wire 1 1 in1 $end
 $var wire 1 & load $end
-$var reg 1 1 mux_out $end
-$var reg 1 2 q $end
+$var reg 1 2 mux_out $end
+$var reg 1 3 q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[3] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 3 in0 $end
-$var wire 1 4 in1 $end
+$var wire 1 4 in0 $end
+$var wire 1 5 in1 $end
 $var wire 1 & load $end
-$var reg 1 5 mux_out $end
-$var reg 1 6 q $end
+$var reg 1 6 mux_out $end
+$var reg 1 7 q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[4] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 7 in0 $end
-$var wire 1 8 in1 $end
+$var wire 1 8 in0 $end
+$var wire 1 9 in1 $end
 $var wire 1 & load $end
-$var reg 1 9 mux_out $end
-$var reg 1 : q $end
+$var reg 1 : mux_out $end
+$var reg 1 ; q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[5] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 ; in0 $end
-$var wire 1 < in1 $end
+$var wire 1 < in0 $end
+$var wire 1 = in1 $end
 $var wire 1 & load $end
-$var reg 1 = mux_out $end
-$var reg 1 > q $end
+$var reg 1 > mux_out $end
+$var reg 1 ? q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[6] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 ? in0 $end
-$var wire 1 @ in1 $end
+$var wire 1 @ in0 $end
+$var wire 1 A in1 $end
 $var wire 1 & load $end
-$var reg 1 A mux_out $end
-$var reg 1 B q $end
+$var reg 1 B mux_out $end
+$var reg 1 C q $end
 $upscope $end
 $upscope $end
 $scope begin shift_register_block[7] $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
-$var wire 1 C in0 $end
-$var wire 1 D in1 $end
+$var wire 1 D in0 $end
+$var wire 1 E in1 $end
 $var wire 1 & load $end
-$var reg 1 E mux_out $end
-$var reg 1 F q $end
+$var reg 1 F mux_out $end
+$var reg 1 G q $end
 $upscope $end
 $upscope $end
 $scope module u_mux_dff $end
 $var wire 1 $ clk $end
 $var wire 1 # in0 $end
-$var wire 1 G in1 $end
+$var wire 1 H in1 $end
 $var wire 1 & load $end
-$var reg 1 H mux_out $end
-$var reg 1 I q $end
+$var reg 1 I mux_out $end
+$var reg 1 J q $end
 $upscope $end
 $upscope $end
 $scope task init $end
+$upscope $end
+$scope task loadcycle $end
+$var reg 10 K n [9:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-xI
+b1010 K
+xJ
+0I
 0H
-0G
-xF
-xE
-0D
+xG
+0F
+0E
+xD
 xC
-xB
-xA
-0@
+0B
+0A
+x@
 x?
-x>
-x=
-1<
+0>
+0=
+x<
 x;
-x:
-x9
-08
+0:
+09
+x8
 x7
-x6
-x5
-04
+06
+05
+x4
 x3
-x2
-x1
-10
+02
+01
+x0
 x/
-x.
-x-
-0,
-x+
-bx *
-b100100 )
-bx (
-b1011100010111101110110011000110110010000101111011100110110100001101001011001100111010001011111011100100110010101100111011010010111001101110100011001010111001000101110011101100110001101100100 '
-0&
-b100100 %
+0.
+0-
+x,
+bx +
+b0 *
+bx )
+b1011100010111101110110011000110110010000101111011100110110100001101001011001100111010001011111011100100110010101100111011010010111001101110100011001010111001000101110011101100110001101100100 (
+b111001001100101011001110110100101110011011101000110010101110010 '
+1&
+b0 %
 0$
 0#
-bx "
-z!
+x"
+bx !
 $end
 #5000
-0-
-0+
-bx0 "
-bx0 *
-0I
+0"
+00
+04
+08
+0<
+0@
+0D
+0,
+0/
+03
+07
+0;
+0?
+0C
+0G
+b0 !
+b0 +
+0J
 1$
 #10000
 0$
 #15000
-01
-0/
-bx00 "
-bx00 *
-0.
 1$
 #20000
 0$
 #25000
-05
-03
-bx000 "
-bx000 *
-02
 1$
 #30000
 0$
 #35000
-09
-07
-bx0000 "
-bx0000 *
-06
 1$
 #40000
-00
-14
-0<
-1G
+1F
+1I
+1E
 1H
 0$
-b1001 %
-b1001 )
-1#
-b0 (
+b10000001 %
+b10000001 *
+b0 )
+b111001101101000011010010110011001110100001000000111001001100101011001110110100101110011011101000110010101110010 '
 #45000
-0=
-1-
-0;
-1+
-0:
-bx00001 "
-bx00001 *
-1I
+1"
+1,
+1G
+b10000001 !
+b10000001 +
+1J
 1$
 #50000
-10
-0$
-b1101 %
-b1101 )
-b1 (
-#55000
-0A
-11
-0?
-1/
-0>
-bx000011 "
-bx000011 *
 1.
+1>
+1B
+0F
+1-
+1=
+1A
+0E
+0$
+b1100011 %
+b1100011 *
+1#
+b1 )
+#55000
+0"
+1D
+1@
+10
+0G
+1C
+1?
+b1100011 !
+b1100011 +
+1/
 1$
 #60000
-04
-1<
-1@
-0$
-b1100101 %
-b1100101 )
-b10 (
-#65000
-15
-0E
-13
-0C
-12
-bx0000111 "
-bx0000111 *
-0B
-1$
-#70000
-00
-0<
-0@
-0H
-0$
-b1 %
-b1 )
-0#
-b11 (
-#75000
-0-
-19
-0+
-17
-0I
-0F
-b1110 "
-b1110 *
-16
-1$
-#80000
-1,
-10
-18
-1<
-1@
-0G
-1H
-0$
-b1110110 %
-b1110110 )
-1#
-b100 (
-#85000
-01
-1=
-1-
-0/
-1;
-1+
 0.
-1:
-b11101 "
-b11101 *
-1I
-1$
-#90000
-0,
-14
-08
-1D
-1G
-0$
-b11101101 %
-b11101101 )
-b101 (
-#95000
-1A
-05
-11
-1?
-03
-1/
-1>
-02
-b111011 "
-b111011 *
-1.
-1$
-#100000
-00
-18
-0H
-0$
-b11111001 %
-b11111001 )
-0#
-b110 (
-#105000
-15
-09
-1E
-0-
-13
-07
-1C
-0+
 12
-06
-1B
-b1110110 "
-b1110110 *
-0I
-1$
-#110000
-10
-04
-08
-0<
-0$
-b11000101 %
-b11000101 )
-b111 (
-#115000
-0=
-19
-01
-0;
-17
-0/
-1F
-0:
 16
-b11101100 "
-b11101100 *
-0.
-1$
-#120000
-1<
-0$
-b11100101 %
-b11100101 )
-b1000 (
-#125000
-05
-1=
-0A
-03
-1;
-0?
-02
-1:
-b11011000 "
-b11011000 *
 0>
-1$
-#130000
-1,
+0B
+1F
+0-
+11
+15
+0=
+0A
+1E
+0$
+b10001101 %
+b10001101 *
+b10 )
+#65000
+1"
 00
+14
 18
-0<
 0@
 0D
-0G
-1H
+0/
+13
+17
+0?
+0C
+b10001101 !
+b10001101 +
+1G
+1$
+#70000
+1.
+02
+06
+1:
+0F
+0I
+1-
+01
+05
+19
+0E
+0H
 0$
 b10010 %
-b10010 )
-1#
-b1001 (
-#135000
-1-
-0E
-1A
-09
-1+
-0C
-1?
+b10010 *
+b11 )
+#75000
+0"
+0,
+1<
+08
+04
+10
+0J
+0G
+1;
 07
+03
+b10010 !
+b10010 +
+1/
+1$
+#80000
+0.
+12
+16
+0:
 1I
-0B
+0-
+11
+15
+09
+1H
+0$
+b1101 %
+b1101 *
+b100 )
+#85000
+00
+14
+18
+0<
+1,
+0/
+13
+17
+0;
+b1101 !
+b1101 +
+1J
+1$
+#90000
+1:
 1>
-b10110001 "
-b10110001 *
+19
+1=
+0$
+b111101 %
+b111101 *
+0#
+b101 )
+#95000
+1@
+1<
+1?
+b111101 !
+b111101 +
+1;
+1$
+#100000
+0:
+0>
+1F
+0I
+09
+0=
+1E
+0H
+0$
+b10001100 %
+b10001100 *
+1#
+b110 )
+#105000
+1"
+0<
+0@
+0,
+0;
+0?
+1G
+b10001100 !
+b10001100 +
+0J
+1$
+#110000
+1.
 06
+1B
+1-
+05
+1A
+0$
+b11000110 %
+b11000110 *
+b111 )
+#115000
+1D
+08
+10
+1C
+07
+b11000110 !
+b11000110 +
+1/
+1$
+#120000
+02
+16
+1>
+0B
+01
+15
+1=
+0A
+0$
+b10101010 %
+b10101010 *
+b1000 )
+#125000
+04
+18
+1@
+0D
+03
+17
+1?
+b10101010 !
+b10101010 +
+0C
+1$
+#130000
+12
+06
+1:
+1B
+0F
+1I
+11
+05
+19
+1A
+0E
+1H
+0$
+b1110111 %
+b1110111 *
+b1001 )
+#135000
+0"
+1,
+1D
+1<
+08
+14
+1J
+0G
+1C
+1;
+07
+b1110111 !
+b1110111 +
+13
 1$
 #140000
 0$
-b1010 (
+b1010 )

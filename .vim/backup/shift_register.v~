@@ -15,7 +15,7 @@ module shift_register
 	u_mux_dff(
 		.clk				(clk				),
 		.load				(load				),
-		.in0				(d[0]				),
+		.in0				(Sin				),
 		.in1				(d[0]				),
 		.q					(q[0]				)
 	);
@@ -33,8 +33,8 @@ module shift_register
 			);
 		end
 	endgenerate
-	
-	assign Sout = q[7];
+
+	assign Sout = load ? q[7] : 0;
 endmodule
 
 module mux_dff

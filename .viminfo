@@ -20,12 +20,12 @@
 $
 
 # Command Line History (newest to oldest):
-:w
-|2,0,1719969969,,"w"
 :q
-|2,0,1719969347,,"q"
+|2,0,1719972151,,"q"
 :wq
-|2,0,1719968621,,"wq"
+|2,0,1719972150,,"wq"
+:w
+|2,0,1719972146,,"w"
 :so %
 |2,0,1719893172,,"so %"
 :set nohlsearch
@@ -281,60 +281,81 @@ $
 
 # Registers:
 ""0	LINE	0
-	module fsm_traffic
-	(
-		input clk,
-		input rstn,
-		input Ta,
-		input Tb,
-		input P,
-		input R,
-		output reg  [1:0] La,
-		output reg	[1:0] Lb
-	);
+	// --------------------------------------------------
+	//	Define Global Variables
+	// --------------------------------------------------
+	`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
+	`define	SIMCYCLE	`NVEC	// Sim. Cycles
+	`define NVEC		10		// # of Test Vector
 	
-		localparam S0 = 0;
-		localparam S1 = 1;
-		localparam S2 = 2;
-		localparam S3 = 3;
-		localparam SP0 = 0;
-		localparam SP1 = 1;
-		
-		parameter green = 0, yellow = 1, red = 2;
+	// --------------------------------------------------
+	//	Includes
+	// --------------------------------------------------
+	`include	"shift_register.v"
 	
-		wire M;
-		reg [1:0] state, next_state;
-		reg p_state, p_next_state;
+	module shift_register_tb;
+	// --------------------------------------------------
+	//	DUT Signals & Instantiate
+	// --------------------------------------------------
+		parameter bit_size = 8;
 	
-		always @ (*) begin
-			case(p_state)
-				SP0 : p_next_state = P ? SP1 : SP0;
-				SP1 : p_next_state = R ? SP0 : SP1;
-			endcase
+		reg 				  clk;
+		reg 				  load;
+		reg 				  Sin;
+		reg  [bit_size-1:0] d;
+		wire [bit_size-1:0] q;
+		wire Sout;
 	
-			case(state)
-				S0 : next_state = Ta ? S0 : S1;
-				S1 : next_state = S2;
-				S2 : next_state = (M | Tb) ? S2 : S3;
-				S3 : next_state = S0;
-			endcase
-		end
+		shift_register
+		#(
+			.bit_size			(bit_size			)
+		)
+		u_shift_register(
+			.clk				(clk				),
+			.load				(load				),
+			.Sin				(Sin				),
+			.d					(d					),
+			.q					(q					),
+			.Sout				(Sout				)
+		);
 	
-		always @ (posedge clk) begin
-			if(!rstn) begin
-				state <= S0;
-				p_state <= SP0;
-			end else begin
-				state <= next_state;
-				p_state <= p_next_state;
+	// --------------------------------------------------
+	//	Tasks
+	// --------------------------------------------------
+		reg [8*32-1:0] taskState;
+	
+		task init;
+			begin
+				clk = 0;
+				load = 0;
+				Sin = 0;
+				d = 0;
 			end
-		end
-	
-		assign M = (p_state == SP1);
-|3,1,0,1,50,0,1719969255,"module fsm_traffic","(","	input clk,","	input rstn,","	input Ta,","	input Tb,","	input P,","	input R,","	output reg  [1:0] La,","	output reg	[1:0] Lb",");","","	localparam S0 = 0;","	localparam S1 = 1;","	localparam S2 = 2;","	localparam S3 = 3;","	localparam SP0 = 0;","	localparam SP1 = 1;","	","	parameter green = 0, yellow = 1, red = 2;","","	wire M;","	reg [1:0] state, next_state;","	reg p_state, p_next_state;","",>21
-|<"	always @ (*) begin","		case(p_state)","			SP0 : p_next_state = P ? SP1 : SP0;","			SP1 : p_next_state = R ? SP0 : SP1;","		endcase","","		case(state)","			S0 : next_state = Ta ? S0 : S1;","			S1 : next_state = S2;","			S2 : next_state = (M | Tb) ? S2 : S3;","			S3 : next_state = S0;","		endcase","	end","","	always @ (posedge clk) begin","		if(!rstn) begin","			state <= S0;","			p_state <= SP0;","		end else begin","			state <= next_state;","			p_state <= p_next_state;","		end","	end",>2
-|<"","	assign M = (p_state == SP1);"
-"1	CHAR	0
+|3,1,0,1,50,0,1719972072,"// --------------------------------------------------","//	Define Global Variables","// --------------------------------------------------","`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)","`define	SIMCYCLE	`NVEC	// Sim. Cycles","`define NVEC		10		// # of Test Vector","","// --------------------------------------------------","//	Includes","// --------------------------------------------------","`include	\"shift_register.v\"","",>27
+|<"module shift_register_tb;","// --------------------------------------------------","//	DUT Signals & Instantiate","// --------------------------------------------------","	parameter bit_size = 8;","","	reg 				  clk;","	reg 				  load;","	reg 				  Sin;","	reg  [bit_size-1:0] d;","	wire [bit_size-1:0] q;","	wire Sout;","","	shift_register","	#(","		.bit_size			(bit_size			)","	)","	u_shift_register(","		.clk				(clk				),","		.load				(load				),","		.Sin				(Sin				),",>20
+|<"		.d					(d					),","		.q					(q					),","		.Sout				(Sout				)","	);","","// --------------------------------------------------","//	Tasks","// --------------------------------------------------","	reg [8*32-1:0] taskState;","","	task init;","		begin","			clk = 0;","			load = 0;","			Sin = 0;","			d = 0;","		end"
+"1	LINE	0
+				#(1000/`CLKFREQ);
+|3,0,1,1,1,0,1719971128,"			#(1000/`CLKFREQ);"
+"2	LINE	0
+			load = 1;
+			d = $urandom;
+			#(4*1000/`CLKFREQ);
+			load = 0;
+|3,0,2,1,4,0,1719971086,"		load = 1;","		d = $urandom;","		#(4*1000/`CLKFREQ);","		load = 0;"
+"3	LINE	0
+			load = 0;
+|3,0,3,1,1,0,1719970902,"		load = 0;"
+"4	LINE	0
+			load = 0;
+|3,0,4,1,1,0,1719970879,"		load = 0;"
+"5	LINE	0
+			#(4*1000/`CLKFREQ);
+|3,0,5,1,1,0,1719970878,"		#(4*1000/`CLKFREQ);"
+"6	LINE	0
+			d = $urandom;
+|3,0,6,1,1,0,1719970838,"		d = $urandom;"
+"7	CHAR	0
 	module fsm_traffic
 	(
 		input clk,
@@ -385,92 +406,15 @@ $
 			else begin
 				state <= next_state;
 				p_state <= p_next_state;
-|3,0,1,0,50,0,1719969240,"module fsm_traffic","(","	input clk,","	input rstn,","	input Ta,","	input Tb,","	input P,","	input R,","	output reg  [1:0] La,","	output reg	[1:0] Lb",");","","	localparam S0 = 0;","	localparam S1 = 1;","	localparam S2 = 2;","	localparam S3 = 3;","	localparam SP0 = 0;","	localparam SP1 = 1;","	","	parameter green = 0, yellow = 1, red = 2;","","	wire M;","	reg [1:0] state, next_state;","	reg p_state, p_next_state;","",>21
+|3,0,7,0,50,0,1719969240,"module fsm_traffic","(","	input clk,","	input rstn,","	input Ta,","	input Tb,","	input P,","	input R,","	output reg  [1:0] La,","	output reg	[1:0] Lb",");","","	localparam S0 = 0;","	localparam S1 = 1;","	localparam S2 = 2;","	localparam S3 = 3;","	localparam SP0 = 0;","	localparam SP1 = 1;","	","	parameter green = 0, yellow = 1, red = 2;","","	wire M;","	reg [1:0] state, next_state;","	reg p_state, p_next_state;","",>21
 |<"	always @ (*) begin","		case(p_state)","			SP0 : p_next_state = P ? SP1 : SP0;","			SP1 : p_next_state = R ? SP0 : SP1;","		endcase","	end","","	assign M = (p_state == SP1);","	always @ (*) begin","		case(state)","			S0 : next_state = Ta ? S0 : S1;","			S1 : next_state = S2;","			S2 : next_state = (M | Tb) ? S2 : S3;","			S3 : next_state = S0;","		endcase","	end","","	always @ (posedge clk) begin","		if(!rstn) begin","			state <= S0;","			p_state <= SP0;","		end","		else begin",>25
 |<"			state <= next_state;","			p_state <= p_next_state;"
-"2	LINE	0
-		end
-|3,0,2,1,1,0,1719968971,"	end"
-"3	LINE	0
-		always @ (*) begin
-|3,0,3,1,1,0,1719968969,"	always @ (*) begin"
-"4	LINE	0
-	
-|3,0,4,1,1,0,1719968961,""
-"5	LINE	0
-		
-|3,0,5,1,1,0,1719968959,"	"
-"6	LINE	0
-		assign M = (p_state == SP1);
-|3,0,6,1,1,0,1719968950,"	assign M = (p_state == SP1);"
-"7	LINE	0
-	module adder_cla
-	(
-		input  [31:0] a,
-		input  [31:0] b,
-		input         cin,
-		output        cout,
-		output [31:0] sum
-	);
-	
-		wire [6:0] co;
-	
-		adder_cla_4bit
-		u_adder_cla_4bit0(
-			.a					(a[3:0]				),
-			.b					(b[3:0]				),
-			.cin				(cin				),
-			.cout				(co[0]				),
-			.sum				(sum[3:0]			)
-		);
-	
-		genvar i;
-		generate
-			for(i=1; i<7; i=i+1) begin : adder_cla_loop
-				adder_cla_4bit
-				u_adder_cla_4bit(
-					.a					(a[4*i+3:4*i]		),
-					.b					(b[4*i+3:4*i]		),
-					.cin				(co[i-1]			),
-					.cout				(co[i]				),
-					.sum				(sum[4*i+3:4*i]		)
-				);
-			end
-		endgenerate
-	
-		adder_cla_4bit
-		u_adder_cla_4bit7(
-			.a					(a[31:28]			),
-			.b					(b[31:28]			),
-			.cin				(co[6]				),
-			.cout				(cout				),
-			.sum				(sum[31:28]			)
-		);
-	
-	
-	endmodule
-		
-	module adder_cla_4bit
-	(
-		input  [3:0] a,
-		input  [3:0] b,
-|3,0,7,1,50,0,1719968589,"module adder_cla","(","	input  [31:0] a,","	input  [31:0] b,","	input         cin,","	output        cout,","	output [31:0] sum",");","","	wire [6:0] co;","","	adder_cla_4bit","	u_adder_cla_4bit0(","		.a					(a[3:0]				),","		.b					(b[3:0]				),","		.cin				(cin				),","		.cout				(co[0]				),","		.sum				(sum[3:0]			)","	);","","	genvar i;","	generate","		for(i=1; i<7; i=i+1) begin : adder_cla_loop","			adder_cla_4bit",>22
-|<"			u_adder_cla_4bit(","				.a					(a[4*i+3:4*i]		),","				.b					(b[4*i+3:4*i]		),","				.cin				(co[i-1]			),","				.cout				(co[i]				),","				.sum				(sum[4*i+3:4*i]		)","			);","		end","	endgenerate","","	adder_cla_4bit","	u_adder_cla_4bit7(","		.a					(a[31:28]			),","		.b					(b[31:28]			),","		.cin				(co[6]				),","		.cout				(cout				),","		.sum				(sum[31:28]			)","	);","","","endmodule","	","module adder_cla_4bit","(","	input  [3:0] a,","	input  [3:0] b,"
 "8	LINE	0
-		adder_cla_4bit
-		u_adder_cla_4bit0(
-			.a					(a[3:0]				),
-			.b					(b[3:0]				),
-			.cin				(cin				),
-			.cout				(co[0]				),
-			.sum				(sum[3:0]			)
-		);
-	
-|3,0,8,1,9,0,1719968164,"	adder_cla_4bit","	u_adder_cla_4bit0(","		.a					(a[3:0]				),","		.b					(b[3:0]				),","		.cin				(cin				),","		.cout				(co[0]				),","		.sum				(sum[3:0]			)","	);",""
+		end
+|3,0,8,1,1,0,1719968971,"	end"
 "9	LINE	0
-	
-	
-|3,0,9,1,2,0,1719968096,"",""
+		always @ (*) begin
+|3,0,9,1,1,0,1719968969,"	always @ (*) begin"
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
@@ -478,32 +422,38 @@ $
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
 "-	CHAR	0
-		
-|3,0,36,0,1,0,1719968013,"	"
+	10
+|3,0,36,0,1,0,1719971587,"10"
 
 # File marks:
-'0  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,48,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
-'1  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,49,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'2  43  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,50,43,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'3  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,51,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'4  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,52,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
-'5  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,53,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
-'6  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,54,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
-'7  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,55,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
-'8  22  15  ~/utils/scripts/test_vector.py
-|4,56,22,15,1719897727,"~/utils/scripts/test_vector.py"
-'9  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,57,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
+'0  17  15  ~/NERD_tree_tab_1
+|4,48,17,15,1719972153,"~/NERD_tree_tab_1"
+'1  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,49,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+'2  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,50,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+'3  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,51,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'4  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,52,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'5  45  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,53,45,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'6  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,54,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'7  43  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,55,43,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'8  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,56,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'9  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,57,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 
 # Jumplist (newest first):
+-'  17  15  ~/NERD_tree_tab_1
+|4,39,17,15,1719972153,"~/NERD_tree_tab_1"
+-'  25  2  ~/NERD_tree_tab_1
+|4,39,25,2,1719970177,"~/NERD_tree_tab_1"
+-'  1  0  ~/NERD_tree_tab_1
+|4,39,1,0,1719970177,"~/NERD_tree_tab_1"
 -'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
@@ -698,85 +648,198 @@ $
 |4,39,102,0,1719903061,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
 -'  54  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
 |4,39,54,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  58  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,58,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  58  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,58,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  51  6  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,51,6,1719902984,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 
 # History of marks within files (newest to oldest):
 
+> ~/NERD_tree_tab_1
+	*	1719972151	0
+	"	17	15
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+	*	1719972150	0
+	"	1	0
+	.	59	10
+	+	1	62
+	+	1	116
+	+	1	142
+	+	1	159
+	+	1	170
+	+	1	176
+	+	1	196
+	+	1	205
+	+	1	215
+	+	1	224
+	+	1	230
+	+	1	234
+	+	1	242
+	+	1	277
+	+	1	331
+	+	1	348
+	+	1	402
+	+	1	417
+	+	1	431
+	+	1	439
+	+	1	473
+	+	1	490
+	+	1	506
+	+	1	520
+	+	1	538
+	+	1	542
+	+	1	551
+	+	1	555
+	+	1	609
+	+	1	621
+	+	1	675
+	+	1	700
+	+	1	714
+	+	1	766
+	+	1	787
+	+	1	798
+	+	1	813
+	+	1	849
+	+	1	860
+	+	1	864
+	+	1	868
+	+	1	0
+	+	102	0
+	+	39	0
+	+	70	0
+	+	78	0
+	+	85	0
+	+	83	20
+	+	80	6
+	+	82	15
+	+	67	0
+	+	66	8
+	+	39	23
+	+	39	0
+	+	39	1
+	+	39	0
+	+	6	15
+	+	78	0
+	+	82	0
+	+	81	0
+	+	78	0
+	+	77	0
+	+	77	9
+	+	77	14
+	+	39	0
+	+	19	15
+	+	39	0
+	+	18	0
+	+	77	9
+	+	77	0
+	+	82	0
+	+	77	0
+	+	63	0
+	+	77	0
+	+	61	0
+	+	54	15
+	+	58	5
+	+	43	0
+	+	57	3
+	+	58	0
+	+	55	6
+	+	56	24
+	+	60	25
+	+	56	25
+	+	75	14
+	+	56	23
+	+	60	30
+	+	57	10
+	+	59	10
+	+	57	10
+	+	59	10
+	+	75	13
+	+	58	6
+	+	57	10
+	+	59	10
+
+> ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+	*	1719972146	0
+	"	181	27
+	^	185	28
+	.	185	27
+	+	3	49
+	+	10	10
+	+	178	22
+	+	4	43
+	+	11	0
+	+	76	0
+	+	185	27
+
 > ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-	*	1719970048	0
-	"	11	0
-	^	18	11
-	.	36	0
+	*	1719972059	0
+	"	1	0
+	^	37	30
+	.	37	29
 	+	12	2
 	+	12	0
 	+	8	10
 	+	12	11
 	+	8	7
-	+	38	1
-	+	38	10
-	+	38	2
-	+	38	0
-	+	38	8
-	+	38	0
-	+	38	9
-	+	38	0
-	+	38	2
-	+	38	0
-	+	38	21
-	+	38	23
-	+	38	0
-	+	38	23
+	+	40	1
+	+	40	10
+	+	40	2
+	+	40	0
+	+	40	8
+	+	40	0
+	+	40	9
+	+	40	0
+	+	40	2
+	+	40	0
+	+	40	21
+	+	40	23
+	+	40	0
+	+	40	23
 	+	12	0
 	+	10	24
-	+	38	4
-	+	38	11
-	+	38	9
-	+	38	14
-	+	38	18
-	+	38	17
-	+	38	3
-	+	38	13
-	+	38	0
+	+	40	4
+	+	40	11
+	+	40	9
+	+	40	14
+	+	40	18
+	+	40	17
+	+	40	3
+	+	40	13
+	+	40	0
 	+	12	11
 	+	10	24
-	+	38	0
-	+	38	16
-	+	38	0
+	+	40	0
+	+	40	16
+	+	40	0
 	+	12	2
-	+	38	1
-	+	38	2
-	+	38	13
-	+	38	12
-	+	38	9
-	+	38	14
-	+	38	19
-	+	38	12
-	+	38	18
-	+	38	0
+	+	40	1
+	+	40	2
+	+	40	13
+	+	40	12
+	+	40	9
+	+	40	14
+	+	40	19
+	+	40	12
+	+	40	18
+	+	40	0
 	+	12	0
 	+	10	0
-	+	38	10
-	+	38	0
-	+	38	18
-	+	38	0
-	+	38	19
-	+	38	0
-	+	46	0
-	+	45	0
-	+	39	10
-	+	38	0
-	+	38	35
-	+	38	0
+	+	40	10
+	+	40	0
+	+	40	18
+	+	40	0
+	+	40	19
+	+	40	0
+	+	48	0
+	+	47	0
+	+	41	10
+	+	40	0
+	+	40	35
+	+	40	0
 	+	23	0
 	+	13	0
 	+	35	14
-	+	38	0
-	+	59	0
+	+	40	0
+	+	61	0
 	+	23	0
 	+	13	0
 	+	18	13
@@ -790,17 +853,13 @@ $
 	+	30	18
 	+	31	15
 	+	32	14
-	+	47	3
+	+	49	3
 	+	11	11
-	+	36	19
+	+	38	19
 	+	18	0
+	+	38	0
 	+	36	0
-
-> ~/NERD_tree_tab_1
-	*	1719970043	0
-	"	16	15
-	.	1	0
-	+	1	0
+	+	37	29
 
 > ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
 	*	1719970033	0
@@ -1474,104 +1533,6 @@ $
 	+	184	27
 	+	7	0
 	+	3	32
-
-> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-	*	1719912620	0
-	"	30	0
-	^	18	0
-	.	63	9
-	+	1	0
-	+	1	869
-	+	1	0
-	+	1	23
-	+	1	230
-	+	1	229
-	+	1	242
-	+	1	439
-	+	1	477
-	+	1	537
-	+	1	542
-	+	1	10
-	+	1	8
-	+	1	62
-	+	1	116
-	+	1	142
-	+	1	159
-	+	1	170
-	+	1	176
-	+	1	196
-	+	1	205
-	+	1	215
-	+	1	224
-	+	1	230
-	+	1	234
-	+	1	242
-	+	1	277
-	+	1	331
-	+	1	348
-	+	1	402
-	+	1	417
-	+	1	431
-	+	1	439
-	+	1	473
-	+	1	490
-	+	1	506
-	+	1	520
-	+	1	538
-	+	1	542
-	+	1	551
-	+	1	555
-	+	1	609
-	+	1	621
-	+	1	675
-	+	1	700
-	+	1	714
-	+	1	766
-	+	1	787
-	+	1	798
-	+	1	813
-	+	1	849
-	+	1	860
-	+	1	864
-	+	1	868
-	+	1	0
-	+	92	0
-	+	39	0
-	+	57	0
-	+	68	0
-	+	75	0
-	+	73	20
-	+	70	6
-	+	72	15
-	+	54	0
-	+	53	8
-	+	39	23
-	+	39	0
-	+	39	1
-	+	39	0
-	+	6	15
-	+	68	0
-	+	72	0
-	+	71	0
-	+	68	0
-	+	67	0
-	+	63	9
-	+	66	9
-	+	64	14
-	+	39	0
-	+	19	15
-	+	39	0
-	+	18	0
-	+	63	9
-
-> ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
-	*	1719910483	0
-	"	5	9
-	^	18	0
-	.	17	22
-	+	3	49
-	+	9	10
-	+	17	22
 
 > ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
 	*	1719906643	0
