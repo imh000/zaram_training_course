@@ -18,7 +18,7 @@ module signed_alu_tb;
 	reg [3:0] b;
 	reg cin;
 	wire signed [3:0] sum;
-	wire signed Cout;
+	wire Cout;
 
 	signed_alu
 	u_signed_alu(
@@ -55,7 +55,7 @@ module signed_alu_tb;
 			a = $random;
 			b = $random;
 			cin = $random;
-			#(1000/`CLKFREQ);
+		#(1000/`CLKFREQ);
 		end
 		$finish;
 	end

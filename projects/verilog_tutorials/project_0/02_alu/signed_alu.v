@@ -7,7 +7,7 @@ module signed_alu
 	output signed Cout
 );
 
-	assign {Cout, sum} = a + b + cin;
+	assign {Cout, sum} = {1'b0, a} + b + cin;
 
 endmodule
 

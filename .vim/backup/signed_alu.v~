@@ -4,10 +4,10 @@ module signed_alu
 	input [3:0] b,
 	input cin,
 	output signed [3:0] sum,
-	output Cout
+	output signed Cout
 );
 
-	assign {Cout, sum} = a + b + cin;
+	assign {Cout, sum} = $signed({1'b0, a} + b + cin;
 
 endmodule
 
