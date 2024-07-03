@@ -51,9 +51,9 @@ module ALU_tb;
 		init();
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			F = 7;
+			F = $urandom;
 			A = $urandom;
-			B = -32'hffffffff;
+			B = $urandom;
 			#(1000/`CLKFREQ);
 		end
 		$finish;

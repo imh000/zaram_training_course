@@ -9,10 +9,10 @@
 module ALU
 (
 	input		 [2:0]  F,
-	input		 [31:0] A,
-	input		 [31:0] B,
-	output reg	 [31:0] ALUOut,
-	output reg			Cout
+	input signed		 [31:0] A,
+	input signed		 [31:0] B,
+	output reg signed	 [31:0] ALUOut,
+	output reg signed			Cout
 );
 
 	always @ (*) begin
@@ -22,7 +22,7 @@ module ALU
 			2 : {Cout, ALUOut} = A + B;
 			4 : ALUOut = A & ~B;
 			5 : ALUOut = A | ~B;
-			6 : ALUOut = A - B;
+			6 : {Cout, ALUOut} = A - B;
 			7 : ALUOut = A < B;
 			default : {Cout, ALUOut} = 0;
 		endcase

@@ -5,6 +5,8 @@
  - When Load = 0, acts as a shift Register
  	- Serial-to-parallel converter : Sin to Q
 
+![image](https://github.com/imh000/zaram_training_course/assets/173435083/9a0d91b1-f0eb-4eea-b303-050bf0f87fcb)
+
 ## Verilog Code
 ### DUT
 ```Verilog
