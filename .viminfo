@@ -20,10 +20,10 @@
 $
 
 # Command Line History (newest to oldest):
+:w
+|2,0,1719991788,,"w"
 :q
 |2,0,1719991193,,"q"
-:w
-|2,0,1719989059,,"w"
 :set nohlsearch
 |2,0,1719988610,,"set nohlsearch"
 :help
@@ -123,7 +123,7 @@ $
 
 # Search String History (newest to oldest):
 ? \Vtb\%#
-|2,1,1719985583,,"\\Vtb\\%#"
+|2,1,1719991684,,"\\Vtb\\%#"
 ? c
 |2,1,1719882727,,"c"
 ? \Vco\%#
@@ -226,6 +226,8 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@/home/imh522/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|2,3,1719991677,,"/home/imh522/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 @/home/imh522/projects/verilog_tutorials/project_0/02_alu/abc.v
 |2,3,1719985476,,"/home/imh522/projects/verilog_tutorials/project_0/02_alu/abc.v"
 @/home/imh522/projects/verilog_tutorials/project_0/02_alu/signed_alu_tb.v
@@ -287,63 +289,45 @@ $
 
 # Registers:
 "0	LINE	0
-	module ALU
-	(
-		input		 [2:0]  F,
-		input		 [31:0] A,
-		input		 [31:0] B,
-		output reg	 [31:0] ALUOut,
-		output reg			Cout
-	);
-	
-		always @ (*) begin
-			case(F)
-				0 : ALUOut = A & B;
-				1 : ALUOut = A | B;
-				2 : {Cout, ALUOut} = A + B;
-				4 : ALUOut = A & ~B;
-				5 : ALUOut = A | ~B;
-				6 : ALUOut = A - B;
-				7 : ALUOut = A < B;
-				default : {Cout, ALUOut} = 0;
-			endcase
-|3,0,0,1,20,0,1719986857,"module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut,","	output reg			Cout",");","","	always @ (*) begin","		case(F)","			0 : ALUOut = A & B;","			1 : ALUOut = A | B;","			2 : {Cout, ALUOut} = A + B;","			4 : ALUOut = A & ~B;","			5 : ALUOut = A | ~B;","			6 : ALUOut = A - B;","			7 : ALUOut = A < B;","			default : {Cout, ALUOut} = 0;","		endcase"
+				a = $random;
+|3,0,0,1,1,0,1719991747,"			a = $random;"
 ""1	LINE	0
-	
-|3,1,1,1,1,0,1719989024,""
-"2	LINE	0
-	dfjdkf
-|3,0,2,1,1,0,1719989023,"dfjdkf"
-"3	LINE	0
-	module ALU
-	(
-		input		 [2:0]  F,
-		input		 [31:0] A,
-		input		 [31:0] B,
-		output reg	 [31:0] ALUOut,
-		output reg			Cout
-	);
-	
-		always @ (*) begin
-|3,0,3,1,10,0,1719986943,"module ALU","(","	input		 [2:0]  F,","	input		 [31:0] A,","	input		 [31:0] B,","	output reg	 [31:0] ALUOut,","	output reg			Cout",");","","	always @ (*) begin"
-"4	LINE	0
-				0 : ALUOut = A & B;
-|3,0,4,1,1,0,1719985267,"			0 : ALUOut = A & B;"
-"5	LINE	0
 			#(1000/`CLKFREQ);
-|3,0,5,1,1,0,1719984766,"		#(1000/`CLKFREQ);"
-"6	LINE	0
+|3,1,1,1,1,0,1719991761,"		#(1000/`CLKFREQ);"
+"2	LINE	0
 			resetReleaseAfterNCycles(4);
-|3,0,6,1,1,0,1719984729,"		resetReleaseAfterNCycles(4);"
-"7	LINE	0
+|3,0,2,1,1,0,1719991741,"		resetReleaseAfterNCycles(4);"
+"3	LINE	0
 	
-|3,0,7,1,1,0,1719984727,""
-"8	LINE	0
+|3,0,3,1,1,0,1719991739,""
+"4	LINE	0
+	
+	// --------------------------------------------------
+|3,0,4,1,2,0,1719991736,"","// --------------------------------------------------"
+"5	LINE	0
 		always #(500/`CLKFREQ) clk = ~clk;
-|3,0,8,1,1,0,1719984727,"	always #(500/`CLKFREQ) clk = ~clk;"
-"9	LINE	0
+|3,0,5,1,1,0,1719991735,"	always #(500/`CLKFREQ) clk = ~clk;"
+"6	LINE	0
 	
-|3,0,9,1,1,0,1719984726,""
+|3,0,6,1,1,0,1719991732,""
+"7	LINE	0
+		task resetReleaseAfterNCycles;
+			input [9:0] n;
+			begin
+				taskState = "Reset On";
+				rstn = 1'b0;
+				#(1000/`CLKFREQ);
+				rstn = 1'b1; 
+				taskState = "Reset OFF";
+			end
+		endtask
+|3,0,7,1,10,0,1719991732,"	task resetReleaseAfterNCycles;","		input [9:0] n;","		begin","			taskState = \"Reset On\";","			rstn = 1'b0;","			#(1000/`CLKFREQ);","			rstn = 1'b1; ","			taskState = \"Reset OFF\";","		end","	endtask"
+"8	LINE	0
+	
+|3,0,8,1,1,0,1719991728,""
+"9	LINE	0
+		reg [8*32-1:0] taskState;
+|3,0,9,1,1,0,1719991726,"	reg [8*32-1:0] taskState;"
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
@@ -351,52 +335,136 @@ $
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
 "-	CHAR	0
-	(
-|3,0,36,0,1,0,1719989056,"("
+	a
+|3,0,36,0,1,0,1719991757,"a"
 
 # File marks:
-'0  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,48,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'1  23  13  ~/NERD_tree_tab_1
-|4,49,23,13,1719991151,"~/NERD_tree_tab_1"
-'2  28  56  ~/.vimrc
-|4,50,28,56,1719989065,"~/.vimrc"
-'3  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
-|4,51,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
-'4  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
-|4,52,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
-'5  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
-|4,53,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
-'6  1  15  ~/NERD_tree_tab_1
-|4,54,1,15,1719972153,"~/NERD_tree_tab_1"
-'7  1  15  ~/NERD_tree_tab_1
-|4,55,1,15,1719972153,"~/NERD_tree_tab_1"
+'0  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,48,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+'1  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,49,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+'2  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,50,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'3  23  13  ~/NERD_tree_tab_1
+|4,51,23,13,1719991151,"~/NERD_tree_tab_1"
+'4  28  56  ~/.vimrc
+|4,52,28,56,1719989065,"~/.vimrc"
+'5  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,53,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+'6  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,54,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+'7  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,55,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 '8  1  15  ~/NERD_tree_tab_1
 |4,56,1,15,1719972153,"~/NERD_tree_tab_1"
-'9  17  15  ~/NERD_tree_tab_1
-|4,57,17,15,1719972153,"~/NERD_tree_tab_1"
+'9  1  15  ~/NERD_tree_tab_1
+|4,57,1,15,1719972153,"~/NERD_tree_tab_1"
 
 # Jumplist (newest first):
+-'  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  48  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,48,0,1719991737,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  1  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,1,2,1719991684,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  6  23  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+|4,39,6,23,1719991680,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+|4,39,1,0,1719991499,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
 -'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
 |4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
 -'  12  2  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
 |4,39,12,2,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
 -'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
 |4,39,1,0,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  12  2  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,12,2,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,1,0,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  12  2  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,12,2,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,1,0,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  12  2  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,12,2,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,1,0,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  23  13  ~/NERD_tree_tab_1
+|4,39,23,13,1719991151,"~/NERD_tree_tab_1"
+-'  23  13  ~/NERD_tree_tab_1
+|4,39,23,13,1719991151,"~/NERD_tree_tab_1"
+-'  23  13  ~/NERD_tree_tab_1
+|4,39,23,13,1719991151,"~/NERD_tree_tab_1"
 -'  23  13  ~/NERD_tree_tab_1
 |4,39,23,13,1719991151,"~/NERD_tree_tab_1"
 -'  41  2  ~/NERD_tree_tab_1
 |4,39,41,2,1719991148,"~/NERD_tree_tab_1"
 -'  1  13  ~/NERD_tree_tab_1
 |4,39,1,13,1719991148,"~/NERD_tree_tab_1"
+-'  41  2  ~/NERD_tree_tab_1
+|4,39,41,2,1719991148,"~/NERD_tree_tab_1"
+-'  1  13  ~/NERD_tree_tab_1
+|4,39,1,13,1719991148,"~/NERD_tree_tab_1"
+-'  41  2  ~/NERD_tree_tab_1
+|4,39,41,2,1719991148,"~/NERD_tree_tab_1"
+-'  1  13  ~/NERD_tree_tab_1
+|4,39,1,13,1719991148,"~/NERD_tree_tab_1"
+-'  41  2  ~/NERD_tree_tab_1
+|4,39,41,2,1719991148,"~/NERD_tree_tab_1"
+-'  1  13  ~/NERD_tree_tab_1
+|4,39,1,13,1719991148,"~/NERD_tree_tab_1"
+-'  28  56  ~/.vimrc
+|4,39,28,56,1719989065,"~/.vimrc"
+-'  28  56  ~/.vimrc
+|4,39,28,56,1719989065,"~/.vimrc"
+-'  28  56  ~/.vimrc
+|4,39,28,56,1719989065,"~/.vimrc"
 -'  28  56  ~/.vimrc
 |4,39,28,56,1719989065,"~/.vimrc"
 -'  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
 |4,39,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+-'  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,39,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+-'  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,39,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+-'  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,39,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719986453,"~/.vimrc"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719986453,"~/.vimrc"
+-'  127  0  ~/.vimrc
+|4,39,127,0,1719986453,"~/.vimrc"
 -'  127  0  ~/.vimrc
 |4,39,127,0,1719986453,"~/.vimrc"
 -'  24  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
 |4,39,24,18,1719984496,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  24  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,24,18,1719984496,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  24  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,24,18,1719984496,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  24  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,24,18,1719984496,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,1,0,1719984455,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,1,0,1719984455,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+|4,39,1,0,1719984455,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
 -'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
 |4,39,1,0,1719984455,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
 -'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
@@ -405,6 +473,42 @@ $
 |4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,188,0,1719980181,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  188  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
@@ -417,168 +521,91 @@ $
 |4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  151  8  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,151,8,1719980180,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
 |4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
 -'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
 |4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
 -'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
 |4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  55  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,55,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  56  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,56,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  55  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,55,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  56  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,56,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  55  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,55,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  56  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,56,8,1719979743,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  54  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,54,8,1719979742,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  54  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,54,8,1719979742,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  54  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,54,8,1719979742,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  17  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,17,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  18  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,18,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  19  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,19,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  17  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,17,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  18  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,18,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  19  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,19,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  17  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,17,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  18  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,18,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  19  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,19,4,1719979741,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  20  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,20,4,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  21  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,21,5,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  20  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,20,4,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  21  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,21,5,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  20  4  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,20,4,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  21  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,21,5,1719979740,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  13  13  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,13,13,1719979736,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  13  13  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,13,13,1719979736,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  13  13  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,13,13,1719979736,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  11  15  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,11,15,1719972830,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  11  15  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,11,15,1719972830,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  11  15  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,11,15,1719972830,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  75  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,75,0,1719972442,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  75  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,75,0,1719972442,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  75  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,75,0,1719972442,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  51  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,51,8,1719972441,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  51  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,51,8,1719972441,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  51  8  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,51,8,1719972441,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  13  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,13,5,1719972439,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  19  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,19,5,1719972439,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  13  5  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,13,5,1719972439,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,1,0,1719972416,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,1,0,1719972416,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  1  15  ~/NERD_tree_tab_1
-|4,39,1,15,1719972153,"~/NERD_tree_tab_1"
--'  17  15  ~/NERD_tree_tab_1
-|4,39,17,15,1719972153,"~/NERD_tree_tab_1"
--'  1  15  ~/NERD_tree_tab_1
-|4,39,1,15,1719972153,"~/NERD_tree_tab_1"
--'  17  15  ~/NERD_tree_tab_1
-|4,39,17,15,1719972153,"~/NERD_tree_tab_1"
--'  1  15  ~/NERD_tree_tab_1
-|4,39,1,15,1719972153,"~/NERD_tree_tab_1"
--'  17  15  ~/NERD_tree_tab_1
-|4,39,17,15,1719972153,"~/NERD_tree_tab_1"
--'  25  2  ~/NERD_tree_tab_1
-|4,39,25,2,1719970177,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719970177,"~/NERD_tree_tab_1"
--'  25  2  ~/NERD_tree_tab_1
-|4,39,25,2,1719970177,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719970177,"~/NERD_tree_tab_1"
--'  25  2  ~/NERD_tree_tab_1
-|4,39,25,2,1719970177,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1719970177,"~/NERD_tree_tab_1"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
+-'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+|4,39,52,0,1719980178,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
 
 # History of marks within files (newest to oldest):
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+	*	1719992245	0
+	"	35	8
+	^	52	20
+	.	52	19
+	+	1	0
+	+	71	0
+	+	29	0
+	+	38	0
+	+	37	10
+	+	35	0
+	+	33	0
+	+	42	0
+	+	40	0
+	+	47	0
+	+	49	8
+	+	50	0
+	+	51	0
+	+	50	3
+	+	51	5
+	+	54	0
+	+	52	19
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+	*	1719991690	0
+	"	1	0
+	^	11	9
+	.	6	24
+	+	7	14
+	+	6	16
+	+	11	8
+	+	6	24
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_tab_1
+	*	1719991677	0
+	"	14	0
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+	*	1719991474	0
+	"	28	0
 
 > ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
 	*	1719991192	0
@@ -2723,10 +2750,6 @@ $
 	*	1719367105	0
 	"	24	0
 
-> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-	*	1719366193	0
-	"	29	0
-
 > ~/projects/zaram_training_course/02_combinational_logic/03_adder/add_tb.v
 	*	1719366188	0
 	"	114	0
@@ -2912,66 +2935,3 @@ $
 	+	56	35
 	+	8	0
 	+	6	14
-
-> ~/projects/zaram_training_course/03_sequential_logic/05_fsm_seq_dectect/fsm_detect.v
-	*	1719280716	0
-	"	24	0
-	^	31	0
-	.	1	10
-	+	1	0
-	+	5	8
-	+	12	0
-	+	16	0
-	+	14	12
-	+	18	0
-	+	16	6
-	+	18	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	0
-	+	32	0
-	+	22	32
-	+	23	31
-	+	24	30
-	+	25	30
-	+	26	30
-	+	31	0
-	+	1	10
-
-> ~/projects/zaram_training_course/03_sequential_logic/04_counter/cnt_tb.v
-	*	1719279368	0
-	"	24	0
-	^	55	19
-	.	56	5
-	+	3	19
-	+	4	0
-	+	6	0
-	+	9	9
-	+	9	0
-	+	8	0
-	+	9	9
-	+	9	3
-	+	9	9
-	+	9	3
-	+	9	9
-	+	9	4
-	+	9	0
-	+	9	1
-	+	9	0
-	+	9	9
-	+	25	0
-	+	9	0
-	+	35	10
-	+	55	18
-	+	56	5
-
-> ~/projects/zaram_training_course/03_sequential_logic/03_dffs/dffs_tb.v
-	*	1719278943	0
-	"	2	0
