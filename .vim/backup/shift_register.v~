@@ -7,14 +7,15 @@ module shift_register
 	input 				  load,
 	input 				  Sin,
 	input  [bit_size-1:0] d,
-	output [bit_size-1:0] q
+	output [bit_size-1:0] q,
+	output Sout
 );
 
 	mux_dff
 	u_mux_dff(
 		.clk				(clk				),
 		.load				(load				),
-		.in0				(Sin				),
+		.in0				(d[0]				),
 		.in1				(d[0]				),
 		.q					(q[0]				)
 	);
@@ -33,6 +34,7 @@ module shift_register
 		end
 	endgenerate
 	
+	assign Sout = q[7];
 endmodule
 
 module mux_dff
@@ -44,7 +46,7 @@ module mux_dff
 	output reg q
 );
 
-	wire mux_out;
+	reg mux_out;
 
 	always @ (*) begin
 		case(load)

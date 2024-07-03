@@ -1,6 +1,6 @@
 # Barrel Shifter
 ## Operation Principle
-- 8-bit barrel Shifter
+- 8-bit barrel Shifter using mux2
 	- rotate right
 		- k[2:0] = rotate amount
 

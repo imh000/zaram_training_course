@@ -73,4 +73,14 @@
       </metadata>
     </info>
   </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/06_sram_extension/waveform.png" added="2024-07-03T01:21:03.706442Z" modified="2024-07-03T01:21:03.706475Z" visited="2024-07-03T01:21:03.706457Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-03T01:21:03.706471Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
 </xbel>

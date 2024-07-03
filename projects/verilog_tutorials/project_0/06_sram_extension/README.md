@@ -169,7 +169,7 @@ module spsram
 	// Memory Read
 	`ifdef	SPSRAM_ASYNC
 		assign o_data = !oen ? 'bz :
-						cen && !wen ? mem[addr] : 'bx;
+						(cen && !wen) ? mem[addr] : 'bx;
 	`else //sync
 		reg		[BW_DATA-1:0] o_data;
 		always @ (posedge clk) begin
@@ -307,5 +307,6 @@ endmodule
 ## Simulation Result
 - Clock Period = 10ns
 - When taskState is RD, o_data = i (0 ~ 63)
+- Memory Read -> synchronous 
 
 ![Waveform0](./waveform.png)

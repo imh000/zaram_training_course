@@ -21,11 +21,11 @@ $
 
 # Command Line History (newest to oldest):
 :w
-|2,0,1719909024,,"w"
+|2,0,1719969969,,"w"
 :q
-|2,0,1719908862,,"q"
+|2,0,1719969347,,"q"
 :wq
-|2,0,1719902044,,"wq"
+|2,0,1719968621,,"wq"
 :so %
 |2,0,1719893172,,"so %"
 :set nohlsearch
@@ -226,6 +226,8 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@/home/imh522/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|2,3,1719910021,,"/home/imh522/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 @/home/imh522/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |2,3,1719904024,,"/home/imh522/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 @/home/imh522/projects/verilog_tutorials/project_0/03_adder_cla/README.md
@@ -278,123 +280,358 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	module mux2
+""0	LINE	0
+	module fsm_traffic
 	(
-		input load,
-		input Sin,
-		input d,
-		output reg mux_out
+		input clk,
+		input rstn,
+		input Ta,
+		input Tb,
+		input P,
+		input R,
+		output reg  [1:0] La,
+		output reg	[1:0] Lb
 	);
-|3,0,0,1,7,0,1719909041,"module mux2","(","	input load,","	input Sin,","	input d,","	output reg mux_out",");"
-"1	LINE	0
-		reg load;
-		reg Sin;
-		reg d;
-		wire	 mux_out;
 	
-|3,0,1,1,5,0,1719909048,"	reg load;","	reg Sin;","	reg d;","	wire	 mux_out;",""
-"2	LINE	0
-				mux_dff
-				u_mux_dff(
-					.clk				(clk				),
-					.load				(load				),
-					.Sin				(q[i-1]				),
-					.d					(d[i]				),
-					.q					(q[i]				)
-				);
-|3,0,2,1,8,0,1719909022,"			mux_dff","			u_mux_dff(","				.clk				(clk				),","				.load				(load				),","				.Sin				(q[i-1]				),","				.d					(d[i]				),","				.q					(q[i]				)","			);"
-"3	LINE	0
-			mux_dff
-			u_mux_dff(
-				.clk				(clk				),
-				.load				(load				),
-				.Sin				(Sin				),
-				.d					(d[0]				),
-				.q					(q[0]				)
-			);
+		localparam S0 = 0;
+		localparam S1 = 1;
+		localparam S2 = 2;
+		localparam S3 = 3;
+		localparam SP0 = 0;
+		localparam SP1 = 1;
+		
+		parameter green = 0, yellow = 1, red = 2;
 	
-|3,0,3,1,9,0,1719909019,"		mux_dff","		u_mux_dff(","			.clk				(clk				),","			.load				(load				),","			.Sin				(Sin				),","			.d					(d[0]				),","			.q					(q[0]				)","		);",""
-"4	LINE	0
+		wire M;
+		reg [1:0] state, next_state;
+		reg p_state, p_next_state;
 	
-|3,0,4,1,1,0,1719908918,""
-"5	LINE	0
-		always @ (posedge clk) begin
-			q <= mux_out;
+		always @ (*) begin
+			case(p_state)
+				SP0 : p_next_state = P ? SP1 : SP0;
+				SP1 : p_next_state = R ? SP0 : SP1;
+			endcase
+	
+			case(state)
+				S0 : next_state = Ta ? S0 : S1;
+				S1 : next_state = S2;
+				S2 : next_state = (M | Tb) ? S2 : S3;
+				S3 : next_state = S0;
+			endcase
 		end
 	
-|3,0,5,1,4,0,1719908910,"	always @ (posedge clk) begin","		q <= mux_out;","	end",""
-"6	LINE	0
+		always @ (posedge clk) begin
+			if(!rstn) begin
+				state <= S0;
+				p_state <= SP0;
+			end else begin
+				state <= next_state;
+				p_state <= p_next_state;
+			end
+		end
 	
-|3,0,6,1,1,0,1719908901,""
-"7	LINE	0
-		reg mux_out;
-|3,0,7,1,1,0,1719908901,"	reg mux_out;"
-"8	LINE	0
-		output reg Sout
-|3,0,8,1,1,0,1719908895,"	output reg Sout"
-"9	LINE	0
+		assign M = (p_state == SP1);
+|3,1,0,1,50,0,1719969255,"module fsm_traffic","(","	input clk,","	input rstn,","	input Ta,","	input Tb,","	input P,","	input R,","	output reg  [1:0] La,","	output reg	[1:0] Lb",");","","	localparam S0 = 0;","	localparam S1 = 1;","	localparam S2 = 2;","	localparam S3 = 3;","	localparam SP0 = 0;","	localparam SP1 = 1;","	","	parameter green = 0, yellow = 1, red = 2;","","	wire M;","	reg [1:0] state, next_state;","	reg p_state, p_next_state;","",>21
+|<"	always @ (*) begin","		case(p_state)","			SP0 : p_next_state = P ? SP1 : SP0;","			SP1 : p_next_state = R ? SP0 : SP1;","		endcase","","		case(state)","			S0 : next_state = Ta ? S0 : S1;","			S1 : next_state = S2;","			S2 : next_state = (M | Tb) ? S2 : S3;","			S3 : next_state = S0;","		endcase","	end","","	always @ (posedge clk) begin","		if(!rstn) begin","			state <= S0;","			p_state <= SP0;","		end else begin","			state <= next_state;","			p_state <= p_next_state;","		end","	end",>2
+|<"","	assign M = (p_state == SP1);"
+"1	CHAR	0
+	module fsm_traffic
+	(
 		input clk,
-|3,0,9,1,1,0,1719908875,"	input clk,"
+		input rstn,
+		input Ta,
+		input Tb,
+		input P,
+		input R,
+		output reg  [1:0] La,
+		output reg	[1:0] Lb
+	);
+	
+		localparam S0 = 0;
+		localparam S1 = 1;
+		localparam S2 = 2;
+		localparam S3 = 3;
+		localparam SP0 = 0;
+		localparam SP1 = 1;
+		
+		parameter green = 0, yellow = 1, red = 2;
+	
+		wire M;
+		reg [1:0] state, next_state;
+		reg p_state, p_next_state;
+	
+		always @ (*) begin
+			case(p_state)
+				SP0 : p_next_state = P ? SP1 : SP0;
+				SP1 : p_next_state = R ? SP0 : SP1;
+			endcase
+		end
+	
+		assign M = (p_state == SP1);
+		always @ (*) begin
+			case(state)
+				S0 : next_state = Ta ? S0 : S1;
+				S1 : next_state = S2;
+				S2 : next_state = (M | Tb) ? S2 : S3;
+				S3 : next_state = S0;
+			endcase
+		end
+	
+		always @ (posedge clk) begin
+			if(!rstn) begin
+				state <= S0;
+				p_state <= SP0;
+			end
+			else begin
+				state <= next_state;
+				p_state <= p_next_state;
+|3,0,1,0,50,0,1719969240,"module fsm_traffic","(","	input clk,","	input rstn,","	input Ta,","	input Tb,","	input P,","	input R,","	output reg  [1:0] La,","	output reg	[1:0] Lb",");","","	localparam S0 = 0;","	localparam S1 = 1;","	localparam S2 = 2;","	localparam S3 = 3;","	localparam SP0 = 0;","	localparam SP1 = 1;","	","	parameter green = 0, yellow = 1, red = 2;","","	wire M;","	reg [1:0] state, next_state;","	reg p_state, p_next_state;","",>21
+|<"	always @ (*) begin","		case(p_state)","			SP0 : p_next_state = P ? SP1 : SP0;","			SP1 : p_next_state = R ? SP0 : SP1;","		endcase","	end","","	assign M = (p_state == SP1);","	always @ (*) begin","		case(state)","			S0 : next_state = Ta ? S0 : S1;","			S1 : next_state = S2;","			S2 : next_state = (M | Tb) ? S2 : S3;","			S3 : next_state = S0;","		endcase","	end","","	always @ (posedge clk) begin","		if(!rstn) begin","			state <= S0;","			p_state <= SP0;","		end","		else begin",>25
+|<"			state <= next_state;","			p_state <= p_next_state;"
+"2	LINE	0
+		end
+|3,0,2,1,1,0,1719968971,"	end"
+"3	LINE	0
+		always @ (*) begin
+|3,0,3,1,1,0,1719968969,"	always @ (*) begin"
+"4	LINE	0
+	
+|3,0,4,1,1,0,1719968961,""
+"5	LINE	0
+		
+|3,0,5,1,1,0,1719968959,"	"
+"6	LINE	0
+		assign M = (p_state == SP1);
+|3,0,6,1,1,0,1719968950,"	assign M = (p_state == SP1);"
+"7	LINE	0
+	module adder_cla
+	(
+		input  [31:0] a,
+		input  [31:0] b,
+		input         cin,
+		output        cout,
+		output [31:0] sum
+	);
+	
+		wire [6:0] co;
+	
+		adder_cla_4bit
+		u_adder_cla_4bit0(
+			.a					(a[3:0]				),
+			.b					(b[3:0]				),
+			.cin				(cin				),
+			.cout				(co[0]				),
+			.sum				(sum[3:0]			)
+		);
+	
+		genvar i;
+		generate
+			for(i=1; i<7; i=i+1) begin : adder_cla_loop
+				adder_cla_4bit
+				u_adder_cla_4bit(
+					.a					(a[4*i+3:4*i]		),
+					.b					(b[4*i+3:4*i]		),
+					.cin				(co[i-1]			),
+					.cout				(co[i]				),
+					.sum				(sum[4*i+3:4*i]		)
+				);
+			end
+		endgenerate
+	
+		adder_cla_4bit
+		u_adder_cla_4bit7(
+			.a					(a[31:28]			),
+			.b					(b[31:28]			),
+			.cin				(co[6]				),
+			.cout				(cout				),
+			.sum				(sum[31:28]			)
+		);
+	
+	
+	endmodule
+		
+	module adder_cla_4bit
+	(
+		input  [3:0] a,
+		input  [3:0] b,
+|3,0,7,1,50,0,1719968589,"module adder_cla","(","	input  [31:0] a,","	input  [31:0] b,","	input         cin,","	output        cout,","	output [31:0] sum",");","","	wire [6:0] co;","","	adder_cla_4bit","	u_adder_cla_4bit0(","		.a					(a[3:0]				),","		.b					(b[3:0]				),","		.cin				(cin				),","		.cout				(co[0]				),","		.sum				(sum[3:0]			)","	);","","	genvar i;","	generate","		for(i=1; i<7; i=i+1) begin : adder_cla_loop","			adder_cla_4bit",>22
+|<"			u_adder_cla_4bit(","				.a					(a[4*i+3:4*i]		),","				.b					(b[4*i+3:4*i]		),","				.cin				(co[i-1]			),","				.cout				(co[i]				),","				.sum				(sum[4*i+3:4*i]		)","			);","		end","	endgenerate","","	adder_cla_4bit","	u_adder_cla_4bit7(","		.a					(a[31:28]			),","		.b					(b[31:28]			),","		.cin				(co[6]				),","		.cout				(cout				),","		.sum				(sum[31:28]			)","	);","","","endmodule","	","module adder_cla_4bit","(","	input  [3:0] a,","	input  [3:0] b,"
+"8	LINE	0
+		adder_cla_4bit
+		u_adder_cla_4bit0(
+			.a					(a[3:0]				),
+			.b					(b[3:0]				),
+			.cin				(cin				),
+			.cout				(co[0]				),
+			.sum				(sum[3:0]			)
+		);
+	
+|3,0,8,1,9,0,1719968164,"	adder_cla_4bit","	u_adder_cla_4bit0(","		.a					(a[3:0]				),","		.b					(b[3:0]				),","		.cin				(cin				),","		.cout				(co[0]				),","		.sum				(sum[3:0]			)","	);",""
+"9	LINE	0
+	
+	
+|3,0,9,1,2,0,1719968096,"",""
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
 "t	CHAR	0
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
-""-	CHAR	0
+"-	CHAR	0
 		
-|3,1,36,0,1,0,1719909071,"	"
+|3,0,36,0,1,0,1719968013,"	"
 
 # File marks:
-'0  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,48,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'1  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,49,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
-'2  22  15  ~/utils/scripts/test_vector.py
-|4,50,22,15,1719897727,"~/utils/scripts/test_vector.py"
-'3  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,51,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
-'4  22  15  ~/utils/scripts/_i_c    = './vec/i_c.vec'
-|4,52,22,15,1719893178,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
-'5  46  0  ~/utils/scripts/_i_c    = './vec/i_c.vec'
-|4,53,46,0,1719884773,"~/utils/scripts/_i_c    = './vec/i_c.vec'"
-'6  46  0  ~/utils/scripts/test_vector.py
-|4,54,46,0,1719884773,"~/utils/scripts/test_vector.py"
-'7  46  0  ~/utils/scripts/test_vector.py
-|4,55,46,0,1719884773,"~/utils/scripts/test_vector.py"
-'8  94  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,56,94,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
-'9  97  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,57,97,16,1719884764,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+'0  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,48,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+'1  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,49,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'2  43  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,50,43,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'3  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,51,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'4  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,52,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+'5  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,53,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+'6  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,54,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+'7  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,55,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+'8  22  15  ~/utils/scripts/test_vector.py
+|4,56,22,15,1719897727,"~/utils/scripts/test_vector.py"
+'9  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+|4,57,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
 
 # Jumplist (newest first):
+-'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  113  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
+|4,39,113,0,1719970043,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
+-'  172  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+|4,39,172,18,1719969971,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+|4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  169  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v
+|4,39,169,18,1719969923,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v"
+-'  312  21  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+|4,39,312,21,1719969906,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  91  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
+|4,39,91,0,1719969724,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v"
+-'  309  18  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+|4,39,309,18,1719969575,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
+-'  30  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v
+|4,39,30,0,1719969554,"~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v"
+-'  8  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,39,8,0,1719969353,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
+-'  50  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
+|4,39,50,0,1719969224,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  104  2  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,39,104,2,1719969011,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
+-'  151  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,151,0,1719968902,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+-'  30  4  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,30,4,1719968574,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  30  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
+|4,39,30,0,1719968557,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v"
+-'  30  3  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+|4,39,30,3,1719968421,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v"
+-'  1  0  ~/utils/scripts/vec/i_c.vec
+|4,39,1,0,1719968408,"~/utils/scripts/vec/i_c.vec"
+-'  1  0  ~/utils/scripts/vec/o_c.vec
+|4,39,1,0,1719968399,"~/utils/scripts/vec/o_c.vec"
+-'  1  0  ~/utils/scripts/vec/o_s.vec
+|4,39,1,0,1719968388,"~/utils/scripts/vec/o_s.vec"
+-'  1  0  ~/utils/scripts/vec/i_a.vec
+|4,39,1,0,1719968369,"~/utils/scripts/vec/i_a.vec"
+-'  78  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+|4,39,78,1,1719968335,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  14  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,14,1,1719968194,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  19  7  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+|4,39,19,7,1719968118,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
+-'  16  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,16,0,1719967957,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  1  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,1,0,1719967370,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  39  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,39,0,1719911411,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  39  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,39,0,1719911411,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  36  8  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,36,8,1719911365,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  36  8  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,36,8,1719911365,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  54  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,54,0,1719911263,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  54  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,54,0,1719911263,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  68  4  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,68,4,1719910525,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  68  4  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,68,4,1719910525,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  1  16  ~/NERD_tree_tab_1
+|4,39,1,16,1719910499,"~/NERD_tree_tab_1"
+-'  25  16  ~/NERD_tree_tab_1
+|4,39,25,16,1719910499,"~/NERD_tree_tab_1"
+-'  33  2  ~/NERD_tree_tab_1
+|4,39,33,2,1719910026,"~/NERD_tree_tab_1"
+-'  1  13  ~/NERD_tree_tab_1
+|4,39,1,13,1719910026,"~/NERD_tree_tab_1"
+-'  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
 -'  41  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
 |4,39,41,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
 -'  18  14  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,18,14,1719909092,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  18  14  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,18,14,1719909092,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  10  22  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,10,22,1719907864,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  10  22  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,10,22,1719907864,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  19  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
 |4,39,19,1,1719907631,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  19  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+|4,39,19,1,1719907631,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+-'  22  7  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,22,7,1719906979,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  22  7  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,22,7,1719906979,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
 |4,39,11,0,1719906646,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
+-'  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
+|4,39,11,0,1719906646,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
+|4,39,1,0,1719906639,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
 -'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
 |4,39,1,0,1719906639,"~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v"
 -'  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+-'  15  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,15,6,1719906621,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+-'  183  8  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,183,8,1719905856,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  198  8  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,198,8,1719905856,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  198  8  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,198,8,1719905856,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+-'  79  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,79,0,1719905557,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  94  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,94,0,1719905557,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  94  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,94,0,1719905557,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
+-'  75  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,75,0,1719905519,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,18,0,1719905519,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  18  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
@@ -403,6 +640,10 @@ $
 |4,39,3,7,1719905351,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  3  7  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,3,7,1719905351,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
+-'  3  7  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+|4,39,3,7,1719905351,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
+-'  3  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+|4,39,3,1,1719905169,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  3  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
 |4,39,3,1,1719905169,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
 -'  3  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
@@ -411,22 +652,34 @@ $
 |4,39,31,9,1719905072,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 -'  31  9  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
 |4,39,31,9,1719905072,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
+-'  31  9  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,39,31,9,1719905072,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 -'  23  6  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
 |4,39,23,6,1719905069,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
 -'  23  6  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
 |4,39,23,6,1719905069,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  23  6  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
+|4,39,23,6,1719905069,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  114  17  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+|4,39,114,17,1719904843,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  97  17  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,97,17,1719904843,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  97  17  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,97,17,1719904843,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
+-'  225  27  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+|4,39,225,27,1719904235,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  228  27  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,228,27,1719904235,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  228  27  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,228,27,1719904235,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
+-'  220  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+|4,39,220,0,1719904143,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  223  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,223,0,1719904143,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  223  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,223,0,1719904143,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
+-'  117  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+|4,39,117,0,1719904117,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  120  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
 |4,39,120,0,1719904117,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md"
 -'  120  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
@@ -435,587 +688,313 @@ $
 |4,39,1,5,1719903192,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
 -'  1  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
 |4,39,1,5,1719903192,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  1  5  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
+|4,39,1,5,1719903192,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
 -'  102  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
 |4,39,102,0,1719903061,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
 -'  102  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
 |4,39,102,0,1719903061,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  102  0  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
+|4,39,102,0,1719903061,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v"
+-'  54  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,39,54,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 -'  58  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
 |4,39,58,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 -'  58  4  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
 |4,39,58,4,1719903016,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  55  1  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,55,1,1719902984,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  55  1  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,55,1,1719902984,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  26  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,26,0,1719902059,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  26  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,26,0,1719902059,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  44  2  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,44,2,1719902046,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  44  2  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-|4,39,44,2,1719902046,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
--'  55  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,55,7,1719902018,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  55  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,55,7,1719902018,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  56  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,56,7,1719901992,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  56  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,56,7,1719901992,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  54  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,54,7,1719901990,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  54  7  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,54,7,1719901990,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  311  26  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,311,26,1719901843,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  311  26  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,311,26,1719901843,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  26  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,26,18,1719901828,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  26  18  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,26,18,1719901828,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  31  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,31,0,1719901641,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  31  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,31,0,1719901641,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  124  0  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,124,0,1719899313,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  124  0  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,124,0,1719899313,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,52,0,1719899312,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  52  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,52,0,1719899312,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  19  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,19,0,1719899266,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  19  0  ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-|4,39,19,0,1719899266,"~/projects/verilog_tutorials/project_0/02_alu/ALU.v"
--'  2  21  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,39,2,21,1719899152,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
--'  2  21  ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-|4,39,2,21,1719899152,"~/projects/verilog_tutorials/project_0/03_adder_cla/README.md"
--'  61  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,61,0,1719898251,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  61  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,61,0,1719898251,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  69  36  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,69,36,1719898053,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  69  36  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,69,36,1719898053,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  64  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,64,0,1719897959,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  71  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,71,16,1719897959,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  64  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,64,0,1719897959,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  71  16  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,71,16,1719897959,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  63  17  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,63,17,1719897958,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  63  17  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,63,17,1719897958,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  22  15  ~/utils/scripts/test_vector.py
-|4,39,22,15,1719897727,"~/utils/scripts/test_vector.py"
--'  22  15  ~/utils/scripts/test_vector.py
-|4,39,22,15,1719897727,"~/utils/scripts/test_vector.py"
--'  8  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
-|4,39,8,6,1719897147,"~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log"
--'  8  6  ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
-|4,39,8,6,1719897147,"~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log"
--'  56  19  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,56,19,1719897137,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  56  19  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,56,19,1719897137,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  40  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,40,1,1719896261,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  40  1  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,40,1,1719896261,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  15  4  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,15,4,1719895298,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  15  4  ~/projects/verilog_tutorials/project_0/02_alu/README.md
-|4,39,15,4,1719895298,"~/projects/verilog_tutorials/project_0/02_alu/README.md"
--'  63  10  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,63,10,1719895245,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  63  10  ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-|4,39,63,10,1719895245,"~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v"
--'  30  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,30,0,1719894914,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  30  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,30,0,1719894914,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  7  4  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,7,4,1719894779,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  7  4  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,7,4,1719894779,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  8  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,8,0,1719894775,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  8  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-|4,39,8,0,1719894775,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v"
--'  1  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
-|4,39,1,0,1719894723,"~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log"
--'  1  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
-|4,39,1,0,1719894723,"~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log"
--'  103  52  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,103,52,1719894719,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  103  52  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,103,52,1719894719,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,39,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,39,1,0,1719894568,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
--'  9  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,39,9,2,1719894562,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
--'  9  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-|4,39,9,2,1719894562,"~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1"
--'  15  0  ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-|4,39,15,0,1719893570,"~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v"
+-'  51  6  ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+|4,39,51,6,1719902984,"~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v"
 
 # History of marks within files (newest to oldest):
 
-> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-	*	1719909093	0
-	"	41	6
-	^	18	0
-	.	37	0
-	+	1	0
-	+	1	869
-	+	1	0
-	+	1	23
-	+	1	230
-	+	1	229
-	+	1	242
-	+	1	439
-	+	1	477
-	+	1	537
-	+	1	542
-	+	1	10
-	+	1	8
-	+	1	62
-	+	1	116
-	+	1	142
-	+	1	159
-	+	1	170
-	+	1	176
-	+	1	196
-	+	1	205
-	+	1	215
-	+	1	224
-	+	1	230
-	+	1	234
-	+	1	242
-	+	1	277
-	+	1	331
-	+	1	348
-	+	1	402
-	+	1	417
-	+	1	431
-	+	1	439
-	+	1	473
-	+	1	490
-	+	1	506
-	+	1	520
-	+	1	538
-	+	1	542
-	+	1	551
-	+	1	555
-	+	1	609
-	+	1	621
-	+	1	675
-	+	1	700
-	+	1	714
-	+	1	766
-	+	1	787
-	+	1	798
-	+	1	813
-	+	1	849
-	+	1	860
-	+	1	864
-	+	1	868
-	+	1	0
-	+	87	0
-	+	37	0
-	+	55	0
-	+	63	0
-	+	70	0
-	+	68	20
-	+	65	6
-	+	67	15
-	+	52	0
-	+	51	8
-	+	19	23
-	+	37	0
-	+	36	1
-	+	37	0
-	+	17	0
+> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+	*	1719970048	0
+	"	11	0
+	^	18	11
+	.	36	0
+	+	12	2
+	+	12	0
+	+	8	10
+	+	12	11
+	+	8	7
+	+	38	1
+	+	38	10
+	+	38	2
+	+	38	0
+	+	38	8
+	+	38	0
+	+	38	9
+	+	38	0
+	+	38	2
+	+	38	0
+	+	38	21
+	+	38	23
+	+	38	0
+	+	38	23
+	+	12	0
+	+	10	24
+	+	38	4
+	+	38	11
+	+	38	9
+	+	38	14
+	+	38	18
+	+	38	17
+	+	38	3
+	+	38	13
+	+	38	0
+	+	12	11
+	+	10	24
+	+	38	0
+	+	38	16
+	+	38	0
+	+	12	2
+	+	38	1
+	+	38	2
+	+	38	13
+	+	38	12
+	+	38	9
+	+	38	14
+	+	38	19
+	+	38	12
+	+	38	18
+	+	38	0
+	+	12	0
+	+	10	0
+	+	38	10
+	+	38	0
+	+	38	18
+	+	38	0
+	+	38	19
+	+	38	0
+	+	46	0
+	+	45	0
+	+	39	10
+	+	38	0
+	+	38	35
+	+	38	0
+	+	23	0
+	+	13	0
+	+	35	14
+	+	38	0
+	+	59	0
+	+	23	0
+	+	13	0
+	+	18	13
+	+	19	14
+	+	20	14
+	+	23	0
+	+	26	1
+	+	27	0
+	+	34	0
+	+	31	0
+	+	30	18
+	+	31	15
+	+	32	14
+	+	47	3
+	+	11	11
+	+	36	19
 	+	18	0
-	+	37	0
+	+	36	0
 
 > ~/NERD_tree_tab_1
-	*	1719909092	0
-	"	17	15
+	*	1719970043	0
+	"	16	15
 	.	1	0
 	+	1	0
 
-> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-	*	1719909092	0
-	"	18	14
-	^	17	14
-	.	17	14
-	+	11	2
-	+	11	0
-	+	8	10
-	+	11	11
-	+	8	7
-	+	36	1
-	+	33	10
-	+	41	2
-	+	42	0
-	+	44	8
-	+	26	0
-	+	24	9
-	+	26	0
-	+	24	2
-	+	25	0
-	+	23	21
-	+	25	23
-	+	33	0
-	+	25	23
-	+	11	0
-	+	10	24
-	+	25	4
-	+	26	11
-	+	23	9
-	+	25	14
-	+	25	18
-	+	25	17
-	+	36	3
-	+	25	13
-	+	25	0
-	+	11	11
-	+	10	24
-	+	25	0
-	+	26	16
-	+	22	0
-	+	11	2
-	+	22	1
-	+	22	2
-	+	22	13
-	+	25	12
-	+	23	9
-	+	25	14
-	+	25	19
-	+	25	12
-	+	26	18
-	+	26	0
-	+	11	0
-	+	10	0
-	+	30	10
-	+	32	0
-	+	35	18
-	+	36	0
-	+	35	19
-	+	37	0
-	+	44	0
-	+	45	0
-	+	57	0
-	+	56	0
-	+	50	10
-	+	22	0
-	+	25	0
-	+	24	35
-	+	21	0
-	+	13	0
-	+	12	0
-	+	17	14
-
-> ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
-	*	1719906643	0
-	"	11	0
-	.	11	1
-	+	12	8
-	+	11	1
-	d	1	0
-
-> ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
-	*	1719906619	0
-	"	15	6
-	^	11	35
-	.	11	34
-	+	3	1
-	+	16	10
-	+	17	0
-	+	93	10
-	+	94	0
-	+	211	20
-	+	215	27
-	+	213	31
-	+	4	13
-	+	12	12
-	+	12	13
-	+	12	34
-	+	13	18
-	+	12	0
-	+	9	63
-	+	10	41
-	+	11	34
-
-> ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
-	*	1719906266	0
-	"	74	0
-	^	68	34
-	.	68	0
-	+	34	0
-	+	37	17
-	+	38	16
-	+	39	14
-	+	40	15
-	+	41	19
-	+	38	18
-	+	37	18
-	+	39	13
-	+	13	17
-	+	36	17
-	+	17	13
-	+	28	14
-	+	29	15
-	+	28	0
-	+	39	12
-	+	71	20
-	+	70	16
-	+	70	22
-	+	23	44
-	+	8	22
-	+	11	30
-	+	36	0
-	+	70	30
-	+	70	15
-	+	71	18
-	+	59	19
-	+	70	0
-	+	70	37
-	+	70	18
-	+	70	26
-	+	70	10
-	+	70	18
-	+	70	33
-	+	70	20
-	+	71	14
-	+	70	0
-	+	56	16
-	+	71	20
-	+	56	18
-	+	68	14
-	+	71	19
-	+	70	0
-	+	68	32
-	+	59	19
-	+	62	0
-	+	63	17
-	+	70	12
-	+	70	0
-	+	59	0
-	+	58	0
-	+	70	0
-	+	69	22
-	+	69	0
-	+	11	0
-	+	49	6
-	+	50	7
-	+	51	13
-	+	52	13
-	+	56	0
-	+	63	17
-	+	59	19
-	+	69	8
-	+	68	15
-	+	69	0
-	+	71	0
-	+	36	17
-	+	3	6
-	+	4	7
-	+	5	14
-	+	6	14
-	+	8	24
-	+	8	20
-	+	11	28
-	+	8	0
-	+	11	0
-	+	7	18
-	+	8	0
-	+	71	21
-	+	55	0
-	+	71	16
-	+	71	41
-	+	71	24
-	+	57	18
-	+	68	72
-	+	68	2
-	+	68	19
-	+	71	0
-	+	69	36
-	+	68	0
-	+	71	0
-	+	69	0
-	+	64	0
-	+	68	0
-	+	71	23
-	+	69	0
-	+	68	33
-	+	68	0
-
-> ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
-	*	1719905862	0
-	"	81	71
-	^	49	51
-	.	49	50
+> ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
+	*	1719970033	0
+	"	113	0
+	^	6	16
+	.	6	15
 	+	1	0
-	+	115	0
-	+	52	0
-	+	59	0
-	+	57	0
-	+	63	0
-	+	62	10
-	+	86	0
-	+	92	0
-	+	96	3
-	+	96	5
-	+	98	0
-	+	96	19
-	+	52	21
-	+	52	19
-	+	52	21
-	+	52	1
-	+	52	0
-	+	18	15
-	+	18	0
-	+	19	1
-	+	52	0
-	+	15	0
-	+	19	9
-	+	6	15
-	+	7	18
+	+	114	0
 	+	35	0
+	+	18	0
+	+	17	8
+	+	18	8
+	+	19	8
+	+	20	8
+	+	35	0
+	+	50	0
+	+	52	0
+	+	40	0
+	+	50	0
+	+	44	10
+	+	49	13
+	+	43	0
+	+	53	0
+	+	52	0
+	+	81	0
+	+	100	0
+	+	54	9
+	+	55	10
+	+	69	9
 	+	6	15
-	+	51	0
-	+	56	20
-	+	56	0
-	+	55	5
-	+	56	12
-	+	66	0
-	+	70	3
-	+	71	3
-	+	72	5
-	+	80	9
-	+	81	11
-	+	82	31
-	+	80	66
-	+	81	67
-	+	96	0
-	+	97	1
-	+	96	0
-	+	95	15
-	+	6	15
-	+	19	0
-	+	15	0
-	+	34	0
-	+	38	7
-	+	7	18
-	+	45	13
-	+	46	13
-	+	46	0
-	+	49	50
 
-> ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
-	*	1719905348	0
-	"	3	7
-	^	3	8
-	.	3	7
-	+	8	9
-	+	9	0
-	+	119	10
-	+	120	0
-	+	223	2
-	+	7	6
-	+	223	0
-	+	224	0
-	+	228	27
-	+	3	11
-	+	5	0
-	+	32	5
-	+	5	51
-	+	5	9
-	+	5	0
-	+	6	0
-	+	4	0
-	+	7	0
-	+	3	7
+> ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
+	*	1719969969	0
+	"	172	18
+	^	172	19
+	.	172	18
+	+	309	25
+	+	310	16
+	+	172	18
+
+> ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v
+	*	1719969921	0
+	"	169	18
+	^	169	19
+	.	169	18
+	+	14	8
+	+	13	8
+	+	12	7
+	+	11	8
+	+	139	8
+	+	139	0
+	+	146	0
+	+	151	8
+	+	152	9
+	+	153	10
+	+	152	0
+	+	148	0
+	+	151	9
+	+	16	10
+	+	142	0
+	+	144	21
+	+	16	10
+	+	17	10
+	+	152	0
+	+	148	0
+	+	49	0
+	+	20	0
+	+	19	0
+	+	22	15
+	+	23	14
+	+	22	19
+	+	23	19
+	+	30	20
+	+	23	14
+	+	28	30
+	+	30	22
+	+	30	0
+	+	29	29
+	+	25	9
+	+	31	25
+	+	32	26
+	+	31	26
+	+	35	0
+	+	139	0
+	+	46	27
+	+	47	25
+	+	28	17
+	+	29	17
+	+	28	28
+	+	29	28
+	+	43	28
+	+	44	17
+	+	43	17
+	+	139	0
+	+	140	0
+	+	50	0
+	+	80	0
+	+	110	0
+	+	109	0
+	+	79	0
+	+	40	9
+	+	55	9
+	+	58	22
+	+	59	22
+	+	58	22
+	+	58	29
+	+	59	29
+	+	73	22
+	+	74	29
+	+	73	29
+	+	88	11
+	+	89	29
+	+	88	29
+	+	103	11
+	+	104	11
+	+	103	21
+	+	104	29
+	+	103	29
+	+	118	11
+	+	119	21
+	+	118	30
+	+	119	29
+	+	133	11
+	+	134	21
+	+	133	29
+	+	134	29
+	+	103	21
+	+	104	30
+	+	103	29
+	+	70	9
+	+	85	9
+	+	100	9
+	+	115	9
+	+	130	9
+	+	169	18
 
 > ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-	*	1719905070	0
-	"	31	9
-	^	40	27
-	.	111	0
-	+	79	19
-	+	79	16
-	+	79	30
-	+	79	25
-	+	79	31
-	+	79	32
-	+	16	17
-	+	17	17
-	+	82	8
-	+	83	3
-	+	114	0
-	+	114	1
-	+	114	12
-	+	114	0
-	+	114	23
-	+	114	24
-	+	114	16
-	+	83	0
-	+	80	0
-	+	85	34
-	+	99	0
-	+	111	0
+	*	1719969347	0
+	"	8	0
+	^	51	6
+	.	51	5
+	+	80	8
+	+	81	3
+	+	112	0
+	+	112	1
+	+	112	12
+	+	112	0
+	+	112	23
+	+	112	24
+	+	112	16
+	+	81	0
+	+	78	0
+	+	83	34
+	+	97	0
+	+	109	0
+	+	100	0
+	+	101	0
+	+	100	39
+	+	101	33
 	+	102	0
-	+	103	0
-	+	102	39
-	+	103	33
 	+	104	0
-	+	106	0
-	+	105	0
-	+	106	10
-	+	85	23
-	+	86	23
-	+	101	18
-	+	102	19
-	+	103	16
-	+	107	17
-	+	108	19
-	+	109	16
-	+	79	0
-	+	66	0
-	+	79	0
-	+	67	4
-	+	68	14
-	+	70	6
-	+	71	0
-	+	75	0
-	+	71	4
-	+	75	4
-	+	72	11
-	+	73	13
-	+	76	11
-	+	77	14
-	+	79	0
-	+	45	22
-	+	46	0
-	+	45	40
+	+	103	0
+	+	104	10
+	+	83	23
+	+	84	23
+	+	99	18
+	+	100	19
+	+	101	16
+	+	105	17
+	+	106	19
+	+	107	16
+	+	77	0
+	+	64	0
+	+	77	0
+	+	65	4
+	+	66	14
+	+	68	6
+	+	69	0
+	+	73	0
+	+	69	4
+	+	73	4
+	+	70	11
+	+	71	13
+	+	74	11
+	+	75	14
+	+	77	0
+	+	42	22
+	+	43	0
+	+	42	40
 	+	16	0
 	+	15	8
 	+	25	19
 	+	30	6
-	+	45	38
+	+	42	38
 	+	30	6
 	+	24	18
 	+	25	18
@@ -1029,35 +1008,75 @@ $
 	+	37	0
 	+	35	36
 	+	36	37
-	+	39	0
-	+	40	37
+	+	38	0
+	+	38	37
 	+	29	7
-	+	95	0
-	+	84	0
-	+	95	0
-	+	94	0
-	+	95	10
-	+	96	35
-	+	97	35
-	+	114	0
-	+	53	17
+	+	93	0
+	+	82	0
+	+	93	0
+	+	92	0
+	+	93	10
+	+	94	35
+	+	95	35
+	+	112	0
+	+	50	17
+	+	48	16
+	+	51	0
 	+	51	16
+	+	53	25
 	+	54	0
-	+	55	11
-	+	57	25
-	+	58	0
 	+	8	18
 	+	16	8
 	+	16	0
-	+	99	0
-	+	40	26
+	+	97	0
+	+	38	26
 	+	32	0
 	+	31	0
-	+	111	0
+	+	109	0
+	+	38	0
+	+	57	1
+	+	57	0
+	+	58	0
+	+	57	0
+	+	38	0
+	+	39	0
+	+	38	0
+	+	51	5
+
+> ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/waveform.png
+	*	1719969346	0
+	"	13	16
+
+> ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/README.md
+	*	1719969267	0
+	"	112	7
+	^	3	8
+	.	10	0
+	+	8	9
+	+	9	0
+	+	116	10
+	+	117	0
+	+	220	2
+	+	7	6
+	+	220	0
+	+	221	0
+	+	225	27
+	+	3	11
+	+	5	0
+	+	114	5
+	+	5	51
+	+	5	9
+	+	5	0
+	+	6	0
+	+	4	0
+	+	7	0
+	+	3	7
+	+	115	0
+	+	10	0
 
 > ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic_tb.v
-	*	1719905068	0
-	"	23	6
+	*	1719969223	0
+	"	50	0
 	^	24	6
 	.	24	6
 	+	15	0
@@ -1095,251 +1114,140 @@ $
 	+	25	5
 	+	24	6
 
-> ~/projects/verilog_tutorials/project_0/02_alu/README.md
-	*	1719904969	0
-	"	16	9
-	^	42	0
-	.	117	0
-	+	13	15
-	+	124	0
-	+	38	0
-	+	117	0
-	+	123	28
-	+	121	0
-	+	5	9
-	+	13	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	11	0
+> ~/projects/verilog_tutorials/project_0/03_adder_cla/README.md
+	*	1719968837	0
+	"	151	0
+	^	11	35
+	.	17	0
+	+	3	1
+	+	16	10
+	+	75	0
+	+	78	10
+	+	79	0
+	+	196	20
+	+	200	27
+	+	198	31
+	+	4	13
+	+	12	12
+	+	12	13
+	+	12	34
+	+	13	18
 	+	12	0
-	+	6	3
-	+	7	2
-	+	8	3
-	+	9	2
-	+	10	3
-	+	11	2
-	+	12	3
-	+	6	6
-	+	7	6
-	+	8	13
-	+	9	6
-	+	7	6
-	+	6	6
-	+	5	6
-	+	10	9
-	+	11	8
-	+	12	7
-	+	6	7
-	+	38	0
-	+	39	0
-	+	38	0
-	+	16	0
-	+	38	0
-	+	42	0
-	+	117	0
+	+	9	63
+	+	10	41
+	+	11	34
+	+	75	0
+	+	17	0
 
-> ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-	*	1719902003	0
-	"	55	7
-	^	54	8
-	.	56	0
-	+	1	0
-	+	75	0
-	+	17	0
-	+	17	5
-	+	17	4
-	+	17	12
-	+	17	0
-	+	43	0
-	+	42	8
-	+	46	0
-	+	52	0
-	+	54	3
-	+	55	0
-	+	56	0
-	+	55	3
-	+	56	3
-	+	57	0
-	+	59	0
-	+	57	2
-	+	75	0
-	+	6	15
-	+	54	14
-	+	54	0
-	+	40	0
-	+	37	0
-	+	57	0
-	+	17	16
-	+	32	0
-	+	20	5
-	+	21	5
-	+	54	14
-	+	6	17
+> ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla.v
+	*	1719968620	0
+	"	30	0
+	^	29	0
+	.	29	0
+	+	30	17
+	+	14	13
+	+	21	14
+	+	22	15
+	+	21	0
+	+	30	12
+	+	56	20
+	+	55	16
+	+	55	22
+	+	16	44
+	+	8	22
+	+	13	30
+	+	30	0
+	+	55	30
+	+	55	15
 	+	56	18
-	+	54	7
+	+	44	19
+	+	55	0
+	+	55	37
+	+	55	18
+	+	55	26
+	+	55	10
+	+	55	18
+	+	55	33
+	+	55	20
 	+	56	14
-	+	54	14
+	+	55	0
+	+	41	16
+	+	56	20
+	+	41	18
+	+	53	14
 	+	56	19
+	+	55	0
+	+	53	32
+	+	44	19
+	+	47	0
+	+	48	17
+	+	55	12
+	+	55	0
+	+	44	0
+	+	43	0
+	+	55	0
+	+	54	22
+	+	54	0
+	+	13	0
+	+	34	6
+	+	35	7
+	+	36	13
+	+	37	13
+	+	41	0
+	+	48	17
+	+	44	19
+	+	54	8
+	+	53	15
 	+	54	0
 	+	56	0
-
-> ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-	*	1719901841	0
-	"	311	26
-	^	309	26
-	.	309	25
-	+	309	25
-
-> ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-	*	1719901643	0
-	"	26	18
-	^	27	27
-	.	27	26
-	+	31	6
-	+	31	12
-	+	31	13
-	+	31	6
-	+	31	10
-	+	31	1
-	+	31	0
-	+	31	6
-	+	31	14
-	+	31	6
-	+	31	0
-	+	31	18
-	+	31	20
-	+	31	6
-	+	31	3
-	+	31	18
-	+	31	0
-	+	31	3
-	+	31	0
-	+	31	18
-	+	31	0
-	+	31	6
-	+	31	8
-	+	31	11
-	+	31	7
-	+	31	14
-	+	31	0
-	+	1	0
-	+	26	18
-	+	15	17
-	+	22	20
-	+	27	26
-
-> ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
-	*	1719898048	0
-	"	1	20
-
-> ~/utils/scripts/test_vector.py
-	*	1719897725	0
-	"	22	15
-	^	22	16
-	.	22	15
-	+	22	15
-
-> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder_testvector_tb.v
-	*	1719894702	0
-	"	50	36
-	^	113	33
-	.	113	32
-	+	13	25
-	+	15	25
-	+	25	16
-	+	29	18
-	+	113	32
-
-> ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
-	*	1719894566	0
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/projects/zaram_training_course/02_combinational_logic/03_adder/vec/o_c.vec
-	*	1719894524	0
-	"	7	0
-
-> ~/utils/scripts/_i_c    = './vec/i_c.vec'
-	*	1719893170	0
-	"	22	15
-	^	22	16
-	.	22	15
-	+	22	15
-
-> ~/projects/verilog_tutorials/project_0/03_adder_cla/NERD_tree_tab_1
-	*	1719883812	0
-	"	19	14
-	.	1	0
-	+	1	0
-
-> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder_testvector.v
-	*	1719883809	0
-	"	14	18
-	^	2	23
-	.	2	22
-	+	2	22
-
-> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-	*	1719881454	0
-	"	30	6
-	^	184	28
-	.	184	27
-	+	1	16
-	+	9	9
-	+	108	0
-	+	111	10
-	+	108	0
-	+	10	0
-	+	112	0
-	+	182	18
-	+	184	27
-
-> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/NERD_tree_tab_1
-	*	1719881403	0
-	"	11	7
-	.	1	0
-	+	1	0
-
-> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/waveform.png
-	*	1719881403	0
-	"	1	0
-
-> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
-	*	1719881398	0
-	"	19	0
-	^	18	6
-	.	18	5
-	+	1	0
-	+	67	0
+	+	30	17
+	+	3	6
+	+	4	7
+	+	5	14
+	+	6	14
+	+	8	24
+	+	8	20
+	+	13	28
+	+	8	0
+	+	13	0
+	+	7	18
+	+	8	0
+	+	56	21
+	+	40	0
+	+	56	16
+	+	56	41
+	+	56	24
+	+	42	18
+	+	53	72
+	+	53	2
+	+	53	19
+	+	56	0
+	+	54	36
+	+	53	0
+	+	56	0
+	+	54	0
+	+	49	0
+	+	53	0
+	+	56	23
+	+	54	0
+	+	53	33
+	+	53	0
+	+	10	7
+	+	11	1
+	+	12	19
+	+	16	13
+	+	21	19
+	+	22	21
+	+	16	13
+	+	30	0
 	+	27	0
-	+	31	0
-	+	35	0
-	+	31	0
-	+	37	0
-	+	34	8
-	+	44	0
-	+	46	3
-	+	47	3
-	+	6	15
-	+	47	7
-	+	48	19
-	+	50	0
-	+	17	6
-	+	18	6
-	+	19	7
-	+	6	15
-	+	46	7
-	+	47	14
-	+	17	5
-	+	18	5
+	+	28	20
+	+	14	0
+	+	29	0
 
 > ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter.v
-	*	1719881218	0
-	"	1	0
+	*	1719968554	0
+	"	30	0
 	^	87	10
 	.	87	9
 	+	8	4
@@ -1443,6 +1351,427 @@ $
 	+	86	9
 	+	87	9
 
+> ~/utils/scripts/vec/o_s.vec
+	*	1719968551	0
+	"	10	19
+
+> ~/utils/scripts/vec/i_a.vec
+	*	1719968508	0
+	"	1	0
+
+> ~/projects/verilog_tutorials/project_0/03_adder_cla/adder_cla_tb.v
+	*	1719968497	0
+	"	66	0
+	^	49	51
+	.	49	50
+	+	1	0
+	+	115	0
+	+	52	0
+	+	59	0
+	+	57	0
+	+	63	0
+	+	62	10
+	+	86	0
+	+	92	0
+	+	96	3
+	+	96	5
+	+	98	0
+	+	96	19
+	+	52	21
+	+	52	19
+	+	52	21
+	+	52	1
+	+	52	0
+	+	18	15
+	+	18	0
+	+	19	1
+	+	52	0
+	+	15	0
+	+	19	9
+	+	6	15
+	+	7	18
+	+	35	0
+	+	6	15
+	+	51	0
+	+	56	20
+	+	56	0
+	+	55	5
+	+	56	12
+	+	66	0
+	+	70	3
+	+	71	3
+	+	72	5
+	+	80	9
+	+	81	11
+	+	82	31
+	+	80	66
+	+	81	67
+	+	96	0
+	+	97	1
+	+	96	0
+	+	95	15
+	+	6	15
+	+	19	0
+	+	15	0
+	+	34	0
+	+	38	7
+	+	7	18
+	+	45	13
+	+	46	13
+	+	46	0
+	+	49	50
+
+> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/barrel_shifter_tb.v
+	*	1719968419	0
+	"	30	3
+	^	18	6
+	.	18	5
+	+	1	0
+	+	67	0
+	+	27	0
+	+	31	0
+	+	35	0
+	+	31	0
+	+	37	0
+	+	34	8
+	+	44	0
+	+	46	3
+	+	47	3
+	+	6	15
+	+	47	7
+	+	48	19
+	+	50	0
+	+	17	6
+	+	18	6
+	+	19	7
+	+	6	15
+	+	46	7
+	+	47	14
+	+	17	5
+	+	18	5
+
+> ~/utils/scripts/vec/i_c.vec
+	*	1719968404	0
+	"	1	0
+
+> ~/utils/scripts/vec/o_c.vec
+	*	1719968394	0
+	"	1	0
+
+> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+	*	1719967954	0
+	"	16	0
+	^	3	33
+	.	3	32
+	+	1	16
+	+	9	9
+	+	108	0
+	+	111	10
+	+	108	0
+	+	10	0
+	+	112	0
+	+	182	18
+	+	184	27
+	+	7	0
+	+	3	32
+
+> ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
+	*	1719912620	0
+	"	30	0
+	^	18	0
+	.	63	9
+	+	1	0
+	+	1	869
+	+	1	0
+	+	1	23
+	+	1	230
+	+	1	229
+	+	1	242
+	+	1	439
+	+	1	477
+	+	1	537
+	+	1	542
+	+	1	10
+	+	1	8
+	+	1	62
+	+	1	116
+	+	1	142
+	+	1	159
+	+	1	170
+	+	1	176
+	+	1	196
+	+	1	205
+	+	1	215
+	+	1	224
+	+	1	230
+	+	1	234
+	+	1	242
+	+	1	277
+	+	1	331
+	+	1	348
+	+	1	402
+	+	1	417
+	+	1	431
+	+	1	439
+	+	1	473
+	+	1	490
+	+	1	506
+	+	1	520
+	+	1	538
+	+	1	542
+	+	1	551
+	+	1	555
+	+	1	609
+	+	1	621
+	+	1	675
+	+	1	700
+	+	1	714
+	+	1	766
+	+	1	787
+	+	1	798
+	+	1	813
+	+	1	849
+	+	1	860
+	+	1	864
+	+	1	868
+	+	1	0
+	+	92	0
+	+	39	0
+	+	57	0
+	+	68	0
+	+	75	0
+	+	73	20
+	+	70	6
+	+	72	15
+	+	54	0
+	+	53	8
+	+	39	23
+	+	39	0
+	+	39	1
+	+	39	0
+	+	6	15
+	+	68	0
+	+	72	0
+	+	71	0
+	+	68	0
+	+	67	0
+	+	63	9
+	+	66	9
+	+	64	14
+	+	39	0
+	+	19	15
+	+	39	0
+	+	18	0
+	+	63	9
+
+> ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+	*	1719910483	0
+	"	5	9
+	^	18	0
+	.	17	22
+	+	3	49
+	+	9	10
+	+	17	22
+
+> ~/projects/verilog_tutorials/project_0/04_shift_register/regshift.v
+	*	1719906643	0
+	"	11	0
+	.	11	1
+	+	12	8
+	+	11	1
+	d	1	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/README.md
+	*	1719904969	0
+	"	16	9
+	^	42	0
+	.	117	0
+	+	13	15
+	+	124	0
+	+	38	0
+	+	117	0
+	+	123	28
+	+	121	0
+	+	5	9
+	+	13	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	11	0
+	+	12	0
+	+	6	3
+	+	7	2
+	+	8	3
+	+	9	2
+	+	10	3
+	+	11	2
+	+	12	3
+	+	6	6
+	+	7	6
+	+	8	13
+	+	9	6
+	+	7	6
+	+	6	6
+	+	5	6
+	+	10	9
+	+	11	8
+	+	12	7
+	+	6	7
+	+	38	0
+	+	39	0
+	+	38	0
+	+	16	0
+	+	38	0
+	+	42	0
+	+	117	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+	*	1719902003	0
+	"	55	7
+	^	54	8
+	.	56	0
+	+	1	0
+	+	75	0
+	+	17	0
+	+	17	5
+	+	17	4
+	+	17	12
+	+	17	0
+	+	43	0
+	+	42	8
+	+	46	0
+	+	52	0
+	+	54	3
+	+	55	0
+	+	56	0
+	+	55	3
+	+	56	3
+	+	57	0
+	+	59	0
+	+	57	2
+	+	75	0
+	+	6	15
+	+	54	14
+	+	54	0
+	+	40	0
+	+	37	0
+	+	57	0
+	+	17	16
+	+	32	0
+	+	20	5
+	+	21	5
+	+	54	14
+	+	6	17
+	+	56	18
+	+	54	7
+	+	56	14
+	+	54	14
+	+	56	19
+	+	54	0
+	+	56	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+	*	1719901643	0
+	"	26	18
+	^	27	27
+	.	27	26
+	+	31	6
+	+	31	12
+	+	31	13
+	+	31	6
+	+	31	10
+	+	31	1
+	+	31	0
+	+	31	6
+	+	31	14
+	+	31	6
+	+	31	0
+	+	31	18
+	+	31	20
+	+	31	6
+	+	31	3
+	+	31	18
+	+	31	0
+	+	31	3
+	+	31	0
+	+	31	18
+	+	31	0
+	+	31	6
+	+	31	8
+	+	31	11
+	+	31	7
+	+	31	14
+	+	31	0
+	+	1	0
+	+	26	18
+	+	15	17
+	+	22	20
+	+	27	26
+
+> ~/projects/verilog_tutorials/project_0/03_adder_cla/log/adder_cla.log
+	*	1719898048	0
+	"	1	20
+
+> ~/utils/scripts/test_vector.py
+	*	1719897725	0
+	"	22	15
+	^	22	16
+	.	22	15
+	+	22	15
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder_testvector_tb.v
+	*	1719894702	0
+	"	50	36
+	^	113	33
+	.	113	32
+	+	13	25
+	+	15	25
+	+	25	16
+	+	29	18
+	+	113	32
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_win_1
+	*	1719894566	0
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/vec/o_c.vec
+	*	1719894524	0
+	"	7	0
+
+> ~/utils/scripts/_i_c    = './vec/i_c.vec'
+	*	1719893170	0
+	"	22	15
+	^	22	16
+	.	22	15
+	+	22	15
+
+> ~/projects/verilog_tutorials/project_0/03_adder_cla/NERD_tree_tab_1
+	*	1719883812	0
+	"	19	14
+	.	1	0
+	+	1	0
+
+> ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder_testvector.v
+	*	1719883809	0
+	"	14	18
+	^	2	23
+	.	2	22
+	+	2	22
+
+> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/NERD_tree_tab_1
+	*	1719881403	0
+	"	11	7
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/waveform.png
+	*	1719881403	0
+	"	1	0
+
 > ~/projects/verilog_tutorials/project_0/00_gray_code_converter/README.md
 	*	1719822096	0
 	"	128	14
@@ -1488,131 +1817,6 @@ $
 	^	7	12
 	.	1	0
 	+	1	0
-
-> ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension.v
-	*	1719799640	0
-	"	1	0
-	^	103	29
-	.	130	9
-	+	14	8
-	+	13	8
-	+	12	7
-	+	11	8
-	+	139	8
-	+	139	0
-	+	146	0
-	+	151	8
-	+	152	9
-	+	153	10
-	+	152	0
-	+	148	0
-	+	151	9
-	+	16	10
-	+	142	0
-	+	144	21
-	+	16	10
-	+	17	10
-	+	152	0
-	+	148	0
-	+	49	0
-	+	20	0
-	+	19	0
-	+	22	15
-	+	23	14
-	+	22	19
-	+	23	19
-	+	30	20
-	+	23	14
-	+	28	30
-	+	30	22
-	+	30	0
-	+	29	29
-	+	25	9
-	+	31	25
-	+	32	26
-	+	31	26
-	+	35	0
-	+	139	0
-	+	46	27
-	+	47	25
-	+	28	17
-	+	29	17
-	+	28	28
-	+	29	28
-	+	43	28
-	+	44	17
-	+	43	17
-	+	139	0
-	+	140	0
-	+	50	0
-	+	80	0
-	+	110	0
-	+	109	0
-	+	79	0
-	+	40	9
-	+	55	9
-	+	58	22
-	+	59	22
-	+	58	22
-	+	58	29
-	+	59	29
-	+	73	22
-	+	74	29
-	+	73	29
-	+	88	11
-	+	89	29
-	+	88	29
-	+	103	11
-	+	104	11
-	+	103	21
-	+	104	29
-	+	103	29
-	+	118	11
-	+	119	21
-	+	118	30
-	+	119	29
-	+	133	11
-	+	134	21
-	+	133	29
-	+	134	29
-	+	103	21
-	+	104	30
-	+	103	29
-	+	70	9
-	+	85	9
-	+	100	9
-	+	115	9
-	+	130	9
-
-> ~/projects/verilog_tutorials/project_0/06_sram_extension/sram_extension_tb.v
-	*	1719799637	0
-	"	11	26
-	^	6	16
-	.	6	15
-	+	1	0
-	+	114	0
-	+	35	0
-	+	18	0
-	+	17	8
-	+	18	8
-	+	19	8
-	+	20	8
-	+	35	0
-	+	50	0
-	+	52	0
-	+	40	0
-	+	50	0
-	+	44	10
-	+	49	13
-	+	43	0
-	+	53	0
-	+	52	0
-	+	81	0
-	+	100	0
-	+	54	9
-	+	55	10
-	+	69	9
-	+	6	15
 
 > ~/projects/zaram_training_course/03_sequential_logic/06_sram/sram_doubled_tb.v
 	*	1719799626	0
@@ -2830,41 +3034,3 @@ $
 	+	3	14
 	+	10	13
 	+	8	17
-
-> ~/projects/zaram_training_course/03_sequential_logic/01_blockings/blockings.v
-	*	1719277220	0
-	"	29	0
-	^	27	10
-	.	27	9
-	+	8	7
-	+	11	3
-	+	12	8
-	+	23	7
-	+	26	4
-	+	27	9
-
-> ~/.vim/pack/plugins/start/vim-snippets/snippets/_.snippets
-	*	1719219397	0
-	"	288	4
-
-> ~/projects/zaram_training_course/03_sequential_logic/01_blockings/NERD_tree_tab_1
-	*	1719217569	0
-	"	6	0
-	.	1	0
-	+	1	0
-
-> ~/projects/zaram_training_course/02_vim_script/vim_script/test.vim
-	*	1719216680	0
-	"	1	0
-
-> ~/projects/NERD_tree_win_1
-	*	1719216477	0
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/projects/zaram_training_course/sequential_logic/05_fsm_seq_dectect/NERD_tree_tab_1
-	*	1719215893	0
-	"	13	11
-	.	1	0
-	+	1	0

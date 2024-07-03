@@ -1440,3 +1440,45 @@ gitpush
 cd utils/
 cd scripts/
 gvim test_vector.py 
+gvim
+cd utils/scripts/
+gvim test_vector.py 
+./test_vector.py 
+ll
+cd
+cd projects/verilog_tutorials/project_0/
+cd 03_adder_cla/
+cd
+cd projects/
+cd zaram_training_course/
+cd 02_combinational_logic/
+cd 03_adder/
+gvim vec/
+cd
+cd projects/verilog_tutorials/project_0/
+cd 02_alu/
+rm waveform.png 
+rm waveform1.png 
+cd
+cd -
+la
+cd
+gitpush
+cd utils/scripts/
+cd vec/
+cd ..
+./test_vector.py 
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/
+cd 05_fsm_traffic_light/
+feh waveform.png 
+cd
+gitpush
+gvim
+gitpush
+cd projects/verilog_tutorials/project_0/04
+cd projects/verilog_tutorials/project_0/04_shift_register/
+rm regshift.v 
+la
+cd

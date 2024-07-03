@@ -21,6 +21,7 @@ module shift_register_tb;
 	reg 				  Sin;
 	reg  [bit_size-1:0] d;
 	wire [bit_size-1:0] q;
+	wire Sout;
 
 	shift_register
 	#(
@@ -31,7 +32,8 @@ module shift_register_tb;
 		.load				(load				),
 		.Sin				(Sin				),
 		.d					(d					),
-		.q					(q					)
+		.q					(q					),
+		.Sout				(Sout				)
 	);
 
 // --------------------------------------------------
@@ -58,8 +60,11 @@ module shift_register_tb;
 	initial begin
 		init();
 
+		load = 0;
+		d = $urandom;
+		#(4*1000/`CLKFREQ);
+		load = 0;
 		for (i=0; i<`SIMCYCLE; i++) begin
-			load = 0;
 			Sin  = $urandom;
 			d	 = $urandom;
 			#(1000/`CLKFREQ);

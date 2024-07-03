@@ -166,7 +166,7 @@ module spsram
 	// Memory Read
 	`ifdef	SPSRAM_ASYNC
 		assign o_data = !oen ? 'bz :
-						cen && !wen ? mem[addr] : 'bx;
+						(cen && !wen) ? mem[addr] : 'bx;
 	`else //sync
 		reg		[BW_DATA-1:0] o_data;
 		always @ (posedge clk) begin

@@ -23,40 +23,25 @@ module adder_cla
 	output [31:0] sum
 );
 
-	wire [6:0] co;
-
-	adder_cla_4bit
-	u_adder_cla_4bit0(
-		.a					(a[3:0]				),
-		.b					(b[3:0]				),
-		.cin				(cin				),
-		.cout				(co[0]				),
-		.sum				(sum[3:0]			)
-	);
+	wire [8:0] co;
+	
+	assign co[0] = cin;
 
 	genvar i;
 	generate
-		for(i=1; i<7; i=i+1) begin : adder_cla_loop
+		for(i=0; i<8; i=i+1) begin : adder_cla_loop
 			adder_cla_4bit
 			u_adder_cla_4bit(
 				.a					(a[4*i+3:4*i]		),
 				.b					(b[4*i+3:4*i]		),
-				.cin				(co[i-1]			),
-				.cout				(co[i]				),
+				.cin				(co[i]				),
+				.cout				(co[i+1]			),
 				.sum				(sum[4*i+3:4*i]		)
 			);
 		end
 	endgenerate
 
-	adder_cla_4bit
-	u_adder_cla_4bit7(
-		.a					(a[31:28]			),
-		.b					(b[31:28]			),
-		.cin				(co[6]				),
-		.cout				(cout				),
-		.sum				(sum[31:28]			)
-	);
-
+	assign cout = co[8];
 
 endmodule
 	

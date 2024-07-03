@@ -35,10 +35,7 @@ module fsm_traffic
 			SP0 : p_next_state = P ? SP1 : SP0;
 			SP1 : p_next_state = R ? SP0 : SP1;
 		endcase
-	end
 
-	assign M = (p_state == SP1);
-	always @ (*) begin
 		case(state)
 			S0 : next_state = Ta ? S0 : S1;
 			S1 : next_state = S2;
@@ -51,12 +48,13 @@ module fsm_traffic
 		if(!rstn) begin
 			state <= S0;
 			p_state <= SP0;
-		end
-		else begin
+		end else begin
 			state <= next_state;
 			p_state <= p_next_state;
 		end
 	end
+
+	assign M = (p_state == SP1);
 
 	always @ (*) begin
 		case(state)

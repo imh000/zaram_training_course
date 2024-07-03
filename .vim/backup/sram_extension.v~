@@ -67,7 +67,7 @@ module sram_extension
 		.BW_DATA			(32					),
 		.BW_ADDR			(4					)
 	)
-	u_spsram0(
+	u_spsram3(
 		.clk				(clk				),
 		.wen				(wen				),
 		.cen				(~addr[5] & addr[4] ),
@@ -82,7 +82,7 @@ module sram_extension
 		.BW_DATA			(32					),
 		.BW_ADDR			(4					)
 	)
-	u_spsram0(
+	u_spsram4(
 		.clk				(clk				),
 		.wen				(wen				),
 		.cen				(addr[5] & ~addr[4] ),
@@ -97,7 +97,7 @@ module sram_extension
 		.BW_DATA			(32					),
 		.BW_ADDR			(4					)
 	)
-	u_spsram0(
+	u_spsram5(
 		.clk				(clk				),
 		.wen				(wen				),
 		.cen				(addr[5] & ~addr[4] ),
@@ -112,7 +112,7 @@ module sram_extension
 		.BW_DATA			(32					),
 		.BW_ADDR			(4					)
 	)
-	u_spsram0(
+	u_spsram6(
 		.clk				(clk				),
 		.wen				(wen				),
 		.cen				(addr[5] & addr[4]  ),
@@ -127,7 +127,7 @@ module sram_extension
 		.BW_DATA			(32					),
 		.BW_ADDR			(4					)
 	)
-	u_spsram0(
+	u_spsram7(
 		.clk				(clk				),
 		.wen				(wen				),
 		.cen				(addr[5] & addr[4]  ),

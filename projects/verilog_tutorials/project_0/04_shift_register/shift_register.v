@@ -7,7 +7,8 @@ module shift_register
 	input 				  load,
 	input 				  Sin,
 	input  [bit_size-1:0] d,
-	output [bit_size-1:0] q
+	output [bit_size-1:0] q,
+	output Sout
 );
 
 	mux_dff
@@ -32,7 +33,6 @@ module shift_register
 			);
 		end
 	endgenerate
-	
 endmodule
 
 module mux_dff
