@@ -19,7 +19,7 @@ module signed_alu_tb;
 	reg cin;
 	wire signed [3:0] sum;
 	wire Cout;
-dfjdkf
+
 	signed_alu
 	u_signed_alu(
 		.a					(a					),

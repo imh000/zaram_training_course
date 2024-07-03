@@ -20,10 +20,10 @@
 $
 
 # Command Line History (newest to oldest):
+:q
+|2,0,1719991193,,"q"
 :w
 |2,0,1719989059,,"w"
-:q
-|2,0,1719989031,,"q"
 :set nohlsearch
 |2,0,1719988610,,"set nohlsearch"
 :help
@@ -355,28 +355,40 @@ $
 |3,0,36,0,1,0,1719989056,"("
 
 # File marks:
-'0  28  56  ~/.vimrc
-|4,48,28,56,1719989065,"~/.vimrc"
-'1  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
-|4,49,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
-'2  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
-|4,50,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
-'3  1  15  ~/NERD_tree_tab_1
-|4,51,1,15,1719972153,"~/NERD_tree_tab_1"
-'4  17  15  ~/NERD_tree_tab_1
-|4,52,17,15,1719972153,"~/NERD_tree_tab_1"
-'5  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,53,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
-'6  11  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
-|4,54,11,0,1719970071,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
-'7  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,55,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'8  30  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,56,30,0,1719912621,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
-'9  45  6  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
-|4,57,45,6,1719909095,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v"
+'0  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,48,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+'1  23  13  ~/NERD_tree_tab_1
+|4,49,23,13,1719991151,"~/NERD_tree_tab_1"
+'2  28  56  ~/.vimrc
+|4,50,28,56,1719989065,"~/.vimrc"
+'3  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,51,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+'4  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+|4,52,10,37,1719989061,"~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v"
+'5  8  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,53,8,0,1719980198,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+'6  1  15  ~/NERD_tree_tab_1
+|4,54,1,15,1719972153,"~/NERD_tree_tab_1"
+'7  1  15  ~/NERD_tree_tab_1
+|4,55,1,15,1719972153,"~/NERD_tree_tab_1"
+'8  1  15  ~/NERD_tree_tab_1
+|4,56,1,15,1719972153,"~/NERD_tree_tab_1"
+'9  17  15  ~/NERD_tree_tab_1
+|4,57,17,15,1719972153,"~/NERD_tree_tab_1"
 
 # Jumplist (newest first):
+-'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  12  2  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,12,2,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  1  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,39,1,0,1719991184,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  23  13  ~/NERD_tree_tab_1
+|4,39,23,13,1719991151,"~/NERD_tree_tab_1"
+-'  41  2  ~/NERD_tree_tab_1
+|4,39,41,2,1719991148,"~/NERD_tree_tab_1"
+-'  1  13  ~/NERD_tree_tab_1
+|4,39,1,13,1719991148,"~/NERD_tree_tab_1"
 -'  28  56  ~/.vimrc
 |4,39,28,56,1719989065,"~/.vimrc"
 -'  10  37  ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
@@ -565,20 +577,341 @@ $
 |4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
 -'  46  0  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
 |4,39,46,0,1719969929,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
--'  299  12  ~/projects/verilog_tutorials/project_0/06_sram_extension/README.md
-|4,39,299,12,1719969925,"~/projects/verilog_tutorials/project_0/06_sram_extension/README.md"
 
 # History of marks within files (newest to oldest):
+
+> ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+	*	1719991192	0
+	"	8	0
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
+	*	1719991190	0
+	"	3	0
+	^	55	9
+	.	54	0
+	+	1	0
+	+	75	0
+	+	17	0
+	+	17	5
+	+	17	4
+	+	17	12
+	+	17	0
+	+	43	0
+	+	42	8
+	+	46	0
+	+	52	0
+	+	54	3
+	+	55	0
+	+	56	0
+	+	55	3
+	+	56	3
+	+	57	0
+	+	59	0
+	+	57	2
+	+	75	0
+	+	6	15
+	+	54	14
+	+	54	0
+	+	40	0
+	+	37	0
+	+	57	0
+	+	17	16
+	+	32	0
+	+	20	5
+	+	21	5
+	+	54	14
+	+	6	17
+	+	56	18
+	+	54	7
+	+	56	14
+	+	54	14
+	+	56	19
+	+	54	0
+	+	56	0
+	+	18	8
+	+	19	8
+	+	20	8
+	+	18	10
+	+	20	11
+	+	18	0
+	+	54	8
+	+	55	8
+	+	56	8
+	+	54	8
+	+	17	10
+	+	18	10
+	+	19	10
+	+	20	11
+	+	21	11
+	+	17	5
+	+	18	15
+	+	19	15
+	+	20	15
+	+	18	5
+	+	54	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
+	*	1719991183	0
+	"	9	0
+	^	20	23
+	.	9	0
+	+	31	6
+	+	31	12
+	+	31	13
+	+	31	6
+	+	31	10
+	+	31	1
+	+	31	0
+	+	31	6
+	+	31	14
+	+	31	6
+	+	31	0
+	+	31	18
+	+	31	20
+	+	31	6
+	+	31	3
+	+	31	18
+	+	31	0
+	+	31	3
+	+	31	0
+	+	31	18
+	+	31	0
+	+	31	6
+	+	31	8
+	+	31	11
+	+	31	7
+	+	31	14
+	+	31	0
+	+	1	0
+	+	27	18
+	+	19	17
+	+	22	20
+	+	27	26
+	+	19	10
+	+	19	14
+	+	19	10
+	+	19	12
+	+	19	17
+	+	19	12
+	+	19	17
+	+	22	0
+	+	27	0
+	+	26	3
+	+	19	17
+	+	19	21
+	+	19	0
+	+	20	0
+	+	19	0
+	+	9	0
+
+> ~/NERD_tree_tab_1
+	*	1719991149	0
+	"	23	13
+	.	1	0
+	+	1	0
+
+> ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
+	*	1719991132	0
+	"	10	37
+	^	10	39
+	.	10	22
+	+	9	0
+	+	3	12
+	+	6	13
+	+	12	8
+	+	1	16
+	+	7	13
+	+	10	22
+
+> ~/projects/verilog_tutorials/project_0/02_alu/signed_alu_tb.v
+	*	1719990930	0
+	"	19	0
+	.	22	0
+	+	1	0
+	+	77	0
+	+	17	20
+	+	31	0
+	+	41	6
+	+	44	0
+	+	47	0
+	+	53	0
+	+	55	8
+	+	56	3
+	+	57	5
+	+	60	0
+	+	58	0
+	+	21	11
+	+	31	0
+	+	58	0
+	+	23	0
+	+	22	0
+
+> ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
+	*	1719990873	0
+	"	28	0
+	^	51	6
+	.	51	5
+	+	80	8
+	+	81	3
+	+	112	0
+	+	112	1
+	+	112	12
+	+	112	0
+	+	112	23
+	+	112	24
+	+	112	16
+	+	81	0
+	+	78	0
+	+	83	34
+	+	97	0
+	+	109	0
+	+	100	0
+	+	101	0
+	+	100	39
+	+	101	33
+	+	102	0
+	+	104	0
+	+	103	0
+	+	104	10
+	+	83	23
+	+	84	23
+	+	99	18
+	+	100	19
+	+	101	16
+	+	105	17
+	+	106	19
+	+	107	16
+	+	77	0
+	+	64	0
+	+	77	0
+	+	65	4
+	+	66	14
+	+	68	6
+	+	69	0
+	+	73	0
+	+	69	4
+	+	73	4
+	+	70	11
+	+	71	13
+	+	74	11
+	+	75	14
+	+	77	0
+	+	42	22
+	+	43	0
+	+	42	40
+	+	16	0
+	+	15	8
+	+	25	19
+	+	30	6
+	+	42	38
+	+	30	6
+	+	24	18
+	+	25	18
+	+	32	21
+	+	33	0
+	+	34	8
+	+	35	5
+	+	36	5
+	+	35	10
+	+	36	10
+	+	37	0
+	+	35	36
+	+	36	37
+	+	38	0
+	+	38	37
+	+	29	7
+	+	93	0
+	+	82	0
+	+	93	0
+	+	92	0
+	+	93	10
+	+	94	35
+	+	95	35
+	+	112	0
+	+	50	17
+	+	48	16
+	+	51	0
+	+	51	16
+	+	53	25
+	+	54	0
+	+	8	18
+	+	16	8
+	+	16	0
+	+	97	0
+	+	38	26
+	+	32	0
+	+	31	0
+	+	109	0
+	+	38	0
+	+	57	1
+	+	57	0
+	+	58	0
+	+	57	0
+	+	38	0
+	+	39	0
+	+	38	0
+	+	51	5
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter.v
+	*	1719989387	0
+	"	1	0
+	^	16	11
+	.	16	10
+	+	1	0
+	+	14	0
+	+	12	0
+	+	13	0
+	+	7	0
+	+	22	0
+	+	9	0
+	+	11	0
+	+	22	0
+	+	24	0
+	+	4	0
+	+	6	20
+	+	7	20
+	+	22	0
+	+	15	0
+	+	19	31
+	+	20	30
+	+	22	0
+	+	3	10
+	+	16	10
+
+> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter_tb.v
+	*	1719989383	0
+	"	61	0
+	^	4	22
+	.	4	20
+	+	1	0
+	+	80	0
+	+	32	30
+	+	41	0
+	+	18	28
+	+	32	0
+	+	38	20
+	+	20	0
+	+	21	23
+	+	18	4
+	+	49	5
+	+	53	0
+	+	61	5
+	+	21	22
+	+	6	17
+	+	61	9
+	+	64	0
+	+	62	0
+	+	64	0
+	+	62	1
+	+	59	0
+	+	56	11
+	+	49	0
+	+	47	0
+	+	21	22
+	+	6	17
+	+	4	20
 
 > ~/.vimrc
 	*	1719989063	0
@@ -686,42 +1019,6 @@ $
 	+	89	0
 	+	163	0
 
-> ~/projects/verilog_tutorials/project_0/02_alu/signed_alu.v
-	*	1719989059	0
-	"	10	37
-	^	10	39
-	.	10	22
-	+	9	0
-	+	3	12
-	+	6	13
-	+	12	8
-	+	1	16
-	+	7	13
-	+	10	22
-
-> ~/projects/verilog_tutorials/project_0/02_alu/signed_alu_tb.v
-	*	1719989027	0
-	"	22	0
-	.	22	0
-	+	1	0
-	+	77	0
-	+	17	20
-	+	31	0
-	+	41	6
-	+	44	0
-	+	47	0
-	+	53	0
-	+	55	8
-	+	56	3
-	+	57	5
-	+	60	0
-	+	58	0
-	+	21	11
-	+	31	0
-	+	58	0
-	+	23	0
-	+	22	0
-
 > ~/projects/verilog_tutorials/project_0/NERD_tree_tab_1
 	*	1719989009	0
 	"	14	10
@@ -778,60 +1075,6 @@ $
 	*	1719988571	0
 	"	1	0
 
-> ~/projects/verilog_tutorials/project_0/02_alu/ALU.v
-	*	1719986952	0
-	"	9	0
-	^	20	23
-	.	9	0
-	+	31	6
-	+	31	12
-	+	31	13
-	+	31	6
-	+	31	10
-	+	31	1
-	+	31	0
-	+	31	6
-	+	31	14
-	+	31	6
-	+	31	0
-	+	31	18
-	+	31	20
-	+	31	6
-	+	31	3
-	+	31	18
-	+	31	0
-	+	31	3
-	+	31	0
-	+	31	18
-	+	31	0
-	+	31	6
-	+	31	8
-	+	31	11
-	+	31	7
-	+	31	14
-	+	31	0
-	+	1	0
-	+	27	18
-	+	19	17
-	+	22	20
-	+	27	26
-	+	19	10
-	+	19	14
-	+	19	10
-	+	19	12
-	+	19	17
-	+	19	12
-	+	19	17
-	+	22	0
-	+	27	0
-	+	26	3
-	+	19	17
-	+	19	21
-	+	19	0
-	+	20	0
-	+	19	0
-	+	9	0
-
 > ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 	*	1719980196	0
 	"	8	0
@@ -847,78 +1090,6 @@ $
 	+	8	0
 	+	9	0
 	+	8	0
-
-> ~/NERD_tree_tab_1
-	*	1719980178	0
-	"	23	11
-	.	1	0
-	+	1	0
-
-> ~/projects/verilog_tutorials/project_0/02_alu/ALU_tb.v
-	*	1719980177	0
-	"	52	0
-	^	55	9
-	.	54	0
-	+	1	0
-	+	75	0
-	+	17	0
-	+	17	5
-	+	17	4
-	+	17	12
-	+	17	0
-	+	43	0
-	+	42	8
-	+	46	0
-	+	52	0
-	+	54	3
-	+	55	0
-	+	56	0
-	+	55	3
-	+	56	3
-	+	57	0
-	+	59	0
-	+	57	2
-	+	75	0
-	+	6	15
-	+	54	14
-	+	54	0
-	+	40	0
-	+	37	0
-	+	57	0
-	+	17	16
-	+	32	0
-	+	20	5
-	+	21	5
-	+	54	14
-	+	6	17
-	+	56	18
-	+	54	7
-	+	56	14
-	+	54	14
-	+	56	19
-	+	54	0
-	+	56	0
-	+	18	8
-	+	19	8
-	+	20	8
-	+	18	10
-	+	20	11
-	+	18	0
-	+	54	8
-	+	55	8
-	+	56	8
-	+	54	8
-	+	17	10
-	+	18	10
-	+	19	10
-	+	20	11
-	+	21	11
-	+	17	5
-	+	18	15
-	+	19	15
-	+	20	15
-	+	18	5
-	+	54	0
 
 > ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register_tb.v
 	*	1719972150	0
@@ -1245,112 +1416,6 @@ $
 	+	115	9
 	+	130	9
 	+	169	18
-
-> ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/fsm_traffic.v
-	*	1719969347	0
-	"	8	0
-	^	51	6
-	.	51	5
-	+	80	8
-	+	81	3
-	+	112	0
-	+	112	1
-	+	112	12
-	+	112	0
-	+	112	23
-	+	112	24
-	+	112	16
-	+	81	0
-	+	78	0
-	+	83	34
-	+	97	0
-	+	109	0
-	+	100	0
-	+	101	0
-	+	100	39
-	+	101	33
-	+	102	0
-	+	104	0
-	+	103	0
-	+	104	10
-	+	83	23
-	+	84	23
-	+	99	18
-	+	100	19
-	+	101	16
-	+	105	17
-	+	106	19
-	+	107	16
-	+	77	0
-	+	64	0
-	+	77	0
-	+	65	4
-	+	66	14
-	+	68	6
-	+	69	0
-	+	73	0
-	+	69	4
-	+	73	4
-	+	70	11
-	+	71	13
-	+	74	11
-	+	75	14
-	+	77	0
-	+	42	22
-	+	43	0
-	+	42	40
-	+	16	0
-	+	15	8
-	+	25	19
-	+	30	6
-	+	42	38
-	+	30	6
-	+	24	18
-	+	25	18
-	+	32	21
-	+	33	0
-	+	34	8
-	+	35	5
-	+	36	5
-	+	35	10
-	+	36	10
-	+	37	0
-	+	35	36
-	+	36	37
-	+	38	0
-	+	38	37
-	+	29	7
-	+	93	0
-	+	82	0
-	+	93	0
-	+	92	0
-	+	93	10
-	+	94	35
-	+	95	35
-	+	112	0
-	+	50	17
-	+	48	16
-	+	51	0
-	+	51	16
-	+	53	25
-	+	54	0
-	+	8	18
-	+	16	8
-	+	16	0
-	+	97	0
-	+	38	26
-	+	32	0
-	+	31	0
-	+	109	0
-	+	38	0
-	+	57	1
-	+	57	0
-	+	58	0
-	+	57	0
-	+	38	0
-	+	39	0
-	+	38	0
-	+	51	5
 
 > ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/waveform.png
 	*	1719969346	0
@@ -1877,12 +1942,6 @@ $
 	+	127	23
 	+	128	14
 
-> ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-	*	1719821641	0
-	"	9	8
-	.	1	0
-	+	1	0
-
 > /usr/share/vim/vim82/doc/NERD_tree_tab_1
 	*	1719819818	0
 	"	4	0
@@ -2062,70 +2121,11 @@ $
 	*	1719794498	0
 	"	1	0
 
-> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter_tb.v
-	*	1719564518	0
-	"	1	0
-	^	4	22
-	.	4	20
-	+	1	0
-	+	80	0
-	+	32	30
-	+	41	0
-	+	18	28
-	+	32	0
-	+	38	20
-	+	20	0
-	+	21	23
-	+	18	4
-	+	49	5
-	+	53	0
-	+	61	5
-	+	21	22
-	+	6	17
-	+	61	9
-	+	64	0
-	+	62	0
-	+	64	0
-	+	62	1
-	+	59	0
-	+	56	11
-	+	49	0
-	+	47	0
-	+	21	22
-	+	6	17
-	+	4	20
-
 > ~/projects/verilog_tutorials/project_0/00_gray_code_converter/NERD_tree_tab_1
 	*	1719564395	0
 	"	8	0
 	.	1	0
 	+	1	0
-
-> ~/projects/verilog_tutorials/project_0/00_gray_code_converter/gray_code_converter.v
-	*	1719564392	0
-	"	1	0
-	^	16	11
-	.	16	10
-	+	1	0
-	+	14	0
-	+	12	0
-	+	13	0
-	+	7	0
-	+	22	0
-	+	9	0
-	+	11	0
-	+	22	0
-	+	24	0
-	+	4	0
-	+	6	20
-	+	7	20
-	+	22	0
-	+	15	0
-	+	19	31
-	+	20	30
-	+	22	0
-	+	3	10
-	+	16	10
 
 > ~/projects/verilog_tutorials/project_0/05_fsm_traffic_light/NERD_tree_tab_1
 	*	1719563937	0
