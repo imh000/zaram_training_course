@@ -1587,3 +1587,16 @@ gitpush
 cd .git/
 gvim FETCH_HEAD 
 gitpush
+cd .git/-credentials
+git config --global --list
+git config --unset --global credental.helper
+gitpush
+git config --global --list
+gitpush
+git config --list
+git config --global --list
+git credential-cache exit
+git config --global --list
+git config --unset credental.helper
+git config --global --list
+gitpush

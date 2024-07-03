@@ -6,6 +6,6 @@ module signed_adder
 	output signed [4:0] sum
 );
 
-	assign sum = {a[3], a} + {1'b0, b} + cin;
+	assign sum = {a[3],a} - {1'b0, b};
 
 endmodule
