@@ -21,9 +21,9 @@ $
 
 # Command Line History (newest to oldest):
 :w
-|2,0,1719993162,,"w"
+|2,0,1719993678,,"w"
 :q
-|2,0,1719993042,,"q"
+|2,0,1719993670,,"q"
 :set nohlsearch
 |2,0,1719988610,,"set nohlsearch"
 :help
@@ -289,78 +289,99 @@ $
 
 # Registers:
 "0	LINE	0
-				a = $random;
-|3,0,0,1,1,0,1719991747,"			a = $random;"
-""1	LINE	0
-			#(1000/`CLKFREQ);
-|3,1,1,1,1,0,1719991761,"		#(1000/`CLKFREQ);"
+	module signed_adder
+	(
+		input signed [3:0] a,
+		input 		 [3:0] b,
+		input			   cin,
+		output signed [4:0] sum
+	);
+|3,0,0,1,7,0,1719993569,"module signed_adder","(","	input signed [3:0] a,","	input 		 [3:0] b,","	input			   cin,","	output signed [4:0] sum",");"
+"1	LINE	0
+	
+|3,0,1,1,1,0,1719993589,""
 "2	LINE	0
-			resetReleaseAfterNCycles(4);
-|3,0,2,1,1,0,1719991741,"		resetReleaseAfterNCycles(4);"
+		reg signed [3:0] a;
+		reg 		 [3:0] b;
+		reg			   cin;
+		wire signed [4:0] sum;
+	
+		signed_adder
+		u_signed_adder(
+			.a					(a					),
+			.b					(b					),
+			.cin				(cin				),
+			.sum				(sum				)
+		);
+	
+|3,0,2,1,13,0,1719993564,"	reg signed [3:0] a;","	reg 		 [3:0] b;","	reg			   cin;","	wire signed [4:0] sum;","","	signed_adder","	u_signed_adder(","		.a					(a					),","		.b					(b					),","		.cin				(cin				),","		.sum				(sum				)","	);",""
 "3	LINE	0
-	
-|3,0,3,1,1,0,1719991739,""
+	### djfdkfkdjf
+|3,0,3,1,1,0,1719993500,"### djfdkfkdjf"
 "4	LINE	0
-	
-	// --------------------------------------------------
-|3,0,4,1,2,0,1719991736,"","// --------------------------------------------------"
+			#(1000/`CLKFREQ);
+|3,0,4,1,1,0,1719991761,"		#(1000/`CLKFREQ);"
 "5	LINE	0
-		always #(500/`CLKFREQ) clk = ~clk;
-|3,0,5,1,1,0,1719991735,"	always #(500/`CLKFREQ) clk = ~clk;"
+			resetReleaseAfterNCycles(4);
+|3,0,5,1,1,0,1719991741,"		resetReleaseAfterNCycles(4);"
 "6	LINE	0
 	
-|3,0,6,1,1,0,1719991732,""
+|3,0,6,1,1,0,1719991739,""
 "7	LINE	0
-		task resetReleaseAfterNCycles;
-			input [9:0] n;
-			begin
-				taskState = "Reset On";
-				rstn = 1'b0;
-				#(1000/`CLKFREQ);
-				rstn = 1'b1; 
-				taskState = "Reset OFF";
-			end
-		endtask
-|3,0,7,1,10,0,1719991732,"	task resetReleaseAfterNCycles;","		input [9:0] n;","		begin","			taskState = \"Reset On\";","			rstn = 1'b0;","			#(1000/`CLKFREQ);","			rstn = 1'b1; ","			taskState = \"Reset OFF\";","		end","	endtask"
-"8	LINE	0
 	
-|3,0,8,1,1,0,1719991728,""
+	// --------------------------------------------------
+|3,0,7,1,2,0,1719991736,"","// --------------------------------------------------"
+"8	LINE	0
+		always #(500/`CLKFREQ) clk = ~clk;
+|3,0,8,1,1,0,1719991735,"	always #(500/`CLKFREQ) clk = ~clk;"
 "9	LINE	0
-		reg [8*32-1:0] taskState;
-|3,0,9,1,1,0,1719991726,"	reg [8*32-1:0] taskState;"
+	
+|3,0,9,1,1,0,1719991732,""
 "f	CHAR	0
 	iint1€ýa€ýa
 |3,0,15,0,1,0,1718260665,"iint1€ýa€ýa"
 "t	CHAR	0
 	15xj
 |3,0,29,0,1,0,1718260439,"15xj"
-"-	CHAR	0
-	a
-|3,0,36,0,1,0,1719991757,"a"
+""-	CHAR	0
+	],
+|3,1,36,0,1,0,1719993660,"],"
 
 # File marks:
-'0  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,48,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
-'1  1  0  ~/.git/COMMIT_EDITMSG
-|4,49,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
-'2  4  0  ~/.git/COMMIT_EDITMSG
-|4,50,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
-'3  4  0  ~/.git/COMMIT_EDITMSG
-|4,51,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
-'4  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,52,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
-'5  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,53,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
-'6  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,54,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
-'7  1  13  ~/NERD_tree_tab_1
-|4,55,1,13,1719991151,"~/NERD_tree_tab_1"
-'8  23  13  ~/NERD_tree_tab_1
-|4,56,23,13,1719991151,"~/NERD_tree_tab_1"
-'9  28  56  ~/.vimrc
-|4,57,28,56,1719989065,"~/.vimrc"
+'0  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,48,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+'1  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,49,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+'2  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,50,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+'3  1  0  ~/.git/COMMIT_EDITMSG
+|4,51,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
+'4  4  0  ~/.git/COMMIT_EDITMSG
+|4,52,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+'5  4  0  ~/.git/COMMIT_EDITMSG
+|4,53,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+'6  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,54,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+'7  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,55,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+'8  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,56,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+'9  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
+|4,57,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
 
 # Jumplist (newest first):
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  9  31  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+|4,39,9,31,1719993675,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
+-'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
+-'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+-'  1  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,39,1,0,1719993498,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
 -'  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
 |4,39,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
 -'  1  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
@@ -369,6 +390,10 @@ $
 |4,39,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
 |4,39,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
 -'  4  0  ~/.git/COMMIT_EDITMSG
 |4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
 -'  4  0  ~/.git/COMMIT_EDITMSG
@@ -377,6 +402,18 @@ $
 |4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
 -'  4  0  ~/.git/COMMIT_EDITMSG
 |4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+-'  4  0  ~/.git/COMMIT_EDITMSG
+|4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+-'  4  0  ~/.git/COMMIT_EDITMSG
+|4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+-'  4  0  ~/.git/COMMIT_EDITMSG
+|4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+-'  4  0  ~/.git/COMMIT_EDITMSG
+|4,39,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719992721,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719992721,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
 |4,39,1,0,1719992721,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
@@ -397,6 +434,10 @@ $
 |4,39,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
 |4,39,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  35  8  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,35,8,1719992361,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  48  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,48,0,1719991737,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  48  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
 |4,39,48,0,1719991737,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  48  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
@@ -429,6 +470,10 @@ $
 |4,39,1,2,1719991684,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  1  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
 |4,39,1,2,1719991684,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  1  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,1,2,1719991684,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  6  23  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
+|4,39,6,23,1719991680,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
 -'  6  23  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
 |4,39,6,23,1719991680,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
 -'  6  23  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
@@ -493,113 +538,49 @@ $
 |4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
 -'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
 |4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  29  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
-|4,39,29,0,1719991464,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
--'  8  0  ~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1
-|4,39,8,0,1719991193,"~/projects/verilog_tutorials/project_0/02_alu/NERD_tree_tab_1"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
+-'  28  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v
+|4,39,28,0,1719991476,"~/projects/zaram_training_course/02_combinational_logic/03_adder/adder.v"
 
 # History of marks within files (newest to oldest):
 
-> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-	*	1719993162	0
-	"	3	13
-	^	3	14
-	.	3	13
-	+	1	16
-	+	10	9
-	+	109	0
-	+	112	10
-	+	109	0
-	+	11	0
-	+	113	0
-	+	183	18
-	+	185	27
-	+	8	0
-	+	4	32
-	+	3	13
-
-> ~/NERD_tree_tab_1
-	*	1719993155	0
-	"	14	8
-	.	1	0
-	+	1	0
-
-> ~/.git/COMMIT_EDITMSG
-	*	1719992957	0
-	"	1	0
-
 > ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-	*	1719992245	0
-	"	35	8
-	^	52	20
-	.	52	19
+	*	1719993719	0
+	"	11	2
+	^	29	0
+	.	29	0
 	+	1	0
 	+	71	0
-	+	29	0
+	+	30	0
 	+	38	0
 	+	37	10
 	+	35	0
@@ -614,16 +595,49 @@ $
 	+	51	5
 	+	54	0
 	+	52	19
+	+	30	0
+	+	16	0
+	+	30	0
+	+	17	20
+	+	29	0
+
+> ~/NERD_tree_tab_1
+	*	1719993673	0
+	"	37	11
+	.	1	0
+	+	1	0
 
 > ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-	*	1719991690	0
-	"	1	0
-	^	11	9
-	.	6	24
+	*	1719993670	0
+	"	9	31
+	^	9	32
+	.	9	31
 	+	7	14
 	+	6	16
 	+	11	8
 	+	6	24
+	+	9	31
+
+> ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+	*	1719993524	0
+	"	3	0
+	.	3	0
+	+	1	16
+	+	9	9
+	+	108	0
+	+	111	10
+	+	108	0
+	+	10	0
+	+	112	0
+	+	182	18
+	+	184	27
+	+	7	0
+	+	3	32
+	+	3	0
+
+> ~/.git/COMMIT_EDITMSG
+	*	1719992957	0
+	"	1	0
 
 > ~/projects/zaram_training_course/02_combinational_logic/03_adder/NERD_tree_tab_1
 	*	1719991677	0
