@@ -350,35 +350,47 @@ $
 
 # File marks:
 '0  22  73  ~/.bash_aliases
-|4,48,22,73,1719994163,"~/.bash_aliases"
-'1  159  35  ~/.vimrc
-|4,49,159,35,1719994131,"~/.vimrc"
-'2  1  0  ~/.git/COMMIT_EDITMSG
-|4,50,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
-'3  11  1  ~/.git/config
-|4,51,11,1,1719993872,"~/.git/config"
-'4  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,52,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
-'5  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,53,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+|4,48,22,73,1719994735,"~/.bash_aliases"
+'1  22  73  ~/.bash_aliases
+|4,49,22,73,1719994163,"~/.bash_aliases"
+'2  159  35  ~/.vimrc
+|4,50,159,35,1719994131,"~/.vimrc"
+'3  1  0  ~/.git/COMMIT_EDITMSG
+|4,51,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+'4  11  1  ~/.git/config
+|4,52,11,1,1719993872,"~/.git/config"
+'5  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,53,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 '6  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
 |4,54,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
-'7  1  0  ~/.git/COMMIT_EDITMSG
-|4,55,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
-'8  4  0  ~/.git/COMMIT_EDITMSG
-|4,56,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
+'7  3  13  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
+|4,55,3,13,1719993164,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
+'8  1  0  ~/.git/COMMIT_EDITMSG
+|4,56,1,0,1719993042,"~/.git/COMMIT_EDITMSG"
 '9  4  0  ~/.git/COMMIT_EDITMSG
 |4,57,4,0,1719992729,"~/.git/COMMIT_EDITMSG"
 
 # Jumplist (newest first):
 -'  22  73  ~/.bash_aliases
+|4,39,22,73,1719994735,"~/.bash_aliases"
+-'  22  73  ~/.bash_aliases
 |4,39,22,73,1719994163,"~/.bash_aliases"
+-'  49  42  ~/.bash_aliases
+|4,39,49,42,1719994137,"~/.bash_aliases"
 -'  49  42  ~/.bash_aliases
 |4,39,49,42,1719994137,"~/.bash_aliases"
 -'  159  35  ~/.vimrc
 |4,39,159,35,1719994131,"~/.vimrc"
 -'  159  35  ~/.vimrc
 |4,39,159,35,1719994131,"~/.vimrc"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1719994131,"~/.vimrc"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1719994131,"~/.vimrc"
+-'  28  56  ~/.vimrc
+|4,39,28,56,1719994122,"~/.vimrc"
+-'  28  56  ~/.vimrc
+|4,39,28,56,1719994122,"~/.vimrc"
 -'  28  56  ~/.vimrc
 |4,39,28,56,1719994122,"~/.vimrc"
 -'  28  56  ~/.vimrc
@@ -391,6 +403,14 @@ $
 |4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
 |4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1719993935,"~/.git/COMMIT_EDITMSG"
 -'  11  1  ~/.git/config
 |4,39,11,1,1719993872,"~/.git/config"
 -'  11  1  ~/.git/config
@@ -407,6 +427,38 @@ $
 |4,39,11,1,1719993872,"~/.git/config"
 -'  11  1  ~/.git/config
 |4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  11  1  ~/.git/config
+|4,39,11,1,1719993872,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
+-'  1  0  ~/.git/config
+|4,39,1,0,1719993805,"~/.git/config"
 -'  1  0  ~/.git/config
 |4,39,1,0,1719993805,"~/.git/config"
 -'  1  0  ~/.git/config
@@ -455,6 +507,38 @@ $
 |4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
 |4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
+-'  11  2  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
+|4,39,11,2,1719993730,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
 -'  9  31  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
 |4,39,9,31,1719993675,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
 -'  9  31  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
@@ -487,95 +571,11 @@ $
 |4,39,9,31,1719993675,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
 -'  9  31  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
 |4,39,9,31,1719993675,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  42  15  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v
-|4,39,42,15,1719993552,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder_tb.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  1  0  ~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v
-|4,39,1,0,1719993540,"~/projects/zaram_training_course/02_combinational_logic/03_adder/signed_adder.v"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
--'  3  0  ~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md
-|4,39,3,0,1719993537,"~/projects/verilog_tutorials/project_0/01_barrel_shifter/README.md"
 
 # History of marks within files (newest to oldest):
 
 > ~/.bash_aliases
-	*	1719994156	0
+	*	1719994733	0
 	"	22	73
 	^	49	43
 	.	49	42
