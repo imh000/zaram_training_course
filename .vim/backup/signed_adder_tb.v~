@@ -3,7 +3,7 @@
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		50		// # of Test Vector
+`define NVEC		10		// # of Test Vector
 
 // --------------------------------------------------
 //	Includes
@@ -17,14 +17,16 @@ module signed_adder_tb;
 	reg signed [3:0] a;
 	reg 		 [3:0] b;
 	reg			   cin;
-	wire signed [4:0] sum;
+	wire signed [5:0] sum;
+	wire correct;
 
 	signed_adder
 	u_signed_adder(
 		.a					(a					),
 		.b					(b					),
 		.cin				(cin				),
-		.sum				(sum				)
+		.sum				(sum				),
+		.correct			(correct			)
 	);
 
 // --------------------------------------------------

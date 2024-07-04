@@ -6,6 +6,12 @@
 	- Target
 		- 6 \-bit Addr. & 64 \-bit I\/O Data
 
+- Code Description
+	- Adress : 00_0000 ~ 00_1111 i_data[31:0] + i_data[63:32]
+	- Adress : 01_0000 ~ 01_1111 i_data[31:0] + i_data[63:32]
+	- Adress : 10_0000 ~ 10_1111 i_data[31:0] + i_data[63:32]
+	- Adress : 11_0000 ~ 11_1111 i_data[31:0] + i_data[63:32]
+
 ## Verilog Code
 ### DUT
 ```Verilog

@@ -1600,3 +1600,8 @@ git config --global --list
 git config --unset credental.helper
 git config --global --list
 gitpush
+gvim
+gitpush
+git config --global --list
+git config --list
+gvim

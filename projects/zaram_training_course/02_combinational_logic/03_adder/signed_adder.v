@@ -3,9 +3,10 @@ module signed_adder
 	input signed [3:0] a,
 	input 		 [3:0] b,
 	input			   cin,
-	output signed [4:0] sum
+	output signed [5:0] sum,
+	output correct
 );
 
-	assign sum = {a[3],a} - {1'b0, b};
-
+	assign sum = {a[3],a} - $signed({1'b0, b});
+	assign correct = (sum > 0) ? 0 : 1; 
 endmodule
