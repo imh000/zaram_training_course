@@ -21,7 +21,6 @@ module shift_register_tb;
 	reg 				  Sin;
 	reg  [bit_size-1:0] d;
 	wire [bit_size-1:0] q;
-	wire Sout;
 
 	shift_register
 	#(
@@ -32,8 +31,7 @@ module shift_register_tb;
 		.load				(load				),
 		.Sin				(Sin				),
 		.d					(d					),
-		.q					(q					),
-		.Sout				(Sout				)
+		.q					(q					)
 	);
 
 // --------------------------------------------------
@@ -55,7 +53,8 @@ module shift_register_tb;
 		begin
 			taskState = "register";
 			load = 1;
-			#(4*1000/`CLKFREQ);
+			d = $urandom;
+			#(1000/`CLKFREQ);
 			load = 0;
 			taskState  = "shift register";
 		end

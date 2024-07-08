@@ -19,8 +19,7 @@ module shift_register
 	input 				  load,
 	input 				  Sin,
 	input  [bit_size-1:0] d,
-	output [bit_size-1:0] q,
-	output Sout
+	output [bit_size-1:0] q
 );
 
 	mux_dff
@@ -46,7 +45,6 @@ module shift_register
 		end
 	endgenerate
 
-	assign Sout = load ? q[7] : 0;
 endmodule
 
 module mux_dff
@@ -98,7 +96,6 @@ module shift_register_tb;
 	reg 				  Sin;
 	reg  [bit_size-1:0] d;
 	wire [bit_size-1:0] q;
-	wire Sout;
 
 	shift_register
 	#(
@@ -109,8 +106,7 @@ module shift_register_tb;
 		.load				(load				),
 		.Sin				(Sin				),
 		.d					(d					),
-		.q					(q					),
-		.Sout				(Sout				)
+		.q					(q					)
 	);
 
 // --------------------------------------------------
@@ -132,7 +128,8 @@ module shift_register_tb;
 		begin
 			taskState = "register";
 			load = 1;
-			#(4*1000/`CLKFREQ);
+			d = $urandom;
+			#(1000/`CLKFREQ);
 			load = 0;
 			taskState  = "shift register";
 		end
@@ -179,9 +176,6 @@ endmodule
 ## Simulation Result
 - Clock Period  = 10ns
 - Load = 1 -> 8-bit Register
-
-![Waveform0](./waveform0.png)
-
 - load = 0 -> shift register
 
 ![Waveform0](./waveform.png)

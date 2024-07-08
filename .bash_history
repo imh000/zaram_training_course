@@ -1605,3 +1605,19 @@ gitpush
 git config --global --list
 git config --list
 gvim
+gitpush
+gvim
+gvim .bash_aliases 
+ll
+gvim
+cd utils/
+cd scripts/
+cd
+gvim .vim
+gvim .vimrc 
+ll
+cd .git/
+cd branches/
+cd ..
+gvim
+cd

@@ -15,18 +15,16 @@ module signed_adder_tb;
 //	DUT Signals & Instantiate
 // --------------------------------------------------
 	reg signed [3:0] a;
-	reg 		 [3:0] b;
+	reg signed		 [3:0] b;
 	reg			   cin;
 	wire signed [5:0] sum;
-	wire correct;
 
 	signed_adder
 	u_signed_adder(
 		.a					(a					),
 		.b					(b					),
 		.cin				(cin				),
-		.sum				(sum				),
-		.correct			(correct			)
+		.sum				(sum				)
 	);
 
 // --------------------------------------------------
