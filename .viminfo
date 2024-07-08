@@ -433,44 +433,124 @@ $i_data
 |3,0,36,0,1,0,1720400215,","
 
 # File marks:
-'0  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
-|4,48,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
-'1  5  7  ~/.git/NERD_tree_tab_1
-|4,49,5,7,1720171603,"~/.git/NERD_tree_tab_1"
-'2  5  9  ~/NERD_tree_tab_1
-|4,50,5,9,1720170425,"~/NERD_tree_tab_1"
-'3  46  34  ~/.vimrc
-|4,51,46,34,1720167847,"~/.vimrc"
-'4  1  0  ~/NERD_tree_win_1
-|4,52,1,0,1720167729,"~/NERD_tree_win_1"
-'5  27  0  ~/NERD_tree_tab_1
-|4,53,27,0,1720079134,"~/NERD_tree_tab_1"
-'6  45  0  ~/NERD_tree_tab_1
-|4,54,45,0,1720079134,"~/NERD_tree_tab_1"
-'7  28  0  ~/utils/scripts/test_vector.py
-|4,55,28,0,1720074942,"~/utils/scripts/test_vector.py"
-'8  1  12  ~/NERD_tree_tab_1
-|4,56,1,12,1720054439,"~/NERD_tree_tab_1"
-'9  1  12  ~/NERD_tree_tab_1
-|4,57,1,12,1720054439,"~/NERD_tree_tab_1"
+'0  25  0  ~/test_1.sh
+|4,48,25,0,1720401512,"~/test_1.sh"
+'1  25  0  ~/test_1.sh
+|4,49,25,0,1720401489,"~/test_1.sh"
+'2  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,50,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+'3  5  7  ~/.git/NERD_tree_tab_1
+|4,51,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+'4  5  9  ~/NERD_tree_tab_1
+|4,52,5,9,1720170425,"~/NERD_tree_tab_1"
+'5  46  34  ~/.vimrc
+|4,53,46,34,1720167847,"~/.vimrc"
+'6  1  0  ~/NERD_tree_win_1
+|4,54,1,0,1720167729,"~/NERD_tree_win_1"
+'7  27  0  ~/NERD_tree_tab_1
+|4,55,27,0,1720079134,"~/NERD_tree_tab_1"
+'8  45  0  ~/NERD_tree_tab_1
+|4,56,45,0,1720079134,"~/NERD_tree_tab_1"
+'9  28  0  ~/utils/scripts/test_vector.py
+|4,57,28,0,1720074942,"~/utils/scripts/test_vector.py"
 
 # Jumplist (newest first):
+-'  25  0  ~/test_1.sh
+|4,39,25,0,1720401512,"~/test_1.sh"
+-'  25  0  ~/test_1.sh
+|4,39,25,0,1720401489,"~/test_1.sh"
+-'  1  0  ~/test_1.sh
+|4,39,1,0,1720401471,"~/test_1.sh"
+-'  1  0  ~/test_1.sh
+|4,39,1,0,1720401471,"~/test_1.sh"
+-'  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  141  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,141,0,1720400300,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  138  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,138,0,1720400277,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  138  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,138,0,1720400277,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  138  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,138,0,1720400277,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  138  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,138,0,1720400277,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  174  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,174,0,1720400254,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  174  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,174,0,1720400254,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  174  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,174,0,1720400254,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  174  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,174,0,1720400254,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  22  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 |4,39,22,0,1720400179,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  22  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,22,0,1720400179,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  22  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,22,0,1720400179,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
+-'  22  0  ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
+|4,39,22,0,1720400179,"~/projects/verilog_tutorials/project_0/04_shift_register/README.md"
 -'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,1,0,1720400175,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,1,0,1720400175,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,1,0,1720400175,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  1  0  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,1,0,1720400175,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  11  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,11,1,1720399671,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  11  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,11,1,1720399671,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
+-'  11  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
+|4,39,11,1,1720399671,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  11  1  ~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v
 |4,39,11,1,1720399671,"~/projects/verilog_tutorials/project_0/04_shift_register/shift_register.v"
 -'  5  7  ~/.git/NERD_tree_tab_1
 |4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
 -'  5  7  ~/.git/NERD_tree_tab_1
 |4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  5  7  ~/.git/NERD_tree_tab_1
+|4,39,5,7,1720171603,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
+-'  290  2  ~/.git/NERD_tree_tab_1
+|4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
+-'  1  7  ~/.git/NERD_tree_tab_1
+|4,39,1,7,1720170452,"~/.git/NERD_tree_tab_1"
 -'  290  2  ~/.git/NERD_tree_tab_1
 |4,39,290,2,1720170452,"~/.git/NERD_tree_tab_1"
 -'  1  7  ~/.git/NERD_tree_tab_1
@@ -483,6 +563,42 @@ $i_data
 |4,39,5,9,1720170425,"~/NERD_tree_tab_1"
 -'  5  9  ~/NERD_tree_tab_1
 |4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  5  9  ~/NERD_tree_tab_1
+|4,39,5,9,1720170425,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
+-'  11  4  ~/NERD_tree_tab_1
+|4,39,11,4,1720170422,"~/NERD_tree_tab_1"
+-'  1  9  ~/NERD_tree_tab_1
+|4,39,1,9,1720170422,"~/NERD_tree_tab_1"
 -'  11  4  ~/NERD_tree_tab_1
 |4,39,11,4,1720170422,"~/NERD_tree_tab_1"
 -'  1  9  ~/NERD_tree_tab_1
@@ -499,6 +615,30 @@ $i_data
 |4,39,46,34,1720167847,"~/.vimrc"
 -'  46  34  ~/.vimrc
 |4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
+-'  46  34  ~/.vimrc
+|4,39,46,34,1720167847,"~/.vimrc"
 -'  159  35  ~/.vimrc
 |4,39,159,35,1720167733,"~/.vimrc"
 -'  159  35  ~/.vimrc
@@ -507,156 +647,20 @@ $i_data
 |4,39,159,35,1720167733,"~/.vimrc"
 -'  159  35  ~/.vimrc
 |4,39,159,35,1720167733,"~/.vimrc"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  1  0  ~/NERD_tree_win_1
-|4,39,1,0,1720167729,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  7  0  ~/NERD_tree_win_1
-|4,39,7,0,1720167724,"~/NERD_tree_win_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  45  0  ~/NERD_tree_tab_1
-|4,39,45,0,1720079134,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  54  2  ~/NERD_tree_tab_1
-|4,39,54,2,1720078036,"~/NERD_tree_tab_1"
--'  1  0  ~/NERD_tree_tab_1
-|4,39,1,0,1720078036,"~/NERD_tree_tab_1"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
--'  28  0  ~/utils/scripts/test_vector.py
-|4,39,28,0,1720074942,"~/utils/scripts/test_vector.py"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1720167733,"~/.vimrc"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1720167733,"~/.vimrc"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1720167733,"~/.vimrc"
+-'  159  35  ~/.vimrc
+|4,39,159,35,1720167733,"~/.vimrc"
 
 # History of marks within files (newest to oldest):
+
+> ~/test_1.sh
+	*	1720401510	0
+	"	25	0
 
 > ~/projects/verilog_tutorials/project_0/04_shift_register/README.md
 	*	1720400300	0
@@ -2948,9 +2952,3 @@ $i_data
 	+	204	8
 	+	206	35
 	+	195	45
-
-> ~/projects/zaram_training_course/03_sequential_logic/07_regfile/NERD_tree_tab_1
-	*	1719388773	0
-	"	19	9
-	.	1	0
-	+	1	0

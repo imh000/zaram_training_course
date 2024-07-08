@@ -1621,3 +1621,14 @@ cd branches/
 cd ..
 gvim
 cd
+cd projects/verilog_tutorials/
+cd project_0/
+cd 04_shift_register/
+gvim shift_register.v
+cd
+gitpush
+cd projects/verilog_tutorials/project_0/
+cd -4
+cd 04_shift_register/
+feh waveform.png 
+cd
