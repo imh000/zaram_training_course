@@ -10,21 +10,21 @@ module riscv_dmem_tb;
 // --------------------------------------------------
 //	DUT Signals & Instantiate
 // --------------------------------------------------
-	wire	[         `XLEN-1:0]	o_dmem_data;
-	reg		[         `XLEN-1:0]	i_dmem_data;
-	reg		[`DMEM_ADDR_BIT-3:0]	i_dmem_addr;
-	reg		[       `XLEN/8-1:0]	i_dmem_byte_sel;
-	reg								i_dmem_wr_en;
-	reg								i_clk;
+	reg i_clk;
+	reg i_dmem_wr_en;
+	reg [`XLEN/8-1:0] i_dmem_byte_sel;
+	reg [`DMEM_ADDR_BIT-3:0] i_dmem_addr;
+	reg [`XLEN-1:0] i_dmem_data;
+	wire [`XLEN-1:0] o_dmem_data;
 
 	riscv_dmem
 	u_riscv_dmem(
-		.o_dmem_data		(o_dmem_data		),
-		.i_dmem_data		(i_dmem_data		),
-		.i_dmem_addr		(i_dmem_addr		),
-		.i_dmem_byte_sel	(i_dmem_byte_sel	),
+		.i_clk				(i_clk				),
 		.i_dmem_wr_en		(i_dmem_wr_en		),
-		.i_clk				(i_clk				)
+		.i_dmem_byte_sel	(i_dmem_byte_sel	),
+		.i_dmem_addr		(i_dmem_addr		),
+		.i_dmem_data		(i_dmem_data		),
+		.o_dmem_data		(o_dmem_data		)
 	);
 
 // --------------------------------------------------

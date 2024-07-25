@@ -3,47 +3,66 @@
 // --------------------------------------------------
 `define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
 `define	SIMCYCLE	`NVEC	// Sim. Cycles
-`define NVEC		100		// # of Test Vector
+`define NVEC		50		// # of Test Vector
 
 // --------------------------------------------------
 //	Includes
 // --------------------------------------------------
-`include	"riscv_mux.v"
+`include	"riscv_register.v"
 
-module risc_mux_tb;
+module riscv_register_tb;
 // --------------------------------------------------
 //	DUT Signals & Instantiate
 // --------------------------------------------------
-	parameter N_MUX_IN = 3;
+	
+	parameter REGISTER_INIT = `XLEN'h0A0A0A0A;
 
-	reg		  [$clog2(N_MUX_IN)-1:0]   i_mux_sel;
-	reg		  [(N_MUX_IN * `XLEN)-1:0] i_mux_concat_data;
-	wire	  [`XLEN-1:0]			   o_mux_data;
+	reg				   i_clk;
+	reg				   i_rstn;
+	reg				   i_register_en  ;
+	reg	   [`XLEN-1:0] i_register_d   ;
+	wire	 [`XLEN-1:0] o_register_q;
 
-	riscv_mux
+	riscv_register
 	#(
-		.N_MUX_IN			(N_MUX_IN			)
+		.REGISTER_INIT		(REGISTER_INIT		)
 	)
-	u_riscv_mux(
-		.i_mux_sel			(i_mux_sel			),
-		.i_mux_concat_data	(i_mux_concat_data	),
-		.o_mux_data			(o_mux_data			)
+	u_riscv_register(
+		.i_clk				(i_clk				),
+		.i_rstn				(i_rstn				),
+		.i_register_en		(i_register_en		),
+		.i_register_d		(i_register_d		),
+		.o_register_q		(o_register_q		)
 	);
-
-
 
 // --------------------------------------------------
 //	Tasks
 // --------------------------------------------------
 	reg [8*32-1:0] taskState;
+	integer err = 0;
 
 	task init;
 		begin
 			taskState = "Init";
-			i_mux_concat_data = 0;
-			i_mux_sel = 0;
+			i_clk = 0;
+			i_rstn = 0;
+			i_register_en = 0;
+			i_register_d = 0;
 		end
 	endtask
+
+	task resetReleaseAfterNCycles;
+		input [9:0] n;
+		begin
+			taskState = "Reset On";
+			i_rstn = 1'b0;
+			#(1000/`CLKFREQ);
+			i_rstn = 1'b1; 
+			taskState = "Reset OFF";
+		end
+	endtask
+
+	always #(500/`CLKFREQ) i_clk = ~i_clk;
 
 // --------------------------------------------------
 //	Test Stimulus
@@ -51,15 +70,14 @@ module risc_mux_tb;
 	integer		i, j;
 	initial begin
 		init();
-		#(1000/`CLKFREQ);
+		resetReleaseAfterNCycles(4);
 
 		for (i=0; i<`SIMCYCLE; i++) begin
-			i_mux_concat_data = {$urandom, $urandom, $urandom};
-			i_mux_sel = 0;
+			i_register_en = 1;
+			i_register_d = $urandom;
 			#(1000/`CLKFREQ);
-			i_mux_sel = 1;
-			#(1000/`CLKFREQ);
-			i_mux_sel = 2;
+			i_register_en = 0;
+			i_register_d = $urandom;
 			#(1000/`CLKFREQ);
 		end
 		#(1000/`CLKFREQ);
@@ -75,7 +93,7 @@ module risc_mux_tb;
 			$dumpfile(vcd_file);
 			$dumpvars;
 		end else begin
-			$dumpfile("riscv_mux_tb.vcd");
+			$dumpfile("riscv_register_tb.vcd");
 			$dumpvars;
 		end
 	end

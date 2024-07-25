@@ -1,13 +1,9 @@
-`define DMEM_INIT
-`define DMEM_INIT_FILE	"riscv_dmem.mif"
-`define IMEM_INIT
-`define IMEM_INIT_FILE	"riscv_imem.mif"
 // --------------------------------------------------
 //	RISC-V Integer Bit & Memory Specification
 // --------------------------------------------------
 `define	XLEN				32
-`define	DMEM_ADDR_BIT		10
-`define	IMEM_ADDR_BIT		10
+`define	DMEM_ADDR_BIT		8
+`define	IMEM_ADDR_BIT		8
 
 //`define	DMEM_INIT
 //`define	DMEM_INIT_FILE		"/home/woong/projects/verilog_tutorials/RV32I/core/common/riscv_dmem.mif"
@@ -28,6 +24,7 @@
 `define	ALU_CTRL_SRA		4'b1101	// Shift Right Logical / Arithmetic
 `define	ALU_CTRL_SLT		4'b0010	// Set on Less Than
 `define	ALU_CTRL_SLTU		4'b0011	// Set on Less Than Unsigned
+`define	ALU_CTRL_NOP		4'b1111	// Set on Less Than Unsigned
 
 // --------------------------------------------------
 // Instruction opcodes

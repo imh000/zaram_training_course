@@ -1,0 +1,26 @@
+`ifndef	NOINC
+`include "../common/riscv_configs.v"
+`include "../common/riscv_adder.v"
+`include "../common/riscv_alu.v"
+`include "../common/riscv_immdecode.v"
+`include "../common/riscv_mux.v"
+`include "../common/riscv_regfile.v"
+`include "../common/riscv_register.v"
+`endif
+
+module riscv_datapath
+#(
+	parameter REGISTER_INIT = 0
+)
+(
+	input i_clk,
+	input i_rstn,
+	input [1:0] i_dp_src_pc,
+	input [2:0] i_dp_src_imm,
+	input [1:0] i_dp_src_rd,
+	input i_dp_src_alu_a,
+	input i_dp_src_alu_b,
+	input i_dp_reg_wr_en,
+	input i_dp_mem_wr_en,
+	input [3:0] i_dp_alu_ctrl,
+	input [`XLEN-1:0] i_dp_mem_rd_data, 

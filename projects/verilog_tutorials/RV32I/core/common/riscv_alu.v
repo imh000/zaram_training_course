@@ -1,12 +1,14 @@
-`include "riscv_configs.v"
+`ifndef		NOINC
+`include	"riscv_configs.v"
+`endif
 
 module riscv_alu
 (
-	input [`XLEN-1:0] i_alu_a,
-	input [`XLEN-1:0] i_alu_b,
-	input [4:0] i_alu_ctrl,
-	output reg [`XLEN-1:0] o_alu_result,
-	output o_alu_zero
+	input		   [3:0] 	   i_alu_ctrl,
+	input		   [`XLEN-1:0] i_alu_a,
+	input		   [`XLEN-1:0] i_alu_b,
+	output					   o_alu_zero,
+	output reg	   [`XLEN-1:0] o_alu_result
 );
 	
 	always @ (*) begin
@@ -19,8 +21,8 @@ module riscv_alu
 			`ALU_CTRL_SLL	  : o_alu_result = i_alu_a << i_alu_b[4:0];
 			`ALU_CTRL_SRL	  : o_alu_result = i_alu_a >> i_alu_b[4:0];
 			`ALU_CTRL_SRA	  : o_alu_result = $signed(i_alu_a) >>> $signed(i_alu_b[4:0]);
-			`ALU_CTRL_SLT	  : o_alu_result = $signed(i_alu_a) < $signed(i_alu_b);
-			`ALU_CTRL_SLTU	  : o_alu_result = i_alu_a < i_alu_b;
+			`ALU_CTRL_SLT	  : o_alu_result = ($signed(i_alu_a) < $signed(i_alu_b)) ? `XLEN'd1 : `XLEN'd0;
+			`ALU_CTRL_SLTU	  : o_alu_result = (i_alu_a < i_alu_b) ? `XLEN'd1 : `XLEN'd0;
 		endcase
 	end
 
@@ -28,7 +30,6 @@ module riscv_alu
 
 	`ifdef	DEBUG
 		reg	[8*8-1:0]	DEBUG_ALU_OP;
-		
 		always @ (*) begin
 			case(i_alu_ctrl)
 				`ALU_CTRL_ADD	  : DEBUG_ALU_OP = "ADD";
