@@ -20,12 +20,12 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
+|2,0,1724303794,,"wq"
+:w
+|2,0,1724303792,,"w"
 :q
 |2,0,1724303369,,"q"
-:w
-|2,0,1724303290,,"w"
-:wq
-|2,0,1724229604,,"wq"
 :Q
 |2,0,1723771562,,"Q"
 :w!
@@ -375,38 +375,54 @@ $
 |3,1,36,0,1,0,1724303283,"add"
 
 # File marks:
-'0  1  0  ~/projects/verilog_tutorials/RV32I/README.md
-|4,48,1,0,1724303369,"~/projects/verilog_tutorials/RV32I/README.md"
-'1  22  25  ~/.bash_aliases
-|4,49,22,25,1724303291,"~/.bash_aliases"
-'2  22  78  ~/.bash_aliases
-|4,50,22,78,1724303102,"~/.bash_aliases"
-'3  22  78  ~/.bash_aliases
-|4,51,22,78,1724302515,"~/.bash_aliases"
+'0  17  113  ~/projects/verilog_tutorials/RV32I/README.md
+|4,48,17,113,1724303794,"~/projects/verilog_tutorials/RV32I/README.md"
+'1  1  0  ~/projects/verilog_tutorials/RV32I/README.md
+|4,49,1,0,1724303369,"~/projects/verilog_tutorials/RV32I/README.md"
+'2  1  0  ~/projects/verilog_tutorials/RV32I/README.md
+|4,50,1,0,1724303369,"~/projects/verilog_tutorials/RV32I/README.md"
+'3  22  25  ~/.bash_aliases
+|4,51,22,25,1724303291,"~/.bash_aliases"
 '4  22  78  ~/.bash_aliases
-|4,52,22,78,1724302515,"~/.bash_aliases"
-'5  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,53,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
-'6  1  0  ~/RV32I/README.md
-|4,54,1,0,1724301418,"~/RV32I/README.md"
+|4,52,22,78,1724303102,"~/.bash_aliases"
+'5  22  78  ~/.bash_aliases
+|4,53,22,78,1724302515,"~/.bash_aliases"
+'6  22  78  ~/.bash_aliases
+|4,54,22,78,1724302515,"~/.bash_aliases"
 '7  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,55,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
-'8  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,56,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
-'9  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,57,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,55,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+'8  1  0  ~/RV32I/README.md
+|4,56,1,0,1724301418,"~/RV32I/README.md"
+'9  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,57,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 
 # Jumplist (newest first):
+-'  17  113  ~/projects/verilog_tutorials/RV32I/README.md
+|4,39,17,113,1724303794,"~/projects/verilog_tutorials/RV32I/README.md"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/README.md
+|4,39,1,0,1724303786,"~/projects/verilog_tutorials/RV32I/README.md"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/README.md
 |4,39,1,0,1724303369,"~/projects/verilog_tutorials/RV32I/README.md"
 -'  22  25  ~/.bash_aliases
 |4,39,22,25,1724303291,"~/.bash_aliases"
 -'  22  25  ~/.bash_aliases
 |4,39,22,25,1724303291,"~/.bash_aliases"
+-'  22  25  ~/.bash_aliases
+|4,39,22,25,1724303291,"~/.bash_aliases"
+-'  22  25  ~/.bash_aliases
+|4,39,22,25,1724303291,"~/.bash_aliases"
 -'  22  78  ~/.bash_aliases
 |4,39,22,78,1724303102,"~/.bash_aliases"
 -'  22  78  ~/.bash_aliases
 |4,39,22,78,1724303102,"~/.bash_aliases"
+-'  22  78  ~/.bash_aliases
+|4,39,22,78,1724303102,"~/.bash_aliases"
+-'  22  78  ~/.bash_aliases
+|4,39,22,78,1724303102,"~/.bash_aliases"
+-'  22  78  ~/.bash_aliases
+|4,39,22,78,1724302515,"~/.bash_aliases"
+-'  22  78  ~/.bash_aliases
+|4,39,22,78,1724302515,"~/.bash_aliases"
 -'  22  78  ~/.bash_aliases
 |4,39,22,78,1724302515,"~/.bash_aliases"
 -'  22  78  ~/.bash_aliases
@@ -423,6 +439,50 @@ $
 |4,39,1,0,1724302502,"~/.bash_aliases"
 -'  1  0  ~/.bash_aliases
 |4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
@@ -487,6 +547,38 @@ $
 |4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/RV32I/README.md
 |4,39,1,0,1724301418,"~/RV32I/README.md"
 -'  1  0  ~/RV32I/README.md
@@ -505,104 +597,14 @@ $
 |4,39,1,0,1724301418,"~/RV32I/README.md"
 -'  1  0  ~/RV32I/README.md
 |4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  1  0  ~/RV32I/README.md
-|4,39,1,0,1724301418,"~/RV32I/README.md"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 
 # History of marks within files (newest to oldest):
 
 > ~/projects/verilog_tutorials/RV32I/README.md
-	*	1724303364	0
-	"	1	0
+	*	1724303792	0
+	"	17	113
+	.	1	0
+	+	1	0
 
 > ~/.bash_aliases
 	*	1724303290	0
