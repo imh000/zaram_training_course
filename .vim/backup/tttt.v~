@@ -1,0 +1,21 @@
+// string variable declaration 
+reg [8*12:1] stringvar; // 8*12 or 96-bit wide 
+
+initial begin 
+	stringvar="Helloworld!"; 
+end
+
+// string manipulation 
+module string_test; 
+reg [8*14:1] stringvar; 
+reg [8*5:1] shortvar;
+
+initial begin 
+stringvar = "Hello world"; 
+$display("%s is stored as %h", stringvar,stringvar); 
+stringvar = {stringvar,"!!!"}; 
+$display("%s is stored as %h", stringvar,stringvar); 
+shortvar = "Hello world";
+ $display("%s is stored as %h", shortvar,shortvar); 
+end 
+endmodule

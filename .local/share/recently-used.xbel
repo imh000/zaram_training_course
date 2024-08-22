@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/00_gray_code_converter/waveform" added="2024-06-28T05:56:22.254694Z" modified="2024-06-28T08:56:07.419078Z" visited="2024-06-28T05:56:22.255012Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-06-28T08:56:07.419073Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/02_alu/waveform" added="2024-07-01T08:13:01.651129Z" modified="2024-07-02T04:44:01.792958Z" visited="2024-07-01T08:13:01.651581Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T04:44:01.792955Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/02_alu/waveform1.png" added="2024-07-01T08:13:21.302751Z" modified="2024-07-02T04:44:15.382821Z" visited="2024-07-01T08:13:21.302752Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T04:44:15.382815Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/01_barrel_shifter/waveform" added="2024-07-02T00:49:56.292153Z" modified="2024-07-02T00:49:56.292232Z" visited="2024-07-02T00:49:56.292217Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T00:49:56.292227Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/06_sram_extension/waveform" added="2024-07-02T02:49:36.329633Z" modified="2024-07-02T02:49:36.336115Z" visited="2024-07-02T02:49:36.336075Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T02:49:36.336111Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/05_fsm_traffic_light/waveform" added="2024-07-02T07:05:38.083575Z" modified="2024-07-02T07:05:38.083614Z" visited="2024-07-02T07:05:38.083602Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T07:05:38.083610Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/03_adder_cla/waveform" added="2024-07-02T07:35:14.829087Z" modified="2024-07-02T07:35:14.829152Z" visited="2024-07-02T07:35:14.829124Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-02T07:35:14.829143Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/06_sram_extension/waveform.png" added="2024-07-03T01:21:03.706442Z" modified="2024-07-03T01:21:03.706475Z" visited="2024-07-03T01:21:03.706457Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-03T01:21:03.706471Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/04_shift_register/waveform" added="2024-07-03T01:58:08.247100Z" modified="2024-07-08T00:56:04.695370Z" visited="2024-07-03T01:58:08.247156Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-08T00:56:04.695368Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/imh522/projects/verilog_tutorials/project_0/04_shift_register/waveform0" added="2024-07-03T01:59:12.790232Z" modified="2024-07-03T01:59:12.790301Z" visited="2024-07-03T01:59:12.790272Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="gtkwave" exec="&apos;gtkwave %u&apos;" modified="2024-07-03T01:59:12.790293Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

@@ -1,0 +1,69 @@
+$date
+	Tue Jun 25 16:33:49 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module even_parity_tb $end
+$var wire 1 ! parity $end
+$var reg 8 " a [7:0] $end
+$var reg 256 # vcd_file [255:0] $end
+$var integer 32 $ i [31:0] $end
+$scope module u_even_parity $end
+$var wire 8 % a [7:0] $end
+$var wire 1 ! parity $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100100 %
+b0 $
+b1011100010111101110110011000110110010000101111011001010111011001100101011011100101111101110000011000010111001001101001011101000111100100101110011101100110001101100100 #
+b100100 "
+0!
+$end
+#10000
+b10000001 "
+b10000001 %
+b1 $
+#20000
+b1001 "
+b1001 %
+b10 $
+#30000
+b1100011 "
+b1100011 %
+b11 $
+#40000
+1!
+b1101 "
+b1101 %
+b100 $
+#50000
+0!
+b10001101 "
+b10001101 %
+b101 $
+#60000
+b1100101 "
+b1100101 %
+b110 $
+#70000
+b10010 "
+b10010 %
+b111 $
+#80000
+1!
+b1 "
+b1 %
+b1000 $
+#90000
+b1101 "
+b1101 %
+b1001 $
+#100000
+b1010 $

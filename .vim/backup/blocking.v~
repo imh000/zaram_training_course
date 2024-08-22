@@ -1,0 +1,29 @@
+module block
+(
+	input clk,
+	input d,
+	output reg q
+);
+
+	reg w;
+
+	always @ (posedge clk) begin
+		w = d;
+		q = d;
+	end
+	endmodule
+
+module non_block
+(
+	input clk,
+	input d,
+	output reg q
+);
+
+	reg w;
+
+	always @ (posedge clk) begin
+		w <= d;
+		q <= d;
+	end
+	endmodule

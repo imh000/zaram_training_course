@@ -1,0 +1,20 @@
+module barrel_shifter
+(
+	input [3:0] data,
+	input [1:0] num_shift, 	// number to shift
+	input direction, 		// 0: left, 1:right
+	input [1:0] sel,		// 0: logical shift, 1:arithmetic shift, 2:rotate
+	output [3:0] out,
+	output overflow			//logical and arithmetic overflow
+);
+	
+	always @ (*) begin
+		case(sel)
+			0 : {overflow, out} = direction ? (data >> num_shift) : (data << num_shift);
+			1 : {overflow, out} = direction ? (data >>> num_shift) : (data <<< num_shift);
+			2 : out = direction ? 
+			endcase
+		end
+
+endmodule
+

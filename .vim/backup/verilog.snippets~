@@ -1,0 +1,206 @@
+# if statement
+snippet if
+	if (${1}) begin
+		${0}
+	end
+# If/else statements
+snippet ife
+	if (${1}) begin
+		${2}
+	end
+	else begin
+		${3}
+	end
+# Else if statement
+snippet eif
+	else if (${1}) begin
+		${0}
+	end
+#Else statement
+snippet el
+	else begin
+		${0}
+	end
+# While statement
+snippet wh
+	while (${1}) begin
+		${0}
+	end
+# Repeat Loop
+snippet rep
+	repeat (${1}) begin
+		${0}
+	end 
+# Case statement
+snippet case
+	case (${1:/* variable */})
+		${2:/* value */}: begin
+			${3}
+		end
+		default: begin
+			${4}
+		end
+	endc ase
+# CaseZ statement
+snippet casez
+	casez (${1:/* variable */})
+		${2:/* value */}: begin
+			${3}
+		end
+		default: begin
+			${4}
+		end
+	endca se
+# Always block
+snippet al
+	always @(${1:/* sensitive list */}) begin
+		${0}
+	end 
+# Module block
+snippet mod
+	module ${1:`vim_snippets#Filename('$1', 'name')`}
+	(${2}
+	);
+		${0}
+	endmodule
+# For
+snippet for
+	for (int ${2:i} = 0; $2 < ${1:count}; $2${3:++}) begin
+		${4}
+	end
+# Forever
+snippet forev
+	forever begin
+		${0}
+	end
+# Function
+snippet fun
+	function ${1:void} ${2:name}(${3});
+		${0}
+	endfunction: $2
+# Task
+snippet task
+	task ${1:name}(${2});
+		${0}
+	endtask: $1
+# Initial 
+snippet ini 
+	initial begin
+		${0}
+	end
+# typedef struct packed
+snippet tdsp
+	typedef struct packed {
+		int ${2:data};
+	} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+# typedef eum
+snippet tde
+	typedef enum ${2:logic[15:0]}
+	{
+		${3:REG = 16'h0000}
+	} ${1:my_dest_t};
+# Test Bench Template
+
+snippet	tb
+	// --------------------------------------------------
+	//	Define Global Variables
+	// --------------------------------------------------
+	\`define	CLKFREQ		100		// Clock Freq. (Unit: MHz)
+	\`define	SIMCYCLE	\`NVEC	// Sim. Cycles
+	\`define NVEC		50		// # of Test Vector
+
+	// --------------------------------------------------
+	//	Includes
+	// --------------------------------------------------
+	\`include	"`expand('%:r:s?_tb??')`.v"
+
+	module ${2:`vim_snippets#Filename('$1', 'name')`};
+	// --------------------------------------------------
+	//	DUT Signals & Instantiate
+	// --------------------------------------------------
+	${1}
+	
+
+	// --------------------------------------------------
+	//	Tasks
+	// --------------------------------------------------
+		reg [8*32-1:0] taskState;
+		integer err = 0;
+
+		task init;
+			begin
+				taskState = "Init";
+				clk		= 0;
+			end
+		endtask
+
+		task resetReleaseAfterNCycles;
+			input [9:0] n;
+			begin
+				taskState = "Reset On";
+				rstn = 1'b0;
+				#(1000/\`CLKFREQ);
+				rstn = 1'b1; 
+				taskState = "Reset OFF";
+			end
+		endtask
+
+		always #(500/\`CLKFREQ) clk = ~clk;
+
+	// --------------------------------------------------
+	//	Test Stimulus
+	// --------------------------------------------------
+		integer		i, j;
+		initial begin
+			init();
+			resetReleaseAfterNCycles(4);
+
+			for (i=0; i<\`SIMCYCLE; i++) begin
+				a = \$urandom;
+			end
+			#(1000/\`CLKFREQ);
+			\$finish;
+		end
+
+	// --------------------------------------------------
+	//	Dump VCD
+	// --------------------------------------------------
+		reg	[8*32-1:0]	vcd_file;
+		initial begin
+			if (\$value\$plusargs("vcd_file=%s", vcd_file)) begin
+				\$dumpfile(vcd_file);
+				\$dumpvars;
+			end else begin
+				\$dumpfile("${3:`vim_snippets#Filename('$1', 'name')`}.vcd");
+				\$dumpvars;
+			end
+		end
+
+	endmodule
+
+# Tasks
+snippet utils
+	task dispAsFixedPoint;
+		input reg	[127:0]					sDescription;
+		input		[\`DEF_BIT_FULL-1:0]	bIn;
+		begin
+			\$display("[\%0s] Binary: \%b > Fixed Point Number: \%f", sDescription, bIn, bIn*(2.0**-(\`DEF_BIT_FRAC)));
+		end
+	endtask
+
+# Header Comment Template
+snippet co
+	// ==================================================
+	//	[ VLSISYS Lab. ]
+	//	* Author		: Woong Choi (woongchoi@sm.ac.kr)
+	//	* Filename		: ${0:`vim_snippets#Filename('$1', 'name')`}.v
+	//	* Date			: `strftime("%Y-%m-%d %H:%M:%S")`
+	//	* Description	: ${1}
+	// ==================================================
+
+#Clock
+snippet clk
+	// ==================================================
+	// Clock
+	// ==================================================
+		always #(500/`CLKFREQ)	clk = ~clk;
