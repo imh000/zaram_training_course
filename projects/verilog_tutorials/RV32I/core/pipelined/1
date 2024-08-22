@@ -1,0 +1,47 @@
+`include "../common/riscv_configs.v"
+
+module riscv_IDEX_register
+(
+	input i_clk,
+	input i_FlushE,
+	input [`XLEN-1:0] i_ID_rs1_data,
+	input [`XLEN-1:0] i_ID_rs2_data,
+	input [`XLEN-1:0] i_ID_pc_data,
+	input [4:0] i_ID_rs1_addr,
+	input [4:0] i_ID_rs2_addr,
+	input [4:0] i_ID_rd_addr,
+	input [`XLEN-1:0] i_ID_imm,
+	input [`XLEN-1:0] i_ID_pc_plus_4_data,
+	output reg [`XLEN-1:0] o_EX_rs1_data,
+	output reg [`XLEN-1:0] o_EX_rs2_data,
+	output reg [`XLEN-1:0] o_EX_pc_data,
+	output reg [4:0] o_EX_rs1_addr,
+	output reg [4:0] o_EX_rs2_addr,
+	output reg [4:0] o_EX_rd_addr,
+	output reg [`XLEN-1:0] o_EX_imm,
+	output reg [`XLEN-1:0] o_EX_pc_plus_4_data
+);
+
+	always @ (posedge i_clk) begin
+		if(!i_FlushE) begin
+			o_EX_rs1_data <= i_ID_rs1_data;
+			o_EX_rs2_data <= i_ID_rs2_data;
+			o_EX_pc_data <= i_ID_pc_data;
+			o_EX_rs1_addr <= i_ID_rs1_addr;
+			o_EX_rs2_addr <= i_ID_rs2_addr;
+			o_EX_rd_addr <= i_ID_rd_addr;
+			o_EX_imm <= i_ID_imm;
+			o_EX_pc_plus_4_data <= i_ID_pc_plus_4_data;
+		end else begin
+			o_EX_rs1_data <= o_EX_rs1_data;
+			o_EX_rs2_data <= o_EX_rs2_data;
+			o_EX_pc_data <= o_EX_pc_data;
+			o_EX_rs1_addr <= o_EX_rs1_addr;
+			o_EX_rs2_addr <= o_EX_rs2_addr;
+			o_EX_rd_addr <= o_EX_rd_addr;
+			o_EX_imm <= o_EX_imm;
+			o_EX_pc_plus_4_data <= o_EX_pc_plus_4_data;
+		end
+	end
+	
+endmodule
