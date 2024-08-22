@@ -376,15 +376,15 @@ $
 
 # File marks:
 '0  22  78  ~/.bash_aliases
-|4,48,22,78,1724302515,"~/.bash_aliases"
-'1  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,49,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
-'2  1  0  ~/RV32I/README.md
-|4,50,1,0,1724301418,"~/RV32I/README.md"
-'3  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,51,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
-'4  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,52,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,48,22,78,1724303102,"~/.bash_aliases"
+'1  22  78  ~/.bash_aliases
+|4,49,22,78,1724302515,"~/.bash_aliases"
+'2  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,50,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+'3  1  0  ~/RV32I/README.md
+|4,51,1,0,1724301418,"~/RV32I/README.md"
+'4  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,52,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 '5  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,53,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 '6  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
@@ -392,19 +392,31 @@ $
 '7  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,55,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 '8  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,56,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,56,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 '9  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,57,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 
 # Jumplist (newest first):
 -'  22  78  ~/.bash_aliases
+|4,39,22,78,1724303102,"~/.bash_aliases"
+-'  22  78  ~/.bash_aliases
 |4,39,22,78,1724302515,"~/.bash_aliases"
+-'  1  0  ~/.bash_aliases
+|4,39,1,0,1724302502,"~/.bash_aliases"
 -'  1  0  ~/.bash_aliases
 |4,39,1,0,1724302502,"~/.bash_aliases"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301484,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,1,0,1724301470,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
@@ -417,6 +429,14 @@ $
 |4,39,1,0,1724301418,"~/RV32I/README.md"
 -'  1  0  ~/RV32I/README.md
 |4,39,1,0,1724301418,"~/RV32I/README.md"
+-'  1  0  ~/RV32I/README.md
+|4,39,1,0,1724301418,"~/RV32I/README.md"
+-'  1  0  ~/RV32I/README.md
+|4,39,1,0,1724301418,"~/RV32I/README.md"
+-'  1  0  ~/RV32I/README.md
+|4,39,1,0,1724301418,"~/RV32I/README.md"
+-'  1  0  ~/RV32I/README.md
+|4,39,1,0,1724301418,"~/RV32I/README.md"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
@@ -425,6 +445,22 @@ $
 |4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  11  22  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,11,22,1724301408,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301213,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301213,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301213,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,1,0,1724301213,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,1,0,1724301213,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
@@ -453,155 +489,119 @@ $
 |4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
 |4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  27  3  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,27,3,1724229831,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229612,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229612,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229612,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229612,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
 -'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,19,1724229604,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229596,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229596,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229596,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229596,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  16  21  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,21,1724229558,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  16  21  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,21,1724229558,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  16  21  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,21,1724229558,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  16  21  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,16,21,1724229558,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229547,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229547,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229547,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  1  0  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
-|4,39,1,0,1724229547,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
--'  28  4  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,28,4,1724229506,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  28  4  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,28,4,1724229506,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  28  4  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,28,4,1724229506,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
--'  28  4  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
-|4,39,28,4,1724229506,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  16  19  ~/projects/verilog_tutorials/RV32I/testbench/Makefile
+|4,39,16,19,1724229916,"~/projects/verilog_tutorials/RV32I/testbench/Makefile"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  26  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,26,2,1724229879,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
+-'  23  2  ~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v
+|4,39,23,2,1724229832,"~/projects/verilog_tutorials/RV32I/core/common/riscv_register_file.v"
 
 # History of marks within files (newest to oldest):
 
 > ~/.bash_aliases
-	*	1724302514	0
+	*	1724303101	0
 	"	22	78
 	^	49	43
 	.	49	42
